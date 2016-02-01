@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar-inverse .navbar-brand {
+    height: 80px;
+}
