@@ -4,3 +4,53 @@
 @import "prettyPhoto";
 @import "animate";
 @import "main";
+
+//#main-slider container-fluid {
+//  //display: inline-block;
+//  float: left;
+//  vertical-align: top;
+//}
+//
+
+.slider-huge {
+  color: white !important;
+  font-weight: 900;
+  text-shadow:
+    5px 5px 7px red,
+    -5px 5px 7px red,
+    5px -5px 7px red,
+    -5px -5px 7px red;
+}
+
+@media screen and (min-width: 1200px) {
+  .slider-huge {
+    font-size: 4em;
+  }
+  .org-logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 780px) and (max-width: 1199px) {
+  .slider-huge {
+    font-size: 40px;
+  }
+  .org-logo {
+    width: 70px;
+    height: 70px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 779px) {
+  .slider-huge {
+    font-size: 25px;
+  }
+  .org-logo {
+    width: 50px;
+    height: 50px;
+    margin-top: 2px;
+  }
+}
