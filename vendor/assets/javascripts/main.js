@@ -1,5 +1,6 @@
 jQuery(function($) {
 
+
 	//#main-slider
 	$(function(){
 		$('#main-slider.carousel').carousel({
