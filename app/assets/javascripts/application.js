@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require bootstrap.min
 //= require jquery.prettyPhoto
+//= require jquery.isotope.min
 //= require main
 //= require_tree .
