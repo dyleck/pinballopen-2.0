@@ -54,3 +54,26 @@
     margin-top: 2px;
   }
 }
+
+body {
+  padding-top: 50px;
+}
+
+.navbar-header > .navbar-toggle {
+  background-color: #333;
+}
+
+.navbar-header .collapsed {
+  background-color: transparent !important;
+}
+
+.nav li {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 767px) {
+  .nav > li {
+    padding-top: 20px;
+  }
+}
