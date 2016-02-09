@@ -351,7 +351,6 @@ body > section {
   position: absolute;
   width: 100%;
   display: block !important;
-  height: 600px;
   -webkit-transition: opacity ease-in-out 500ms;
   -moz-transition: opacity ease-in-out 500ms;
   -o-transition: opacity ease-in-out 500ms;
@@ -951,8 +950,6 @@ ul.rss li::before {
   content: "\f09e";
 }
 #footer {
-  padding-top: 30px;
-  padding-bottom: 30px;
   color: #bdc3c7;
 }
 #footer a {
