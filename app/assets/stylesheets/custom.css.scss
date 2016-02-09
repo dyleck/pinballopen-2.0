@@ -12,14 +12,18 @@
 //}
 //
 
+@mixin red_glow {
+  text-shadow:
+          5px 5px 7px red,
+          -5px 5px 7px red,
+          5px -5px 7px red,
+          -5px -5px 7px red;
+
+}
 .slider-huge {
   color: white !important;
   font-weight: 900;
-  text-shadow:
-    5px 5px 7px red,
-    -5px 5px 7px red,
-    5px -5px 7px red,
-    -5px -5px 7px red;
+  @include red_glow;
 }
 
 @media screen and (min-width: 1200px) {
@@ -89,4 +93,10 @@ body {
   width: 6em;
   height: 2em;
   font-size: 2.5em;
+}
+
+#footer {
+  .row > div {
+    margin: 2px !important;
+  }
 }
