@@ -125,17 +125,16 @@ body {
 
 //TODO: Those colors are ugly!
 #main-slider .carousel .btn {
-  @include red_glow;
+  //@include red_glow;
   border: solid 5px red;
-  background: rgba(0,199,0, 0.6);
+  background: rgba(0,0,0, 0.8);
 }
 
 //TODO: Those colors are ugly!
 #main-slider .carousel .btn:hover {
-  background-color: rgba(0,199,0, 1);
+  background-color: rgba(0,0,0, 1);
   @include yellow_glow;
   border-color: yellow;
-  color: black;
 }
 
 .navbar {
