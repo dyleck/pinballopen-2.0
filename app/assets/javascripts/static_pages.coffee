@@ -2,11 +2,15 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-fit_viewport = () ->
-  new_height = $(window).height() - $('header').outerHeight() - $('footer').outerHeight();
+fit_viewport = (item) ->
+  if ( $(window).width() < 768 || $(window).height() < 700 )
+    new_height = $(window).height() - $('header').outerHeight(true) - $('footer').outerHeight(true);
+  else
+    new_height = 600;
+  item.height( new_height );
 
 $(window).on 'resize', ->
-  $('#main-slider .carousel .item').height( fit_viewport() );
+  fit_viewport( $('#main-slider .carousel .item') );
 
 $(document).on 'ready page:change', ->
-  $('#main-slider .carousel .item').height( fit_viewport() );
+  fit_viewport( $('#main-slider .carousel .item') );
