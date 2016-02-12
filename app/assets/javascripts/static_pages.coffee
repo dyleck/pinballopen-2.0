@@ -14,3 +14,6 @@ $(window).on 'resize', ->
 
 $(document).on 'ready page:change', ->
   fit_viewport( $('#main-slider .carousel .item') );
+  $('.polyglot-language-switcher').polyglotLanguageSwitcher({
+    openMode: "click"
+  })

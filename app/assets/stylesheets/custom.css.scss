@@ -4,6 +4,7 @@
 @import "prettyPhoto";
 @import "animate";
 @import "main";
+@import "polyglot-language-switcher-2";
 
 //#main-slider container-fluid {
 //  //display: inline-block;
@@ -95,10 +96,37 @@ body {
   font-weight: 500;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (max-width: 767px) {
   .nav > li {
-    padding-top: 20px;
+    padding-top: 10px;
   }
+
+  .nav {
+    .dropdown-menu {
+      li {
+        padding-left: 10px;
+      }
+      li:first-child {
+        padding-top: 10px;
+      }
+    }
+    li:first-child {
+      padding-top: 0px;
+    }
+  }
+
+  .navbar-header button {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+  }
+
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
 .carousel-bottom {
@@ -139,4 +167,10 @@ body {
 
 .navbar {
   margin-bottom: 0px;
+}
+
+.navbar-brand {
+  padding-bottom: 0px;
+  padding-top: 0px;
+  height: auto;
 }
