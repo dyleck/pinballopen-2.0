@@ -18,3 +18,9 @@ en:
           martians:   'More martians'
         login:
           self:     'Log In'
+  static_pages:
+    home:
+      slide1:
+        date:     "04-05 of June 2016"
+        place:    "Lodz"
+        register: "Register"

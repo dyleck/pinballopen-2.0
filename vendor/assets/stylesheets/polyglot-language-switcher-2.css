@@ -61,24 +61,6 @@ License URI: http://www.opensource.org/licenses/mit-license.php
 	position: relative !important; /* for the arrow */
 }
 
-/*.polyglot-language-switcher > .pls-selected-locale:hover {*/
-	/*color: #3a91bd !important;*/
-/*}*/
-
-.polyglot-language-switcher > .pls-selected-locale:after {
-	content: " " !important;
-	position: absolute !important;
-	top: 50% !important;
-	margin-top: -2px !important;
-	left: 100% !important;
-	margin-left: 5px !important;
-	width: 0 !important;
-	height: 0 !important;
-	border-left: 4px solid transparent !important;
-	border-right: 4px solid transparent !important;
-	border-top: 4px solid #000 !important;
-}
-
 /* ---------------------------------------------------------------------- */
 /* Language Container
 /* ---------------------------------------------------------------------- */

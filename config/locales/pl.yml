@@ -18,3 +18,9 @@ pl:
           martians:   'Więcej Marsjan'
         login:
           self:     'Zaloguj'
+  static_pages:
+    home:
+      slide1:
+        date:     "04-05 Czerwca 2016"
+        place:    "Łódź"
+        register: "Rejestracja"

@@ -4,8 +4,6 @@
       <div class="col-xs-12">
         <div class="polyglot-language-switcher pull-left" <%= "data-selected-lang=#{I18n.locale}"%>>
           <ul style="display: none">
-            <!--<li><a href="/en" title="English"  data-lang-id="en"><img src="assets/flags/gb.png" alt="English"> English</a></li>-->
-            <!--<li><a href="/" title="Polski" data-lang-id="pl"><img src="assets/flags/pl.png" alt="Polski"> Polski</a></li>-->
             <li>
               <%= link_to root_url(locale: "en"), data: {:lang_id => "en"} do %>
                 <%= image_tag "flags/gb.png", alt: "English" %> English
