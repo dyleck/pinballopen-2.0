@@ -2,10 +2,20 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="polyglot-language-switcher pull-left">
+        <div class="polyglot-language-switcher pull-left" <%= "data-selected-lang=#{I18n.locale}"%>>
           <ul style="display: none">
-            <li><a href="/en" title="English"  data-lang-id="en_GB"><img src="assets/flags/gb.png" alt="English"> English</a></li>
-            <li><a href="/" title="Polski" data-lang-id="pl_PL"><img src="assets/flags/pl.png" alt="Polski"> Polski</a></li>
+            <!--<li><a href="/en" title="English"  data-lang-id="en"><img src="assets/flags/gb.png" alt="English"> English</a></li>-->
+            <!--<li><a href="/" title="Polski" data-lang-id="pl"><img src="assets/flags/pl.png" alt="Polski"> Polski</a></li>-->
+            <li>
+              <%= link_to root_url(locale: "en"), data: {:lang_id => "en"} do %>
+                <%= image_tag "flags/gb.png", alt: "English" %> English
+              <% end %>
+            </li>
+            <li>
+              <%= link_to root_url(locale: "pl"), data: {:lang_id => "pl"} do %>
+                <%= image_tag "flags/pl.png", alt: "Polski" %> Polski
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>
