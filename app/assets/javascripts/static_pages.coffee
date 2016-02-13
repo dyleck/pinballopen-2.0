@@ -4,7 +4,9 @@
 
 fit_viewport = (item) ->
   if ( $(window).width() < 768 || $(window).height() < 700 )
-    new_height = $(window).height() - $('header').outerHeight(true) - $('footer').outerHeight(true);
+    header_height = $('header').outerHeight(true) - 1;
+    $('body').css({"padding-top": header_height + "px"});
+    new_height = $(window).height() - header_height;
   else
     new_height = 600;
   item.height( new_height );
