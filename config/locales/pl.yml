@@ -24,3 +24,7 @@ pl:
         date:     "04-05 Czerwca 2016"
         place:    "Łódź"
         register: "Rejestracja"
+      description:
+        header:     "Opis imprezy"
+      location:
+        header:     "Lokalizacja"

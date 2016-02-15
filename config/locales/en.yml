@@ -24,3 +24,7 @@ en:
         date:     "04-05 of June 2016"
         place:    "Lodz"
         register: "Register"
+      description:
+        header:     "Event's description"
+      location:
+        header:     "Location"
