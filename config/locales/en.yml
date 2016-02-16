@@ -6,7 +6,7 @@ en:
         info:
           self:   'Information'
           desc:     "Description"
-          place:    'Place'
+          place:    'Location'
           hotels:   'Hotels'
           contact:  'Contact'
           faq:      'FAQ'
