@@ -11,11 +11,19 @@ fit_viewport = (item) ->
     new_height = 600;
   item.height( new_height );
 
+resize_map = () ->
+  im = $("iframe#mapa");
+  max_height = parseInt(im.parent().css("max-height"));
+  loc_text_height = $('#location-text div').height();
+  im.width(im.parent().width()).height(Math.min(max_height, loc_text_height));
+
 $(window).on 'resize', ->
   fit_viewport( $('#main-slider .carousel .item') );
+  resize_map()
 
 $(document).on 'ready page:change', ->
   fit_viewport( $('#main-slider .carousel .item') );
+  resize_map();
   $('.polyglot-language-switcher').polyglotLanguageSwitcher({
     openMode: "click"
   })

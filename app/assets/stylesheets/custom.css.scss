@@ -60,7 +60,7 @@
   }
 }
 
-@media screen and (min-width: 780px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .slider-huge {
     font-size: 40px;
   }
@@ -74,7 +74,71 @@
   }
 }
 
-@media screen and (min-width: 321px) and (max-width: 779px) {
+@media screen and (min-width: 768px) {
+  .row-height {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+  }
+  .col-height {
+    display: table-cell;
+    float: none;
+    height: 100%;
+    vertical-align: top;
+  }
+
+  .nav > li {
+    padding-top: 10px;
+  }
+
+  .nav {
+    .dropdown-menu {
+      li {
+        padding-left: 10px;
+      }
+      li:first-child {
+        padding-top: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .dropdown-menu {
+    li:first-child {
+      padding-top: 8px;
+    }
+    li {
+      padding-left: 10px;
+    }
+  }
+  .nav > li {
+    padding-top: 10px;
+  }
+  .nav li.dropdown {
+    a:focus {
+      color: #bdc3c7;
+    }
+    a:hover {
+      color: #fff;
+    }
+  }
+  .navbar-inverse .navbar-nav .dropdown-menu > li:hover > a {
+    background-color: transparent;
+  }
+  .navbar-header button {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+  }
+  .dropdown-toggle {
+    transition: none;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 767px) {
   .slider-huge {
     font-size: 25px;
   }
@@ -117,34 +181,6 @@ body {
 .nav li {
   font-size: 1.2em;
   font-weight: 500;
-}
-
-@media screen and (max-width: 767px) {
-  .nav > li {
-    padding-top: 10px;
-  }
-
-  .nav {
-    .dropdown-menu {
-      li {
-        padding-left: 10px;
-      }
-      li:first-child {
-        padding-top: 10px;
-      }
-    }
-    li:first-child {
-      padding-top: 0px;
-    }
-  }
-
-  .navbar-header button {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    padding-bottom: 2px;
-    padding-top: 2px;
-  }
-
 }
 
 .navbar-inverse .navbar-nav > li > a {
