@@ -206,14 +206,12 @@ body {
   @include red_glow;
 }
 
-//TODO: Those colors are ugly!
 #main-slider .carousel .btn {
   //@include red_glow;
   border: solid 5px red;
   background: rgba(0,0,0, 0.8);
 }
 
-//TODO: Those colors are ugly!
 #main-slider .carousel .btn:hover {
   background-color: rgba(0,0,0, 1);
   @include yellow_glow;
@@ -229,12 +227,25 @@ body {
   padding-top: 0px;
   height: auto;
 }
-
 .violet {
   background-color: #8F59ED;
   color: #fff;
 }
-
+.orange {
+  background-color: #ED5A29;
+  color: yellow;
+}
+.yellow-light {
+  background-color: #F7D85C !important;
+  color: black !important;
+}
+.yellow-dark {
+  background-color: #F7AE00 !important;
+  color: black !important;
+}
+.orange-border {
+  border: 2px orangered solid !important;
+}
 .justify {
   text-align: justify;
   text-justify: auto;
