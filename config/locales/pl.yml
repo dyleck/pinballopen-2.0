@@ -28,3 +28,13 @@ pl:
         header:     "Opis imprezy"
       location:
         header:     "Lokalizacja"
+  users:
+    new:
+      signup:
+        header:           "Zarejestruj się"
+        submit:           "Utwórz konto"
+        first_name:       "Imię"
+        last_name:        "Nazwisko"
+        email:            "Adres e-mail"
+        password:         "Hasło"
+        password_confirm: "Powtórz hasło"

@@ -1,2 +1,29 @@
 <% provide :title, "Sign Up" %>
 
+<h1 class="text-center"><%= t(".signup.header") %></h1>
+<!--<div class="container">-->
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+      <%= form_for @user do |f| %>
+        <%= f.label :first_name, t(".signup.first_name") %>
+        <%= f.text_field :first_name, class: "form-control" %>
+
+        <%= f.label :last_name, t(".signup.last_name") %>
+        <%= f.text_field :last_name, class: "form-control" %>
+
+        <%= f.label :email, t(".signup.email") %>
+        <%= f.email_field :email, class: "form-control" %>
+
+        <%= f.label :password, t(".signup.password")%>
+        <%= f.password_field :password, class: "form-control" %>
+
+        <%= f.label :password_confirmation, t(".signup.password_confirm") %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+
+        <div class="text-center">
+          <%= f.submit t(".signup.submit"), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<!--</div>-->
