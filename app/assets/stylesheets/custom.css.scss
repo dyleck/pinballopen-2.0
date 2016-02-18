@@ -250,3 +250,14 @@ body {
   text-align: justify;
   text-justify: auto;
 }
+
+#flash-message {
+  .row > div {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    & > div {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
+}

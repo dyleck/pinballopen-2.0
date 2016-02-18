@@ -27,7 +27,9 @@
             <div class="col-sm-12">
               <div class="carousel-content">
                 <div class="text-center">
-                  <a href="#" class="btn btn-xl animation animated-item-3"><%= t(".slide1.register") %></a>
+                  <%= link_to signup_url, class: "btn btn-xl animation animated-item-3" do %>
+                    <%= t(".slide1.register") %>
+                  <% end %>
                 </div>
               </div>
             </div>
