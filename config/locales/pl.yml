@@ -38,3 +38,6 @@ pl:
         email:            "Adres e-mail"
         password:         "Hasło"
         password_confirm: "Powtórz hasło"
+    create:
+      cannot:             "Twoje konto nie zostało utworzone. Spróbuj ponownie."
+      exists:             "Użytkownik z takim adresem email już istnieje."

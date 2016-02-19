@@ -5,10 +5,15 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
     if @user.save
-      redirect_to user
+      redirect_to @user
     else
-      flash.now[:danger] = "Your account cannot be created. Please try again."
+      if User.find_by(email: @user.email)
+        flash.now[:danger] = t(".exists")
+      else
+        flash.now[:danger] = t(".cannot")
+      end
       render 'new'
     end
   end

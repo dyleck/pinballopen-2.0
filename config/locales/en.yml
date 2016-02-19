@@ -38,3 +38,6 @@ en:
         email:            "E-mail's address"
         password:         "Password"
         password_confirm: "Confirm Password"
+    create:
+      cannot:             "Your account cannot be created. Please try again."
+      exists:             "User with that email already exists."
