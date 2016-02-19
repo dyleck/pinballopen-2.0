@@ -2,9 +2,11 @@
   <div class="container" id="flash-message">
     <div class="row">
       <div class="col-xs-12">
-        <div class="alert alert-danger">
-          Dupa jasiu
-        </div>
+        <% flash.each do |msg_type, msg| %>
+          <div class="alert alert-<%= "#{msg_type}" %>">
+            <%= "#{msg}" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
