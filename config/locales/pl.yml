@@ -1,4 +1,22 @@
 pl:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank:      "nie może być puste"
+            last_name:
+              blank:      "nie może być puste"
+            email:
+              blank:      "nie może być pusty"
+              invalid:    "jest nieprawidłowy"
+              taken:      "już jest zarejestrowany"
+            password:
+              blank:      "nie może być puste"
+              too_short:  "jest za krótkie"
+            password_confirmation:
+              confirmation: "jest niezgodne"
   layouts:
     header:
       menu:
@@ -37,7 +55,10 @@ pl:
         last_name:        "Nazwisko"
         email:            "Adres e-mail"
         password:         "Hasło"
-        password_confirm: "Powtórz hasło"
+        password_confirmation: "Powtórz hasło"
     create:
       cannot:             "Twoje konto nie zostało utworzone. Spróbuj ponownie."
       exists:             "Użytkownik z takim adresem email już istnieje."
+  shared:
+    form_errors:
+      description:        "Twój formularz zawiera błędy"

@@ -261,3 +261,19 @@ body {
     }
   }
 }
+
+#error_messages {
+  ul {
+    color: red;
+    font-weight: bold;
+  }
+}
+
+#new_user {
+  .field_with_errors {
+    @extend .has-error;
+    .form-control {
+      color: indianred;
+    }
+  }
+}

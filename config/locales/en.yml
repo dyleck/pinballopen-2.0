@@ -1,4 +1,21 @@
 en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank:      "cannot be blank"
+            last_name:
+              blank:      "cannot be blank"
+            email:
+              blank:      "cannot be blank"
+              invalid:    "is invalid"
+            password:
+              blank:      "cannot be blank"
+              too_short:  "is too short"
+            password_confirmation:
+              confirmation: "does not match"
   layouts:
     header:
       menu:
@@ -37,7 +54,10 @@ en:
         last_name:        "Last Name"
         email:            "E-mail's address"
         password:         "Password"
-        password_confirm: "Confirm Password"
+        password_confirmation: "Confirm Password"
     create:
       cannot:             "Your account cannot be created. Please try again."
       exists:             "User with that email already exists."
+  shared:
+    form_errors:
+      description:        "Your form contains errors"

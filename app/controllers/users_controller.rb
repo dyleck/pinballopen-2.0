@@ -9,13 +9,9 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user
     else
-      if User.find_by(email: @user.email)
-        flash.now[:danger] = t(".exists")
-      else
-        flash.now[:danger] = t(".cannot")
-      end
       render 'new'
     end
+
   end
 
   def show
