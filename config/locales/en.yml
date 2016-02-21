@@ -22,8 +22,8 @@ en:
         home:     'Home page'
         info:
           self:   'Information'
-          desc:     "Description"
-          place:    'Location'
+          description:     "Description"
+          location:    'Location'
           hotels:   'Hotels'
           contact:  'Contact'
           faq:      'FAQ'

@@ -23,8 +23,8 @@ pl:
         home:     'Strona domowa'
         info:
           self:   'Informacje'
-          desc:     'Opis imprezy'
-          place:    'Lokalizacja'
+          description:     'Opis imprezy'
+          location:    'Lokalizacja'
           hotels:   'Zakwaterowanie'
           contact:  'Kontakt'
           faq:      'FAQ'

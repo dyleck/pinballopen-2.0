@@ -5,12 +5,12 @@
         <div class="polyglot-language-switcher pull-left" <%= "data-selected-lang=#{I18n.locale}"%>>
           <ul style="display: none">
             <li>
-              <%= link_to root_url(locale: "en"), data: {:lang_id => "en"} do %>
+              <%= link_to url_for(params.merge({ locale: :en })), data: {:lang_id => "en"} do %>
                 <%= image_tag "flags/gb.png", alt: "English" %> English
               <% end %>
             </li>
             <li>
-              <%= link_to root_url(locale: "pl"), data: {:lang_id => "pl"} do %>
+              <%= link_to url_for(params.merge({ locale: :pl })), data: {:lang_id => "pl"} do %>
                 <%= image_tag "flags/pl.png", alt: "Polski" %> Polski
               <% end %>
             </li>
@@ -39,11 +39,13 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t('.menu.info.self') %> <i class="icon-angle-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="#description"><%= t('.menu.info.desc') %></a></li>
-            <li><a href="#location"><%= t('.menu.info.place') %></a></li>
-            <li><a href="#"><%= t('.menu.info.hotels') %></a></li>
-            <li><a href="#"><%= t('.menu.info.faq') %></a></li>
-            <li><a href="#"><%= t('.menu.info.contact') %></a></li>
+          <% %w[description location hotels faq contact].each do |anchor| %>
+            <li>
+            <%= link_to url_for(controller: :static_pages, action: :home, anchor: anchor) do %>
+              <%= t(".menu.info.#{anchor}") %>
+            <% end %>
+            </li>
+          <% end %>
           </ul>
         </li>
         <li class="dropdown">
@@ -56,7 +58,7 @@
           </ul>
         </li>
         <li><%= link_to t('.menu.login.self'), '#' %></li>
-<!--
+<!--en
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
           <ul class="dropdown-menu">
