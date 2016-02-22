@@ -36,6 +36,9 @@ pl:
           martians:   'Więcej Marsjan'
         login:
           self:     'Zaloguj'
+        user:
+          profile:  'Profil'
+          logout:   'Wyloguj'
   static_pages:
     home:
       slide1:
@@ -62,3 +65,10 @@ pl:
   shared:
     form_errors:
       description:        "Twój formularz zawiera błędy"
+  sessions:
+    new:
+      login:
+        header:           "Zaloguj"
+        email:            "Adres email"
+        password:         "Hasło"
+        submit:           "Loguj"

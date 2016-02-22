@@ -35,6 +35,9 @@ en:
           martians:   'More martians'
         login:
           self:     'Log In'
+        user:
+          profile:  'Profile'
+          logout:   'Log out'
   static_pages:
     home:
       slide1:
@@ -61,3 +64,10 @@ en:
   shared:
     form_errors:
       description:        "Your form contains errors"
+  sessions:
+    new:
+      login:
+        header:           "Log in"
+        email:            "Email's address"
+        password:         "Password"
+        submit:           "Login"

@@ -94,9 +94,6 @@
 
   .nav {
     .dropdown-menu {
-      li {
-        padding-left: 10px;
-      }
       li:first-child {
         padding-top: 10px;
       }
@@ -276,4 +273,10 @@ body {
       color: indianred;
     }
   }
+}
+
+.divider {
+  background-color: #bdc3c7 !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
 }
