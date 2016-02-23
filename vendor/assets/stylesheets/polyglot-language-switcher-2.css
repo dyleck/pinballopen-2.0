@@ -57,7 +57,7 @@ License URI: http://www.opensource.org/licenses/mit-license.php
 /* ---------------------------------------------------------------------- */
 .polyglot-language-switcher > .pls-selected-locale {
 	text-decoration: none !important;
-	/*color: #fff !important;*/
+	color: #bdc3c7 !important;
 	position: relative !important; /* for the arrow */
 }
 
@@ -92,7 +92,7 @@ License URI: http://www.opensource.org/licenses/mit-license.php
 }
 
 .pls-language-container a {
-	/*color: #3a91bd !important;*/
+	color: white !important;
 	text-decoration: none !important;
 	padding: 5px 10px !important;
 	display: block !important;

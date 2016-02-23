@@ -11,10 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap
 //= require jquery-polyglot.language.switcher
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap.min
 //= require jquery.prettyPhoto
 //= require jquery.isotope.min
 //= require main

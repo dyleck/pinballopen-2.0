@@ -6,13 +6,6 @@
 @import "main";
 @import "polyglot-language-switcher-2";
 
-//#main-slider container-fluid {
-//  //display: inline-block;
-//  float: left;
-//  vertical-align: top;
-//}
-//
-
 @mixin red_glow {
   text-shadow:
           5px 5px 7px red,
@@ -87,32 +80,9 @@
     height: 100%;
     vertical-align: top;
   }
-
-  .nav > li {
-    padding-top: 10px;
-  }
-
-  .nav {
-    .dropdown-menu {
-      li:first-child {
-        padding-top: 10px;
-      }
-    }
-  }
 }
 
 @media screen and (max-width: 767px) {
-  .dropdown-menu {
-    li:first-child {
-      padding-top: 8px;
-    }
-    li {
-      padding-left: 10px;
-    }
-  }
-  .nav > li {
-    padding-top: 10px;
-  }
   .nav li.dropdown {
     a:focus {
       color: #bdc3c7;
@@ -123,12 +93,6 @@
   }
   .navbar-inverse .navbar-nav .dropdown-menu > li:hover > a {
     background-color: transparent;
-  }
-  .navbar-header button {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    padding-bottom: 2px;
-    padding-top: 2px;
   }
   .dropdown-toggle {
     transition: none;
@@ -163,10 +127,6 @@
   }
 }
 
-body {
-  padding-top: 50px;
-}
-
 .navbar-header > .navbar-toggle {
   background-color: #333;
 }
@@ -175,23 +135,11 @@ body {
   background-color: transparent !important;
 }
 
-.nav li {
-  font-size: 1.2em;
-  font-weight: 500;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-  padding-top: 1px;
-  padding-bottom: 1px;
-}
-
 .carousel-bottom {
   position: absolute;
   bottom: 10%;
   width: 100%;
 }
-
-
 
 #footer {
   .row > div {
@@ -204,7 +152,6 @@ body {
 }
 
 #main-slider .carousel .btn {
-  //@include red_glow;
   border: solid 5px red;
   background: rgba(0,0,0, 0.8);
 }
@@ -219,11 +166,6 @@ body {
   margin-bottom: 0px;
 }
 
-.navbar-brand {
-  padding-bottom: 0px;
-  padding-top: 0px;
-  height: auto;
-}
 .violet {
   background-color: #8F59ED;
   color: #fff;
@@ -279,4 +221,14 @@ body {
   background-color: #bdc3c7 !important;
   margin-left: 10px !important;
   margin-right: 10px !important;
+}
+
+div.affix {
+  top: 0;
+  width: 100%;
+  z-index: 998;
+
+  & + div:first-child {
+    padding-bottom: 50px !important;
+  }
 }
