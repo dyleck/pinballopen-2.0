@@ -46,10 +46,10 @@ $(document).on 'ready page:change', ->
   $('header a').click (e) ->
     href = $.attr(this, 'href')
     index = href.indexOf("#")
-    if index == -1
+    if index == -1 || $(href.substr(index)).length == 0
       return
     else
       e.preventDefault()
-      body.animate({ scrollTop: $( href.substr(index) ).offset().top }, 500)
-    end
+      body.animate({ scrollTop: $( href.substr(index) ).offset().top }, 500, ->
+        window.location.hash = href.substr(index+1))
 
