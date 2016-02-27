@@ -81,6 +81,21 @@
     height: 100%;
     vertical-align: top;
   }
+
+  #tournaments-navbar {
+    .navbar-nav {
+      display: inline-block;
+      float: none;
+      a {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    }
+    .navbar-collapse {
+      text-align: center !important;
+      font-weight: bold;
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -224,10 +239,25 @@
   margin-right: 10px !important;
 }
 
-div.affix {
+#main-navbar.affix {
   top: 0;
   width: 100%;
   z-index: 998;
+}
+
+#tournaments-navbar {
+  min-height: 25px !important;
+  background-color: indianred;
+
+  a {
+    color: yellow;
+  }
+  .icon-bar {
+    background-color: yellow;
+  }
+  .navbar-toggle {
+    border-color: yellow;
+  }
 }
 
 .navbar-nav li {

@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   scope '(:locale)' do
     get 'about'     => 'static_pages#about'
     get 'contact'   => 'static_pages#contact'
+    get 'tournament_main' => 'static_pages#tournament_main'
+    get 'tournament_classic' => 'static_pages#tournament_classic'
+    get 'tournament_bop' => 'static_pages#tournament_bop'
+    get 'tournament_martians' => 'static_pages#tournament_martians'
     resources :users
     get 'signup'    => 'users#new'
     get 'login' => 'sessions#new'

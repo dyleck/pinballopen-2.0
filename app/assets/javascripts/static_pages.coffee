@@ -23,7 +23,7 @@ $(window).on 'resize', ->
   fit_viewport( $('#main-slider .carousel .item') );
   resize_map()
 
-$(document).on 'click','.navbar-collapse.in', (e) ->
+$(document).on 'click','#main-navbar .navbar-collapse.in', (e) ->
   $(this).collapse('hide') if $(e.target).is('a')
 
 $(document).on 'ready page:change', ->
@@ -34,11 +34,11 @@ $(document).on 'ready page:change', ->
   resize_map();
 
   # affixed nav
-  $('div.navbar').affix({offset: {top: $('#lang-switcher').outerHeight(true)}})
-  $('div.navbar').on 'affix.bs.affix', ->
-    $(this).parent().next().css({ paddingTop: $(this).outerHeight(true) })
-  $('div.navbar').on 'affix-top.bs.affix', ->
-    $(this).parent().next().css({ paddingTop: 0})
+  $('#main-navbar').affix({offset: {top: $('#lang-switcher').outerHeight(true)}})
+  $('#main-navbar').on 'affix.bs.affix', ->
+    $(this).parent().next().css({ marginTop: $(this).outerHeight(true)})
+  $('#main-navbar').on 'affix-top.bs.affix', ->
+    $(this).parent().next().css({ marginTop: 0})
 
   # animated scrolling on a.click
   # TODO Fix the default action when not an page with anchor

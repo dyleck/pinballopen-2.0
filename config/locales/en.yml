@@ -56,6 +56,11 @@ en:
         question2:  "Question 2"
         question3:  "Question 3"
         question4:  "Question 4"
+    tournament_nav:
+      menu:
+        rules:      "Rules"
+        flippers:   "Flippers"
+        prizes:     "Prizes"
   users:
     new:
       signup:
