@@ -23,7 +23,7 @@ $(window).on 'resize', ->
   fit_viewport( $('#main-slider .carousel .item') );
   resize_map()
 
-$(document).on 'click','#main-navbar .navbar-collapse.in', (e) ->
+$(document).on 'click','#main-navbar .navbar-collapse.in, #tournaments-navbar .navbar-collapse.in', (e) ->
   $(this).collapse('hide') if $(e.target).is('a')
 
 $(document).on 'ready page:change', ->
@@ -43,7 +43,7 @@ $(document).on 'ready page:change', ->
   # animated scrolling on a.click
   # TODO Fix the default action when not an page with anchor
   body = $('html, body')
-  $('header a').click (e) ->
+  $('header a, #tournaments-navbar a').click (e) ->
     href = $.attr(this, 'href')
     index = href.indexOf("#")
     if index == -1 || $(href.substr(index)).length == 0
