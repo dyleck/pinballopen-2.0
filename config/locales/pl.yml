@@ -49,6 +49,14 @@ pl:
         header:     "Opis imprezy"
       location:
         header:     "Lokalizacja"
+      hotels:
+        header:     "Zakwaterowanie"
+      faq:
+        header:     "Najczęściej zadawane pytania"
+        question1:  "Pytanie numer 1"
+        question2:  "Pytanie numer 2"
+        question3:  "Pytanie numer 3"
+        question4:  "Pytanie numer 4"
   users:
     new:
       signup:

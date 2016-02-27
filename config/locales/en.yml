@@ -48,6 +48,14 @@ en:
         header:     "Event's description"
       location:
         header:     "Location"
+      hotels:
+        header:     "Hotels"
+      faq:
+        header:     "Frequently asked questions"
+        question1:  "Question 1"
+        question2:  "Question 2"
+        question3:  "Question 3"
+        question4:  "Question 4"
   users:
     new:
       signup:
