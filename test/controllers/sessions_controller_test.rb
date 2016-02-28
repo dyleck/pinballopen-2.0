@@ -1,9 +1,12 @@
 require 'test_helper'
 
 class SessionsControllerTest < ActionController::TestCase
-  test "should get new" do
-    get :new
-    assert_response :success
+  def setup
+    @user = users(:one)
   end
 
+  test "should create session" do
+    xhr :post, :create, session: { email: @user.email, password: "password" }
+    assert_response :success
+  end
 end
