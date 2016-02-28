@@ -40,6 +40,10 @@ $(document).on 'ready page:change', ->
   $('#main-navbar').on 'affix-top.bs.affix', ->
     $(this).parent().next().css({ marginTop: 0})
 
+  # hide flash on modal when closed
+  $('#loginModal').on 'hidden.bs.modal', ->
+    $(this).find('#modal-flash').hide();
+
   # animated scrolling on a.click
   # TODO Fix the default action when not an page with anchor
   body = $('html, body')
