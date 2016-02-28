@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
       else
         flash.now[:danger] = t('layouts.login_modal.wrong_password')
         format.js
-        format.html { render 'new' }
       end
     end
   end
