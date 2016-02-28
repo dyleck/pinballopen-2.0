@@ -64,7 +64,7 @@
             </ul>
           </li>
           <% else %>
-          <li><%= link_to t('.menu.login.self'), login_path %></li>
+          <li><%= link_to t('.menu.login.self'), "#", data: { toggle: "modal", target: "#loginModal" } %></li>
           <% end %>
         </ul>
       </div>

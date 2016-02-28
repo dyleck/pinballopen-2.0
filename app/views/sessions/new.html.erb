@@ -5,13 +5,7 @@
       <h1 class="text-center"><%= t(".login.header") %></h1>
     </div>
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <%= form_for :session, url: login_path do |f| %>
-      <%= f.label t(".login.email") %>
-      <%= f.email_field :email, class: "form-control" %>
-      <%= f.label t(".login.password") %>
-      <%= f.password_field :password, class: "form-control" %>
-      <%= f.submit t(".login.submit"), class: "btn btn-primary" %>
-    <% end %>
+      <%= render 'sessions/form' %>
     </div>
   </div>
 </div>

@@ -38,6 +38,10 @@ en:
         user:
           profile:  'Profile'
           logout:   'Log out'
+    login_modal:
+      email:            "Email"
+      password:         "Password"
+      submit:           "Log in"
   static_pages:
     home:
       slide1:
@@ -77,10 +81,3 @@ en:
   shared:
     form_errors:
       description:        "Your form contains errors"
-  sessions:
-    new:
-      login:
-        header:           "Log in"
-        email:            "Email's address"
-        password:         "Password"
-        submit:           "Login"
