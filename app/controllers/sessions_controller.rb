@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email].downcase)
     respond_to do |format|
       if @user and @user.authenticate(params[:session][:password])
-        log_in(@user)
+            log_in @user
+        params[:session][:remember] == "1" ? remember(@user) : forget(@user)
         format.html { redirect_to @user }
         format.js
       else
@@ -15,6 +16,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    user = User.find_by(id: session[:user_id])
+    forget user if logged_in?
     log_out
     redirect_to root_path
   end

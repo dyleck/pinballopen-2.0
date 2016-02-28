@@ -329,4 +329,16 @@
       text-decoration: underline;
     }
   }
+  .checkbox {
+    margin-top: -10px;
+    margin-bottom: 10px;
+
+    span {
+      margin-left: 20px;
+    }
+  }
+
+  #session_remember {
+    margin-left: 0px;
+  }
 }

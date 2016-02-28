@@ -48,6 +48,7 @@ pl:
       not_a_member:     "Nie posiadasz konta?"
       register:         "Zarejestruj się"
       wrong_password:   "Podałeś złe dane logowania. Spróbuj jeszcze raz."
+      remember:         "Zapamiętaj mnie na tym komputerze"
   static_pages:
     home:
       slide1:
