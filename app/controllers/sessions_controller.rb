@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
         format.html { redirect_to @user }
         format.js
       else
-        flash.now[:danger] = "Invalid email/password combination"
+        flash.now[:danger] = t('layouts.login_modal.wrong_password')
         format.js
         format.html { render 'new' }
       end

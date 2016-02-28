@@ -6,7 +6,7 @@
         <h4 class="modal-title"><%= t(".header") %></h4>
       </div>
       <div class="modal-body">
-        <div id="modal-flash" class="alert alert-danger">dupa</div>
+        <div id="modal-flash" class="alert alert-danger"></div>
         <%= form_for :session, url: login_path, remote: true do |f| %>
             <div class="form-group">
               <%= f.label t(".email") %>

@@ -46,6 +46,7 @@ en:
       cancel:           "Cancel"
       not_a_member:     "Don't have an account?"
       register:         "Register"
+      wrong_password:   "You have supplied wrong credentials. Please try again"
   static_pages:
     home:
       slide1:

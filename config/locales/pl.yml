@@ -47,6 +47,7 @@ pl:
       cancel:           "Anuluj"
       not_a_member:     "Nie posiadasz konta?"
       register:         "Zarejestruj się"
+      wrong_password:   "Podałeś złe dane logowania. Spróbuj jeszcze raz."
   static_pages:
     home:
       slide1:
