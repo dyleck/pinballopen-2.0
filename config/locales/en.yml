@@ -39,9 +39,13 @@ en:
           profile:  'Profile'
           logout:   'Log out'
     login_modal:
+      header:           "Log in"
       email:            "Email"
       password:         "Password"
       submit:           "Log in"
+      cancel:           "Cancel"
+      not_a_member:     "Don't have an account?"
+      register:         "Register"
   static_pages:
     home:
       slide1:

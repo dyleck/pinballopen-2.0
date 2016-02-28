@@ -40,9 +40,13 @@ pl:
           profile:  'Profil'
           logout:   'Wyloguj'
     login_modal:
+      header:           "Wpisz się"
       email:            "Adres email"
       password:         "Hasło"
-      submit:           "Loguj"
+      submit:           "Wpisz się"
+      cancel:           "Anuluj"
+      not_a_member:     "Nie posiadasz konta?"
+      register:         "Zarejestruj się"
   static_pages:
     home:
       slide1:

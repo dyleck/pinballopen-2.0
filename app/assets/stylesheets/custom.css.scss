@@ -291,7 +291,14 @@
   input[type="password"] {
     width: 100%;
   }
-
+  .close {
+    color: white;
+    opacity: 0.8;
+    &:hover {
+      color: yellow;
+      opacity: 1;
+    }
+  }
   .login-buttons {
     margin-top: 10px;
   }
