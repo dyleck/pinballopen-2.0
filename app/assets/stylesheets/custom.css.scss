@@ -341,4 +341,16 @@
   #session_remember {
     margin-left: 0px;
   }
+
+  .buttons {
+    display: inline-flex;
+    float: right;
+    clear: left;
+    .btn-success {
+      order: 1;
+    }
+    .btn-danger {
+      order: 2;
+    }
+  }
 }
