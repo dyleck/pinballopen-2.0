@@ -2,4 +2,5 @@
   window.location.replace("<%= user_path(@user) %>");
 <% else %>
   $('#modal-flash').text("<%= flash[:danger] %>").show();
+  $('.modal-content').effect('shake');
 <% end %>

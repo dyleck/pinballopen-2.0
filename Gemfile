@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.2'
 gem 'bcrypt', '~> 3.1'
+gem 'jquery-ui-rails'
 
 group :development do
   gem 'web-console', '~> 2.0'

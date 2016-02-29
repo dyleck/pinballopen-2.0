@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui/effect-shake
 //= require bootstrap
 //= require jquery-polyglot.language.switcher
 //= require jquery_ujs
