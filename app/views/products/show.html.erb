@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="row">
+      <%= "#{@product.name} - price: #{@product.price}" %>
+      <%= link_to "edit", edit_product_path(@product) %>
+      <%= link_to "destroy", product_path(@product), method: :delete %>
+    </div>
+</div>

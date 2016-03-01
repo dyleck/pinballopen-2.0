@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'products/new'
+
+  get 'products/edit'
+
+  get 'products/show'
+
+  get 'products/destroy'
+
+  get 'products/create'
+
+  get 'products/update'
+
   get 'sessions/new'
 
   root 'static_pages#home'
@@ -15,6 +27,10 @@ Rails.application.routes.draw do
     get 'signup'    => 'users#new'
     post 'login' => 'sessions#create'
     delete 'logout' => 'sessions#destroy'
+  end
+
+  scope 'admin' do
+    resources :products
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

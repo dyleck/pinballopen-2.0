@@ -1,0 +1,15 @@
+<%= form_for @product, class: "form" do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :price %>
+      <%= f.text_field :price, type: :number, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :authorized %>
+      <%= f.check_box :authorized %>
+    </div>
+    <%= f.button name: :submit, type: :submit %>
+<% end %>

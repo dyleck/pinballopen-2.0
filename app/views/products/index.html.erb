@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <ul>
+    <% Product.all.each do |product| %>
+      <li>
+        <%= "#{product.name} - #{product.price}" %>
+        <%= link_to "show", product_path(product), class: "btn btn-xs btn-primary" %>
+        <%= link_to "edit", edit_product_path(product), class: "btn btn-xs btn-info" %>
+        <%= link_to "destroy", product_path(product), method: :delete, class: "btn btn-xs btn-danger" %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
