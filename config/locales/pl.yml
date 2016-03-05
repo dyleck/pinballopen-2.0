@@ -38,6 +38,7 @@ pl:
           self:     'Zaloguj'
         user:
           profile:  'Profil'
+          order:    "Płatność"
           logout:   'Wyloguj'
     login_modal:
       header:           "Wpisz się"

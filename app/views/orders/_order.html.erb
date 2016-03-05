@@ -1,0 +1,19 @@
+<% if @current_order.order_items.count > 0 %>
+  <table class="cart">
+    <% @current_order.order_items.each do |item| %>
+      <tr>
+        <td><%= item.product.name %></td>
+        <td class="price"><%= item.product.price %></td>
+        <td class="noborder"><%= link_to "usuń", order_item_path(item), method: :delete, remote: true, class: "btn btn-xs btn-danger" %></td>
+      </tr>
+    <% end %>
+      <tr class="cart-total">
+        <td>Total</td>
+        <td class="total-cell"><%= @current_order.order_items.map {|item| item.product.price}.sum{|p| p} %></td>
+        <td class="noborder"></td>
+      </tr>
+  </table>
+  <%= button_to "Zapłać", "#", class: "btn btn-primary" %>
+<% else %>
+  Twój koszyk jest pusty
+<% end %>

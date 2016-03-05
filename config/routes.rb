@@ -1,29 +1,16 @@
 Rails.application.routes.draw do
-
-  get 'products/new'
-
-  get 'products/edit'
-
-  get 'products/show'
-
-  get 'products/destroy'
-
-  get 'products/create'
-
-  get 'products/update'
-
-  get 'sessions/new'
-
   root 'static_pages#home'
   get '/:locale' => 'static_pages#home'
   scope '(:locale)' do
+    resources :orders, only: [:new, :create]
+    resources :order_items, only: [:create, :destroy]
+    resources :users
     get 'about'     => 'static_pages#about'
     get 'contact'   => 'static_pages#contact'
     get 'tournament_main' => 'static_pages#tournament_main'
     get 'tournament_classic' => 'static_pages#tournament_classic'
     get 'tournament_bop' => 'static_pages#tournament_bop'
     get 'tournament_martians' => 'static_pages#tournament_martians'
-    resources :users
     get 'signup'    => 'users#new'
     post 'login' => 'sessions#create'
     delete 'logout' => 'sessions#destroy'
