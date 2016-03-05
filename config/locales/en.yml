@@ -82,6 +82,7 @@ en:
         email:            "E-mail's address"
         password:         "Password"
         password_confirmation: "Confirm Password"
+        sff_member:       "I am the SFF member and membership fees are paid up"
     create:
       cannot:             "Your account cannot be created. Please try again."
       exists:             "User with that email already exists."

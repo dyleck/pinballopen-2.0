@@ -7,21 +7,32 @@
       <%= form_for @user do |f| %>
         <%= render 'shared/form_errors' %>
 
-        <%= f.label :first_name, t(".signup.first_name") %>
-        <%= f.text_field :first_name, class: "form-control" %>
-
-        <%= f.label :last_name, t(".signup.last_name") %>
-        <%= f.text_field :last_name, class: "form-control" %>
-
-        <%= f.label :email, t(".signup.email") %>
-        <%= f.email_field :email, class: "form-control" %>
-
-        <%= f.label :password, t(".signup.password")%>
-        <%= f.password_field :password, class: "form-control" %>
-
-        <%= f.label :password_confirmation, t(".signup.password_confirmation") %>
-        <%= f.password_field :password_confirmation, class: "form-control" %>
-
+        <div class="form-group">
+          <%= f.label :first_name, t(".signup.first_name") %>
+          <%= f.text_field :first_name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :last_name, t(".signup.last_name") %>
+          <%= f.text_field :last_name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, t(".signup.email") %>
+          <%= f.email_field :email, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, t(".signup.password")%>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, t(".signup.password_confirmation") %>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :sff_member, class: "checkbox inline" do %>
+            <%= f.check_box :sff_member %>
+            <span><%= t(".signup.sff_member") %></span>
+          <% end %>
+        </div>
         <div class="text-center">
           <%= f.submit t(".signup.submit"), class: "btn btn-primary" %>
         </div>

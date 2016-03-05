@@ -83,6 +83,7 @@ pl:
         email:            "Adres e-mail"
         password:         "Hasło"
         password_confirmation: "Powtórz hasło"
+        sff_member:       "Jestem członkiem SFF i opłaciłem składki członkowskie"
     create:
       cannot:             "Twoje konto nie zostało utworzone. Spróbuj ponownie."
       exists:             "Użytkownik z takim adresem email już istnieje."
