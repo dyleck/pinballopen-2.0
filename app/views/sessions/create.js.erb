@@ -1,8 +1,10 @@
-<% if redirect = cookies[:redirect_to] %>
-  <% cookies.delete :redirect_to %>
-  window.location.replace("<%= j(redirect) %>")
-<% elsif @user and session[:user_id] == @user.id %>
-  window.location.replace("<%= user_path(@user) %>");
+<% if @user and session[:user_id] == @user.id %>
+  <% if redirect = cookies[:redirect_to] %>
+    <% cookies.delete :redirect_to %>
+  <% else %>
+    <% redirect = user_path(@user) %>
+  <% end %>
+  window.location.replace("<%= redirect %>");
 <% else %>
   $('#modal-flash').text("<%= flash[:danger] %>").show();
   $('.modal-content').effect('shake');
