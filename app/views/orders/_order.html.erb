@@ -2,8 +2,14 @@
   <table class="cart">
     <% @current_order.order_items.each do |item| %>
       <tr>
-        <td><%= item.product.name %></td>
-        <td class="price"><%= item.product.price %></td>
+        <td>
+          <%= item.product.name %>
+          <% if !item.size.nil? %>
+              <%= "- rozmiar: #{item.size}" %>
+          <% end %>
+        </td>
+        <td class="price">
+          <%= item.price %></td>
         <td class="noborder"><%= link_to "usuń", order_item_path(item), method: :delete, remote: true, class: "btn btn-xs btn-danger" %></td>
       </tr>
     <% end %>
@@ -13,7 +19,10 @@
         <td class="noborder"></td>
       </tr>
   </table>
-  <%= button_to "Zapłać", "#", class: "btn btn-primary" %>
+    <%= form_for @current_order do |f| %>
+      <%= f.select :payment_type, Order::PAYMENT_TYPES, prompt: "Wybierz sposób płatności" %>
+      <%= f.button "Zapłać", class: "btn btn-primary pull-right" %>
+    <% end %>
 <% else %>
   Twój koszyk jest pusty
 <% end %>

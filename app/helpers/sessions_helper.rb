@@ -53,5 +53,6 @@ module SessionsHelper
 
   def forget(user)
     user.forget
+    session.delete(:order_id)
   end
 end

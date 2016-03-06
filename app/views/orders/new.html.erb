@@ -14,8 +14,11 @@
     </div>
     <div class="col-xs-12 col-sm-7 product-list">
         <% Product.all.each do |product| %>
+          <% price = product.price * (current_user.sff_validated? && product.name == "main" ? 0.75 : 1) %>
           <div class="row">
-            <%= form_for :order_item, url: order_items_path(product_id: product.id), remote: true, html: { class: "row-eq-height" } do |f| %>
+            <%= form_for :order_item, url: order_items_path, remote: true, html: { class: "row-eq-height" } do |f| %>
+                <%= f.hidden_field :price, value: price %>
+                <%= f.hidden_field :product_id, value: product.id %>
               <div class="col-xs-7 underline flex-bottom no-margin">
                 <%= product.name %>
                 <% if product.name == 't-shirt' %>
@@ -24,7 +27,7 @@
                 <% end %>
               </div>
               <div class="col-xs-2 text-right underline flex-bottom no-margin">
-                <%= number_to_currency(product.price) %>
+                <%= number_to_currency(price) %>
               </div>
               <div class="col-xs-3">
                 <%= f.button "Do koszyka", class: "btn btn-xs btn-primary" %>
