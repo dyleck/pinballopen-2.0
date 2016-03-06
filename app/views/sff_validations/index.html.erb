@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-5">
+      Imię i nazwisko
+    </div>
+    <div class="col-xs-2">
+      Członek?
+    </div>
+    <div class="col-xs-2">
+      Potwierdź
+    </div>
+  </div>
+  <div class="row">
+      <% @users.each do |user| %>
+        <%= form_for user do |f| %>
+          <div class="col-xs-5">
+            <%= user.full_name %>
+          </div>
+          <div class="col-xs-2 text-center">
+            <%= f.label :sff_member do %>
+              <%= f.check_box :sff_member %>
+            <% end %>
+          </div>
+          <div class="col-xs-2 text-center">
+            <%= f.label :sff_validated do %>
+              <%= f.check_box :sff_validated %>
+            <% end %>
+          </div>
+          <div class="col-xs-3">
+            <%= f.submit "Wyślij" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

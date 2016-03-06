@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'static_pages#home'
   get '/:locale' => 'static_pages#home'
   scope '(:locale)' do
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
 
   scope 'admin' do
     resources :products
+    get 'sff_validations/index'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
