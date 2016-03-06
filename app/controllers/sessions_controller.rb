@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       if @user and @user.authenticate(params[:session][:password])
             log_in @user
         params[:session][:remember] == "1" ? remember(@user) : forget(@user)
-        format.html { redirect_to @user }
+        format.html { redirect_to_from_cookies_or_deault @user }
         format.js
       else
         flash.now[:danger] = t('layouts.login_modal.wrong_password')
@@ -20,4 +20,15 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_path
   end
+
+  private
+
+    def redirect_to_from_cookies_or_default(object)
+      if redirect = cookies[:redirect_to]
+        cookies.delete :redirect_to
+        redirect_to redirect
+      else
+        redirect_to object
+      end
+    end
 end

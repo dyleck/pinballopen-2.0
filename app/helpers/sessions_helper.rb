@@ -19,6 +19,22 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def redirect_to_login_if_not_logged_in
+    if !logged_in?
+      falsh[:login] = true
+      cookies[:redirect_to] = request.path
+      redirect_to root_path
+    end
+  end
+
+  def redirect_to_login_if_not_admin
+    if !logged_in? || !current_user.admin?
+      flash[:login] = true
+      cookies[:redirect_to] = request.path
+      redirect_to root_path
+    end
+  end
+
   def log_out
     session.delete :user_id
     cookies.delete :user_id

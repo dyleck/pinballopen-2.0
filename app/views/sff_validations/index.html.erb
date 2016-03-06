@@ -4,10 +4,10 @@
       Imię i nazwisko
     </div>
     <div class="col-xs-2">
-      Członek?
+      Admin
     </div>
     <div class="col-xs-2">
-      Potwierdź
+      SFF
     </div>
   </div>
   <div class="row">
@@ -17,8 +17,8 @@
             <%= user.full_name %>
           </div>
           <div class="col-xs-2 text-center">
-            <%= f.label :sff_member do %>
-              <%= f.check_box :sff_member %>
+            <%= f.label :admin do %>
+              <%= f.check_box :admin %>
             <% end %>
           </div>
           <div class="col-xs-2 text-center">
