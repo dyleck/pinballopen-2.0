@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :show, :destroy, :update]
+  before_action :redirect_to_login_if_not_logged_in
+  before_action :redirect_to_root_if_not_admin
 
   def index
   end
