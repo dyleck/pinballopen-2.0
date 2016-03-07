@@ -87,6 +87,22 @@ pl:
     create:
       cannot:             "Twoje konto nie zostało utworzone. Spróbuj ponownie."
       exists:             "Użytkownik z takim adresem email już istnieje."
+    show:
+      info:
+        self:             "Informacje"
   shared:
     form_errors:
       description:        "Twój formularz zawiera błędy"
+  orders:
+    new:
+      order:
+        self:             "Koszyk"
+    products:
+      size:               "rozmiar"
+      to_cart:            "Do koszyka"
+    order:
+      product:
+        remove:           "Usuń"
+      choose_payment_type: "Wybierz sposób płatności"
+      checkout:           "Zapłać"
+      cart_is_empty:      "Twój koszyk jest pusty"

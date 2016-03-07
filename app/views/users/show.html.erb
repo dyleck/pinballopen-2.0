@@ -5,7 +5,7 @@
       <div class="panel panel-default panel-info">
         <div class="panel-heading">
           <a href="#panel-info" data-toggle="collapse">
-            <h3 class="panel-title">Informacje <span class="icon-angle-down"></span></h3>
+            <h3 class="panel-title"><%= t('.info.self') %> <span class="icon-angle-down"></span></h3>
           </a>
         </div>
         <div id="panel-info" class="panel-collapse collapse in">
@@ -13,13 +13,13 @@
             <div class="table-responsive">
               <table class="table">
                 <tr>
-                  <td>Imię</td><td><b><%= @user.first_name %></b></td>
+                  <td><%= t('users.new.signup.first_name') %></td><td><b><%= @user.first_name %></b></td>
                 </tr>
                 <tr>
-                  <td>Nazwisko</td><td><b><%= @user.last_name %></b></td>
+                  <td><%= t('users.new.signup.last_name') %></td><td><b><%= @user.last_name %></b></td>
                 </tr>
                 <tr>
-                  <td>Email</td><td><b><b><%= @user.email %></b></b></td>
+                  <td><%= t('users.new.signup.email') %></td><td><b><b><%= @user.email %></b></b></td>
                 </tr>
               </table>
             </div>

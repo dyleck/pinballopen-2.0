@@ -86,6 +86,22 @@ en:
     create:
       cannot:             "Your account cannot be created. Please try again."
       exists:             "User with that email already exists."
+    show:
+      info:
+        self:             "Informations"
   shared:
     form_errors:
       description:        "Your form contains errors"
+  orders:
+    new:
+      order:
+        self:             "Cart"
+    products:
+      size:               "size"
+      to_cart:            "To cart"
+    order:
+      product:
+        remove:           "Remove"
+      choose_payment_type: "Choose payment type"
+      checkout:           "Checkout"
+      cart_is_empty:      "Your cart is empty"

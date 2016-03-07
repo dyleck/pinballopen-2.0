@@ -4,7 +4,7 @@
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">
-            Koszyk
+            <%= t('.order.self') %>
           </h3>
         </div>
         <div class="panel-body" id="cart">
@@ -12,29 +12,8 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-7 product-list">
-        <% Product.all.each do |product| %>
-          <% price = product.discount_if_sff_local_price current_user.sff_validated? %>
-          <div class="row">
-            <%= form_for :order_item, url: order_items_path, remote: true, html: { class: "row-eq-height" } do |f| %>
-                <%= f.hidden_field :price, value: price %>
-                <%= f.hidden_field :product_id, value: product.id %>
-              <div class="col-xs-7 underline flex-bottom no-margin">
-                <%= product.name %>
-                <% if product.name == 't-shirt' %>
-                    rozmiar
-                    <%= f.select :size, %w[XXL XL L M S] %>
-                <% end %>
-              </div>
-              <div class="col-xs-2 text-right underline flex-bottom no-margin">
-                <%= format_currency(price) %>
-              </div>
-              <div class="col-xs-3">
-                <%= f.button "Do koszyka", class: "btn btn-xs btn-primary" %>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
+    <div class="col-xs-12 col-sm-7 product-list" id="products">
+        <%= render 'orders/products' %>
     </div>
   </div>
 </div>

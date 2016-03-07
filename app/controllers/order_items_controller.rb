@@ -14,8 +14,10 @@ class OrderItemsController < ApplicationController
 
   def destroy
     OrderItem.delete(params[:id])
+    @current_order.reload
     respond_to do |format|
       format.js
+      format.html { redirect_to new_order_path }
     end
   end
 

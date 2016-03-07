@@ -5,12 +5,12 @@
         <td>
           <%= item.product.name %>
           <% if !item.size.nil? %>
-              <%= "- rozmiar: #{item.size}" %>
+              <%= "- #{t('orders.products.size')}: #{item.size}" %>
           <% end %>
         </td>
         <td class="price">
           <%= format_currency item.price %></td>
-        <td class="noborder"><%= link_to "usuń", order_item_path(item), method: :delete, remote: true, class: "btn btn-xs btn-danger" %></td>
+        <td class="noborder"><%= link_to t('.product.remove'), item, method: :delete, remote: true, class: "btn btn-xs btn-danger" %></td>
       </tr>
     <% end %>
       <tr class="cart-total">
@@ -20,9 +20,9 @@
       </tr>
   </table>
     <%= form_for @current_order do |f| %>
-      <%= f.select :payment_type, Order::PAYMENT_TYPES, prompt: "Wybierz sposób płatności" %>
-      <%= f.button "Zapłać", class: "btn btn-primary pull-right" %>
+      <%= f.select :payment_type, Order::PAYMENT_TYPES, prompt: t('.choose_payment_type') %>
+      <%= f.button t('.checkout'), class: "btn btn-primary pull-right" %>
     <% end %>
 <% else %>
-  Twój koszyk jest pusty
+  <%= t('.cart_is_empty') %>
 <% end %>
