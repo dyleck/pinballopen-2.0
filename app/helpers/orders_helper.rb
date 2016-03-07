@@ -9,5 +9,8 @@ module OrdersHelper
       @current_order = Order.create(user_id: session[:user_id])
       session[:order_id] = @current_order.id
     end
+    if @current_order.locale != I18n.locale
+      @current_order.recalc_local_prizes_of_items
+    end
   end
 end

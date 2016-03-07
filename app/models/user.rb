@@ -37,4 +37,8 @@ class User < ActiveRecord::Base
   def forget
     self.remember_digest = nil
   end
+
+  def is_sff_member?
+    self.sff_validated?
+  end
 end

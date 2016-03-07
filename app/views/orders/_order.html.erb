@@ -9,13 +9,13 @@
           <% end %>
         </td>
         <td class="price">
-          <%= item.price %></td>
+          <%= format_currency item.price %></td>
         <td class="noborder"><%= link_to "usuń", order_item_path(item), method: :delete, remote: true, class: "btn btn-xs btn-danger" %></td>
       </tr>
     <% end %>
       <tr class="cart-total">
         <td>Total</td>
-        <td class="total-cell"><%= @current_order.order_items.map {|item| item.product.price}.sum{|p| p} %></td>
+        <td class="total-cell"><%= format_currency(@current_order.order_items.map {|item| item.price }.sum{|p| p}) %></td>
         <td class="noborder"></td>
       </tr>
   </table>
