@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to @product
+      redirect_to products_path
     else
       render products_new_path
     end
@@ -33,9 +33,9 @@ class ProductsController < ApplicationController
   def update
     @product.update_attributes product_params
     if @product.save
-      redirect_to @product
+      redirect_to products_path
     else
-      render 'edit'
+      render edit_product_path
     end
   end
 
@@ -48,6 +48,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:name, :price, :authorized)
+      params.require(:product).permit(:name, :price, :sff_price)
     end
 end

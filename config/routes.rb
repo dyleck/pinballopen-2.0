@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   scope 'admin' do
     resources :products
-    get 'sff_validations/index'
+    get 'sff_validations' => 'sff_validations#index'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
