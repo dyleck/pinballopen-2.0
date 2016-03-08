@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      UserMailer.account_activation(@user).deliver_now
       redirect_to @user
     else
       render 'new'

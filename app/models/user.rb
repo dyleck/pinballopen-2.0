@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
+  attr_accessor :activation_token
 
   validates :first_name, presence: true, length: { maximum: 50 }
   validates :last_name, presence: true, length: { maximum: 50 }
@@ -9,6 +10,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   before_save { self.email.downcase! }
+  before_create :create_activation_digest
 
   has_secure_password
 
@@ -41,4 +43,10 @@ class User < ActiveRecord::Base
   def is_sff_member?
     self.sff_validated?
   end
+
+  private
+    def create_activation_digest
+      self.activation_token = User.new_token
+      self.activation_digest = User.digest(self.activation_token)
+    end
 end
