@@ -392,9 +392,11 @@
   td {
     padding: 5px 10px 5px 10px;
     border-bottom: 1px solid grey;
+    padding-left: 0px;
+    padding-right: 5px;
     &.price {
       text-align: right;
-      width: 120px;
+      width: 100px;
     }
   }
   .noborder {

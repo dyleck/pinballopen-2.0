@@ -99,7 +99,7 @@ pl:
         self:             "Koszyk"
     products:
       size:               "rozmiar"
-      to_cart:            "Do koszyka"
+      to_cart:            "Dodaj"
     order:
       product:
         remove:           "Usuń"
