@@ -29,7 +29,12 @@ class UsersController < ApplicationController
         redirect_to current_user
       else
         @user.update_attributes user_params
-        redirect_to sff_validations_index_path
+        if (request_source = params[:request_source]) && respond_to?("#{request_source}_path")
+          flash[:success] = "Dane zaktualizowane"
+          redirect_to send("#{request_source}_path")
+        else
+          redirect_to @user
+        end
       end
     end
   end
