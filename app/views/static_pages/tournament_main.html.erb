@@ -1,5 +1,6 @@
 <% provide :title, "Main" %>
 <%= render 'tournament_nav' %>
+<%= render 'tournament_main_content' %>
 
 <div class="container">
   <div class="row jumbotron text-center">
@@ -13,7 +14,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-
+        <%= yield :rules %>
       </div>
     </div>
   </div>
