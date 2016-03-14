@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get 'tournament_classic' => 'static_pages#tournament_classic'
     get 'tournament_bop' => 'static_pages#tournament_bop'
     get 'tournament_martians' => 'static_pages#tournament_martians'
+    get 'tournament_team' => 'static_pages#tournament_team'
     get 'signup'    => 'users#new'
     post 'login' => 'sessions#create'
     delete 'logout' => 'sessions#destroy'

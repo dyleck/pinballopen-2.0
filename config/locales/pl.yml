@@ -32,6 +32,7 @@ pl:
           self:     'Turnieje'
           main:       'Główny'
           classic:    'Classic'
+          team:       'Drużynowy'
           bop:        'Bride of Pinbot'
           martians:   'Więcej Marsjan'
         login:

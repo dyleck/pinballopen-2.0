@@ -31,6 +31,7 @@ en:
           self:     'Tournaments'
           main:       'Main'
           classic:    'Classic'
+          team:       'Team'
           bop:        'Bride of Pinbot'
           martians:   'More martians'
         login:
