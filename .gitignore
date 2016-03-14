@@ -16,4 +16,5 @@
 !/log/.keep
 /tmp
 /.idea/*
+/config/environments/development.rb
 /.idea
