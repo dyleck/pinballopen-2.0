@@ -30,11 +30,11 @@ pl:
           faq:      'FAQ'
         tournaments:
           self:     'Turnieje'
-          main:       'Główny'
-          classic:    'Classic'
+          main:       'Modern'
+          classic:    "80's"
           team:       'Drużynowy'
-          bop:        'Bride of Pinbot'
-          martians:   'Więcej Marsjan'
+          bop:        'Bride of Pinbot 2.0'
+          martians:   'Stern Trophy'
         login:
           self:     'Zaloguj'
         user:
