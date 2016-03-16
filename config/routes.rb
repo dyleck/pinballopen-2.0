@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :update, :create]
     resources :order_items, only: [:create, :destroy]
     resources :users
-    resources :account_activations, only: [:edit]
+    resources :account_activations, only: [:edit, :update]
     get 'about'     => 'static_pages#about'
     get 'contact'   => 'static_pages#contact'
     get 'tournament_main' => 'static_pages#tournament_main'

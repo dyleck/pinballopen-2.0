@@ -69,7 +69,9 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.full_name %> <i class="icon-angle-down"></i></a>
             <ul class="dropdown-menu">
               <li><%= link_to t(".menu.user.profile"), user_path(current_user) %></li>
-              <li><%= link_to t(".menu.user.order"), new_order_path %></li>
+              <% if is_activated? %>
+                <li><%= link_to t(".menu.user.order"), new_order_path %></li>
+              <% end %>
               <li class="divider"></li>
               <li><%= link_to t(".menu.user.logout"), logout_path, method: :delete %></li>
             </ul>

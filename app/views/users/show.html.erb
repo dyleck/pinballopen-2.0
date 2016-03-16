@@ -21,6 +21,13 @@
                 <tr>
                   <td><%= t('users.new.signup.email') %></td><td><b><b><%= @user.email %></b></b></td>
                 </tr>
+                <% if !@user.activated %>
+                  <tr>
+                    <td colspan="2">
+                      <%= button_to "Wyślij maila aktywacyjnego", account_activation_path, method: :patch %>
+                    </td>
+                  </tr>
+                <% end %>
               </table>
             </div>
           </div>

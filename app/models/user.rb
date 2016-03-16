@@ -32,8 +32,10 @@ class User < ActiveRecord::Base
     update_attribute :remember_digest, User.digest(self.remember_token)
   end
 
-  def authenticated?(remember_token)
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  def authenticated?(attribute, token)
+    digest = self.send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   def forget
@@ -44,9 +46,9 @@ class User < ActiveRecord::Base
     self.sff_validated?
   end
 
-  private
-    def create_activation_digest
-      self.activation_token = User.new_token
-      self.activation_digest = User.digest(self.activation_token)
-    end
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(self.activation_token)
+  end
+
 end

@@ -10,6 +10,8 @@ class UsersController < ApplicationController
 
     if @user.save
       UserMailer.account_activation(@user).deliver_now
+      flash[:success] = "Mail z linkiem aktywacyjnym został wysłany."
+      log_in @user
       redirect_to @user
     else
       render 'new'
@@ -19,6 +21,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if !@user.activated? && flash.empty?
+      flash[:warning] = "Konto nie jest aktywowane"
+    end
   end
 
   def update

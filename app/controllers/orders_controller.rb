@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:new, :update]
+  before_action :user_activated?, only: [:new, :create, :update]
 
   def new
   end
@@ -19,5 +20,11 @@ class OrdersController < ApplicationController
   private
     def order_params
       params.require(:order).permit(:payment_type)
+    end
+
+    def user_activated?
+      if !current_user.activated?
+        redirect_to root_url
+      end
     end
 end
