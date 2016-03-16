@@ -24,7 +24,7 @@
                 <% if !@user.activated %>
                   <tr>
                     <td colspan="2">
-                      <%= button_to "Wyślij maila aktywacyjnego", account_activation_path, method: :patch %>
+                      <%= button_to t(".activation.send"), account_activation_path, method: :patch %>
                     </td>
                   </tr>
                 <% end %>

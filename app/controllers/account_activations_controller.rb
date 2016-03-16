@@ -5,7 +5,7 @@ class AccountActivationsController < ApplicationController
     if user && digest && !user.activated? && user.authenticated?(:activation, digest)
       user.update_attribute :activated, true
       log_in user
-      flash[:success] = "Konto aktywowane"
+      flash[:success] = t(".account.activated")
       redirect_to user
     else
       redirect_to root_url
@@ -17,7 +17,7 @@ class AccountActivationsController < ApplicationController
       user.create_activation_digest
       if user.save
         UserMailer.account_activation(user).deliver_now
-        flash[:warning] = "Link aktywacyjny został wysłany"
+        flash[:warning] = t(".link.sent")
         redirect_to user
       end
     end

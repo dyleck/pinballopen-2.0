@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save
       UserMailer.account_activation(@user).deliver_now
-      flash[:success] = "Mail z linkiem aktywacyjnym został wysłany."
+      flash[:success] = t("account_activations.edit.link.sent")
       log_in @user
       redirect_to @user
     else
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if !@user.activated? && flash.empty?
-      flash[:warning] = "Konto nie jest aktywowane"
+      flash[:warning] = t(".account.not_activated")
     end
   end
 
@@ -30,12 +30,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user
       if !is_update_granted?
-        flash[:danger] = "Nie masz uprawnień do edycji tego pola"
+        flash[:danger] = t(".no_permissions")
         redirect_to current_user
       else
         @user.update_attributes user_params
         if (request_source = params[:request_source]) && respond_to?("#{request_source}_path")
-          flash[:success] = "Dane zaktualizowane"
+          flash[:success] = t(".updated")
           redirect_to send("#{request_source}_path")
         else
           redirect_to @user

@@ -91,6 +91,13 @@ pl:
     show:
       info:
         self:             "Informacje"
+      activation:
+        send:             "Wyślij maila aktywacyjnego"
+      account:
+        not_activated:    "Konto nie jest aktywowane"
+    update:
+      no_permissions:     "Nie masz uprawnień do edycji tego pola"
+      updated:            "Dane zaktualizowane"
   shared:
     form_errors:
       description:        "Twój formularz zawiera błędy"
@@ -107,3 +114,9 @@ pl:
       choose_payment_type: "Wybierz sposób płatności"
       checkout:           "Zapłać"
       cart_is_empty:      "Twój koszyk jest pusty"
+  account_activations:
+    edit:
+      account:
+        activated:        "Konto zostało aktywowane"
+      link:
+        sent:             "Link aktywacyjny został wysłany"

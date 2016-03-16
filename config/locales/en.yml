@@ -11,6 +11,7 @@ en:
             email:
               blank:      "cannot be blank"
               invalid:    "is invalid"
+              taken:      "is already taken"
             password:
               blank:      "cannot be blank"
               too_short:  "is too short"
@@ -90,6 +91,13 @@ en:
     show:
       info:
         self:             "Informations"
+      activation:
+        send:             "Send activation mail"
+      account:
+        not_activated:    "Account is not activated"
+    update:
+      no_permissions:     "You don't have permissions to updated that field"
+      updated:            "Data updated"
   shared:
     form_errors:
       description:        "Your form contains errors"
@@ -106,3 +114,9 @@ en:
       choose_payment_type: "Choose payment type"
       checkout:           "Checkout"
       cart_is_empty:      "Your cart is empty"
+  account_activations:
+    edit:
+      account:
+        activated:        "Account is now activated"
+      link:
+        sent:             "Activation link has been sent"
