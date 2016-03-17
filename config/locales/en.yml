@@ -51,6 +51,7 @@ en:
       register:         "Register"
       wrong_password:   "You have supplied wrong credentials. Please try again"
       remember:         "Remember me"
+      forgot:           "forgot password"
   static_pages:
     home:
       slide1:
@@ -120,3 +121,20 @@ en:
         activated:        "Account is now activated"
       link:
         sent:             "Activation link has been sent"
+  password_resets:
+    new:
+      reset:              "Password reset"
+      submit:             "Reset"
+    create:
+      email_not_there:    "Such email is not registered"
+    update:
+      password_changed:   "Password has been changed"
+    edit:
+      header:             "Password reset"
+      submit:             "Change password"
+  user_mailer:
+    account_activation:
+      subject:            "PPO 2016 - Account activation"
+      header:             "Account activation"
+    password_reset:
+      subject:            "PPO 2016 - Password reset"

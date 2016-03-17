@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1 class="text-center"><%= t(".header") %></h1>
+      <div class="form">
+        <%= form_for :password_reset, url: password_reset_path(@user, email: @user.email, reset_token: @user.reset_token), method: :patch do |f| %>
+          <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, class: "form-control" %>
+          </div>
+          <%= f.submit t(".submit") %>
+        <% end %>
+      </div>
+    </div>
+</div>

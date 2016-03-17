@@ -1,0 +1,9 @@
+<% content_for :body do %>
+    Witaj <%= @user.first_name %>!<br>
+
+    <p>Żeby zresetować zapomniane hasło kliknij w link poniżej i później postępuj według instrukcji</p>
+    <p style="text-align: center; font-size: 2em;">
+      <%= link_to "Link do zmiany hasła", edit_password_reset_url(@user.reset_token, locale: I18n.locale, email: @user.email) %>
+    </p>
+    <p>Pozdrawiamy<br>Zespół PPO 2016</p>
+<% end %>

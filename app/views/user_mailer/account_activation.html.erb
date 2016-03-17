@@ -1,6 +1,2 @@
-<h1>Aktywacja konta</h1> <!-- TODO: translate -->
-
-<p>
-  Witaj <%= @user.first_name %>.
-  <a href="<%= edit_account_activation_url(@user.activation_token, locale: I18n.locale, email: @user.email) %>">Link do aktywacji</a>
-</p>
+<% render 'activation_mail_content' %>
+<%= yield :body %>

@@ -1,0 +1,16 @@
+<% content_for :body do %>
+    Hello <%= @user.first_name %>!
+
+    Thank you for registering in *Polish Pinball Open 2016* tournament.
+
+    Your account is not active right now and because of that you are not
+    visible on registered users' list and you cannot make any payments.
+    In order to unlock those functionalities you need to activate your
+    account. In order to do it please paste the below link into your browser
+    and follow the instuctions.
+
+    <% edit_account_activation_url(@user.activation_token, locale: I18n.locale, email: @user.email) %>
+
+    Best Regards,
+    PPO 2016 Team
+<% end %>

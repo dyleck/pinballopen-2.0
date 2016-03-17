@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
   attr_accessor :activation_token
+  attr_accessor :reset_token
 
   validates :first_name, presence: true, length: { maximum: 50 }
   validates :last_name, presence: true, length: { maximum: 50 }
@@ -51,4 +52,8 @@ class User < ActiveRecord::Base
     self.activation_digest = User.digest(self.activation_token)
   end
 
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_attribute :reset_digest, User.digest(reset_token)
+  end
 end

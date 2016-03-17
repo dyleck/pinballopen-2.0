@@ -51,6 +51,7 @@ pl:
       register:         "Zarejestruj się"
       wrong_password:   "Podałeś złe dane logowania. Spróbuj jeszcze raz."
       remember:         "Zapamiętaj mnie na tym komputerze"
+      forgot:           "zapomniałem hasło"
   static_pages:
     home:
       slide1:
@@ -120,3 +121,20 @@ pl:
         activated:        "Konto zostało aktywowane"
       link:
         sent:             "Link aktywacyjny został wysłany"
+  password_resets:
+    new:
+      reset:              "Reset hasła"
+      submit:             "Zresetuj"
+    create:
+      email_not_there:    "Taki email nie został zarejestrowany"
+    update:
+      password_changed:   "Hasło zostało zmienione"
+    edit:
+      header:             "Zmiana hasła"
+      submit:             "Zmień hasło"
+  user_mailer:
+    account_activation:
+      subject:            "PPO 2016 - Aktywacja Konta"
+      header:             "Aktywacja konta"
+    password_reset:
+      subject:            "PPO 2016 - Zmiana hasła"

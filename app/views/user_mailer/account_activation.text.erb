@@ -1,5 +1,2 @@
-Witaj <%= @user.first_name %>
-
-Link do aktywacji
-
-<%= edit_account_activation_url(@user.activation_token, locale: I18n.locale, email: @user.email) %>
+<% render 'activation_mail_content' %>
+<%= yield :body %>

@@ -1,0 +1,16 @@
+<% content_for :body do %>
+  <p>Witaj <%= @user.first_name %>!</p>
+
+    <p>Dziękujemy za rejestrację w turnieju <b>Polish Pinball Open 2016</b>.</p>
+      <p>Twoje konto jest w tej chwili nieaktywne i w związku z tym nie będziesz widoczny
+    na liście zarejstrowanych użytkowników, ani nie będziesz mógł wykonać płatności. Żeby odblokować te funcjonalności należy aktywować konto,
+    klikając w poniższy link.
+    </p>
+    <p style="font-size: 2em;">
+      <%= link_to "Aktywacja konta", edit_account_activation_url(@user.activation_token, locale: I18n.locale, email: @user.email) %>
+    </p>
+    <p>
+      Pozdrawiamy,<br>
+      Zespół PPO 2016
+    </p>
+<% end %>

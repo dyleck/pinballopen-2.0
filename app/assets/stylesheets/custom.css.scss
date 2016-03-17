@@ -341,6 +341,12 @@
       text-decoration: underline;
     }
   }
+  a.forgot {
+    color: red;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   .checkbox {
     margin-top: -10px;
     margin-bottom: 10px;

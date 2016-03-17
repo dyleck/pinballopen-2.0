@@ -7,11 +7,11 @@ class UserMailer < ApplicationMailer
   #
   def account_activation(user)
     @user = user
-    mail to: user.email, subject: "Account activation" #TODO: translate
+    mail to: user.email, subject: t(".subject")
   end
 
-  def password_reset
-    @greeting = "hi"
-    mail to: "user@example.org", subject: "Password reset"
+  def password_reset(user)
+    @user = user
+    mail to: user.email, subject: t(".subject")
   end
 end
