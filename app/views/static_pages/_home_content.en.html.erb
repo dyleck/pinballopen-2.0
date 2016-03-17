@@ -1,65 +1,59 @@
 <% content_for :description do %>
-  <div class="text-center">
-    Polish Pinball Fans Association proudly invites everyone to pinball tournament<br>
-    <b>"POLISH PINBALL OPEN 2016"</b>
-    which will be held on 4-5 of June 2016 at Lodz<br>
-    <h4>
-      <b>
-        <a href="https://www.portlodz.pl">Shopping Mall PORT ŁÓDŹ</a><br>
-      </b>
-      Pabianicka 245 st
-    </h4>
-  </div>
-  <h2 class="text-center">PRICES:</h2>
-  <ul>
-    <li>
-      PPO 2016 - <%= format_currency(28) %> paid until the 29.05.2016
-    </li>
-    <li>
-      PPO 2016 - <%= format_currency(21) %> paid until 29.05.2016 (for members of association with 2016 fee fully paid)
-    </li>
-    <li>
-      PPO 2016 - <%= format_currency(35) %> paid after 29.05.2016 or during registration at event
-    </li>
-    <li>
-      PPO Team Tournament - <%= format_currency(15) %> paid until 29.05.2016 (registration of one team conisting 3 members)
-    </li>
-    <li>
-      Registration for Kids Tournament: until sunday, 11AM
-    </li>
-    <li>
-      T-Shirt – <%= format_currency(11) %>, orders until 30.04.2016
-    </li>
-  </ul>
-  <h2 class="text-center">TIMETABLE:</h2>
-  <ul style="list-style: none">
-    <li>Saturday (04.06.2016)
-      <ul>
-        <li>10.00 - 11.00 Registration</li>
-        <li>11.00 - 19.00 Team qualifications</li>
-        <li>11.00 - 19.00 80's qualifications</li>
-        <li>11.00 - 19.00 STERN TROPHY qualifications</li>
-        <li>12.00 - 20.00 MODERN qualifications</li>
-        <li>20.00 - 21.00 Team Finals</li>
-      </ul>
-    </li>
-    <li>Sunday (05.06.2016)
-      <ul>
-        <li>10.30 - 12.00 STERN TROPHY finals</li>
-        <li>10.30 - 12.00 80's finals</li>
-        <li>12.00 - 20.00 MODERN finals</li>
-        <li>12.00 - 15.00 Kids Tournament (kids under 12 years old under parents care)</li>
-        <li>20.00 - 21.00 AWARDS AND CLOSING CEREMONY</li>
-      </ul>
-    </li>
-    <li>During the whole event the following attractions will be available:
-      <ul>
-        <li>GRAND CHAMPION - BOP 2.0</li>
-        <li>FREE PLAY - around 25 machines available</li>
-      </ul>
-    </li>
-  </ul>
+    <div class="text-center fa-3x header">
+      Tournaments
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 text-center border">
+        <div class="fa-2x bold">
+          Modern and 80's
+        </div>
+        <div class="fa-stack fa-5x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-user fa-stack-1x fa-black"></i>
+        </div>
+        <div>
+          <p>Two tournaments where you compete with others to win recognition and valuable prices.</p>
+        </div>
+        <div class="fa-2x">Price: <%= format_currency(28) %></div>
+        <div>
+          <%= link_to "Details", tournament_main_path, class: "btn btn-lg btn-danger details" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 text-center border">
+        <div class="fa-2x bold">
+          Team Competition
+        </div>
+        <div class="fa-stack fa-5x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-users fa-stack-1x fa-black"></i>
+        </div>
+        <div>
+          <p>Create a team and show everyone how efficiently you can cooperate when playing pinballs.</p>
+        </div>
+        <div class="fa-2x">Price: <%= format_currency(4) %></div>
+        <div>
+          <%= link_to "Details", tournament_team_path, class: "btn btn-lg btn-danger details" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 text-center border">
+        <div class="fa-2x bold">
+          Stern Trophy
+        </div>
+        <div class="fa-stack fa-5x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-trophy fa-stack-1x fa-black"></i>
+        </div>
+        <div>
+          <p>Compete on the brand new and shiny Stern pinballs.</p>
+        </div>
+        <div class="fa-2x">Price: FREE</div>
+        <div>
+          <%= link_to "Details", "#", class: "btn btn-lg btn-danger details" %>
+        </div>
+      </div>
+    </div>
 <% end %>
+
 
 <% content_for :location do %>
     Location description. Write about the place, its attractions and so on.<br>

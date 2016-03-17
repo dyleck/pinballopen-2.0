@@ -1,64 +1,57 @@
 <% content_for :description do %>
-    <div class="text-center">
-      Stowarzyszenie Fanów Flipperów zaprasza wszystkich na turniej flipperowy<br>
-      <b>"POLISH PINBALL OPEN 2016"</b>
-      który odbędzie się w dniach 4-5 czerwca 2016 r. w Łodzi.<br>
-      <h4>
-        <b>
-          <a href="https://www.portlodz.pl">Centrum Handlowe PORT ŁÓDŹ</a><br>
-        </b>
-        ul. Pabianicka 245 (droga wylotowa z Łodzi na Pabianice)
-      </h4>
+    <div class="text-center fa-3x header">
+      Turnieje
     </div>
-    <h2 class="text-center">CENY:</h2>
-    <ul>
-      <li>
-        PPO 2016 - <%= format_currency(120) %> płatne do 29.05.2016 r.
-      </li>
-      <li>
-        PPO 2016 - <%= format_currency(90) %> płatne do 29.05.2016 (dla członków stowarzyszenia, którzy opłacili składkę za cały 2016 rok)
-      </li>
-      <li>
-        PPO 2016 - <%= format_currency(150) %> płatne po 29.05.2016 lub na miejscu
-      </li>
-      <li>
-        PPO Team Tournament - <%= format_currency(15) %> płatne do 29.05.2016 r.(zgłoszenie jednej 3 osobowej drużyny)
-      </li>
-      <li>
-        Zapisy na Kids Tournament: do niedzieli, godzina 11:00 (udział bezpłatny)
-      </li>
-      <li>
-        Koszulka – <%= format_currency(45) %>, zamówienia do 30.04.2016
-      </li>
-    </ul>
-    <h2 class="text-center">HARMONOGRAM:</h2>
-<ul style="list-style: none">
-  <li>Sobota (04.VI.2016 r.)
-    <ul>
-      <li>10.00 - 11.00 Rejestracja</li>
-      <li>11.00 - 19.00 Eliminacje Team Tournament</li>
-      <li>11.00 - 19.00 Eliminacje 80's</li>
-      <li>11.00 - 19.00 Eliminacje STERN TROPHY</li>
-      <li>12.00 - 20.00 Eliminacje MODERN</li>
-      <li>20.00 - 21.00 Finał Team Tournament</li>
-    </ul>
-  </li>
-  <li>Niedziela (05.VI.2016 r.)
-    <ul>
-      <li>10.30 - 12.00 Finał STERN TROPHY</li>
-      <li>10.30 - 12.00 Finał 80's</li>
-      <li>12.00 - 20.00 Finały MODERN</li>
-      <li>12.00 - 15.00 Kids Tournament (dla dzieci do lat 12 pod opieką osób dorosłych)</li>
-      <li>20.00 - 21.00 WRĘCZENIE NAGRÓD I ZAKOŃCZENIE TURNIEJU</li>
-    </ul>
-  </li>
-  <li>Przez cały czas trwania imprezy (sobota godzina 12:00 - niedziela godzina 18:00):
-    <ul>
-      <li>GRAND CHAMPION - BOP 2.0</li>
-      <li>FREE PLAY - około 25 maszyn</li>
-    </ul>
-  </li>
-</ul>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 text-center border">
+        <div class="fa-2x bold">
+          Modern and 80's
+        </div>
+        <div class="fa-stack fa-5x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-user fa-stack-1x fa-black"></i>
+        </div>
+        <div>
+          <p>To dwa turnieje w których walczysz w pojedynkę o sławę i cenne nagrody.</p>
+        </div>
+        <div class="fa-2x">Koszt: <%= format_currency(120) %></div>
+        <div>
+          <%= link_to "Szczegóły", tournament_main_path, class: "btn btn-lg btn-danger details" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 text-center border">
+        <div class="fa-2x bold">
+          Team Competition
+        </div>
+        <div class="fa-stack fa-5x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-users fa-stack-1x fa-black"></i>
+        </div>
+        <div>
+          <p>Stwórz drużynę i pokaż wszystkim, jak skutecznie potraficie współpracować przy grze na flipperach.</p>
+        </div>
+        <div class="fa-2x">Koszt <%= format_currency(15) %></div>
+        <div>
+          <%= link_to "Szczegóły", tournament_team_path, class: "btn btn-lg btn-danger details" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 text-center border">
+        <div class="fa-2x bold">
+          Stern Trophy
+        </div>
+        <div class="fa-stack fa-5x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-trophy fa-stack-1x fa-black"></i>
+        </div>
+        <div>
+          <p>Zmierz się na fabrycznie nowych maszynach marki Stern.</p>
+        </div>
+        <div class="fa-2x">Udział darmowy</div>
+        <div>
+          <%= link_to "Szczegóły", "#", class: "btn btn-lg btn-danger details" %>
+        </div>
+      </div>
+    </div>
 <% end %>
 
 <% content_for :location do %>
@@ -71,7 +64,7 @@
   To jest odpowiedź na pytanie numer 1.
 <% end %>
 
-<% content_for :question2 do %>
+<% content_for :question2 do %>against others
   To jest odpowiedź na pytanie numer 2.
 <% end %>
 
