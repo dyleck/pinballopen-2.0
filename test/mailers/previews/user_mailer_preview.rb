@@ -13,4 +13,14 @@ class UserMailerPreview < ActionMailer::Preview
     user.reset_token = User.new_token
     UserMailer.password_reset(user)
   end
+
+  def sff_confirmation_required
+    user = User.first
+    UserMailer.sff_confirmation_required(user)
+  end
+
+  def sff_confirmed
+    user = User.first
+    UserMailer.sff_confirmed(user)
+  end
 end

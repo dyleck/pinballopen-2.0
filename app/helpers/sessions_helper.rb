@@ -25,7 +25,7 @@ module SessionsHelper
 
   def redirect_to_login_if_not_logged_in
     if !logged_in?
-      flash[:login] = true
+      session[:display_login] = true
       flash.now[:danger] = "Please log in"
       cookies[:redirect_to] = request.path
       redirect_to root_path

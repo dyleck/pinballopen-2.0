@@ -39,3 +39,8 @@
     </div>
   </div>
 </div>
+
+<% if session[:display_login] %>
+    <% session.delete :display_login %>
+    <script>$("#loginModal").modal("show")</script>
+<% end %>

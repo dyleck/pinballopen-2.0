@@ -10,6 +10,9 @@ class UsersController < ApplicationController
 
     if @user.save
       UserMailer.account_activation(@user).deliver_now
+      if params[:user][:sff_member] == "1"
+        UserMailer.sff_confirmation_required(@user).deliver_now
+      end
       flash[:success] = t("account_activations.edit.link.sent")
       log_in @user
       redirect_to @user
@@ -34,6 +37,9 @@ class UsersController < ApplicationController
         redirect_to current_user
       else
         @user.update_attributes user_params
+        if params[:user][:sff_validated] == "1"
+          UserMailer.sff_confirmed(@user).deliver_now
+        end
         if (request_source = params[:request_source]) && respond_to?("#{request_source}_path")
           flash[:success] = t(".updated")
           redirect_to send("#{request_source}_path")
