@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
   def update
     if @current_order.update_attributes(order_params)
-      # Proceed with checkout
+      redirect_to @current_order.paypal_url
       @current_order
     else
       redirect_to new_order_path
