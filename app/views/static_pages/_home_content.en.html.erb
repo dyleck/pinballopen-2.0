@@ -1,59 +1,75 @@
-<% content_for :description do %>
-    <div class="text-center fa-3x header">
-      Tournaments
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4 text-center border">
-        <div class="fa-2x bold">
-          Modern and 80's
-        </div>
-        <div class="fa-stack fa-5x">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-user fa-stack-1x fa-black"></i>
-        </div>
-        <div>
-          <p>Two tournaments where you compete with others to win recognition and valuable prices.</p>
-        </div>
-        <div class="fa-2x">Price: <%= format_currency(28) %></div>
-        <div>
-          <%= link_to "Details", tournament_main_path, class: "btn btn-lg btn-danger details" %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 text-center border">
-        <div class="fa-2x bold">
-          Team Competition
-        </div>
-        <div class="fa-stack fa-5x">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-users fa-stack-1x fa-black"></i>
-        </div>
-        <div>
-          <p>Create a team and show everyone how efficiently you can cooperate when playing pinballs.</p>
-        </div>
-        <div class="fa-2x">Price: <%= format_currency(4) %></div>
-        <div>
-          <%= link_to "Details", tournament_team_path, class: "btn btn-lg btn-danger details" %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 text-center border">
-        <div class="fa-2x bold">
-          Stern Trophy
-        </div>
-        <div class="fa-stack fa-5x">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-trophy fa-stack-1x fa-black"></i>
-        </div>
-        <div>
-          <p>Compete on the brand new and shiny Stern pinballs.</p>
-        </div>
-        <div class="fa-2x">Price: FREE</div>
-        <div>
-          <%= link_to "Details", "#", class: "btn btn-lg btn-danger details" %>
-        </div>
-      </div>
-    </div>
+<% content_for :header do %>
+    Tournaments
 <% end %>
 
+<% content_for :modern do %>
+    Compete with the best on machines equipped with graphical display (DMD).
+<% end %>
+
+<% content_for :modern_link do %>
+    <%= link_to "More", tournament_main_path, class: "btn btn-lg btn-danger details" %>
+<% end %>
+
+<% content_for :eighties do %>
+    Defeat others playing on machines that were manufactured during the eighties.
+<% end %>
+
+<% content_for :eighties_link do %>
+    <%= link_to "More", tournament_team_path, class: "btn btn-lg btn-danger details" %>
+<% end %>
+
+<% content_for :stern do %>
+    See how good you are playing on the brand new Stern pinballs.
+<% end %>
+
+<% content_for :stern_link do %>
+    <%= link_to "More", "#", class: "btn btn-lg btn-danger details" %>
+<% end %>
+
+<% content_for :price_main do %>
+    For one price of <%= format_currency(28) %><span class="super"><small>*</small></span> you can attend all 3 tournamnets!<br>
+<% end %>
+
+<% content_for :price_disclaimer do %>
+    <span class="super">*</span>For members of SFF who have paid membership's fees price is <%= format_currency(23) %>.
+    When payment is done over the 27<span class="super">th</span> of June price will be <%= format_currency(35) %>
+<% end %>
+
+<% content_for :team do %>
+    Create your team and show to all others how efficiently you are when cooperating.
+ <% end %>
+
+<% content_for :team_link do %>
+    <%= link_to "More", tournament_team_path, class: "btn btn-lg btn-danger details" %>
+<% end %>
+
+<% content_for :team_price do %>
+    Price: <%= format_currency(4) %>
+<% end %>
+
+<% content_for :bop do %>
+    We have BoP 2.0 and are dying to see who will be the Grand Champion. Could it be you?
+<% end %>
+
+<% content_for :bop_link do %>
+    <%= link_to "More", tournament_bop_path, class: "btn btn-lg btn-danger details" %>
+<% end %>
+
+<% content_for :bop_price do %>
+    Price: <%= format_currency(1) %> per game.
+<% end %>
+
+<% content_for :kids do %>
+    All children under the age of 12 are welcome. Let's compete and have some great FUN!
+<% end %>
+
+<% content_for :kids_link do %>
+    <%= link_to "More", "#", class: "btn btn-lg btn-danger details" %>
+<% end %>
+
+<% content_for :kids_price do %>
+    It's FREE!
+<% end %>
 
 <% content_for :location do %>
     Location description. Write about the place, its attractions and so on.<br>

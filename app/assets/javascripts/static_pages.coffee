@@ -3,25 +3,31 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 fit_viewport = (item) ->
-  if ( $(window).width() < 768 || $(window).height() < 700 )
-    header_height = $('header').outerHeight(true) - 1;
-    new_height = $(window).height() - header_height;
-  else
-    new_height = 600;
+#  if ( $(window).width() < 768 || $(window).height() < 700 )
+#    header_height = $('header').outerHeight(true) - 1;
+#    new_height = $(window).height() - header_height;
+#  else
+#    new_height = 600;
+#  item.height( new_height );
+  header_height = $('header').outerHeight(true) - 1;
+  new_height = $(window).height() - header_height;
   item.height( new_height );
-#  $('body').css({"padding-top": $('header').outerHeight(true) - 1});
 
+clickHandler = () ->
+  tag = $(this);
+  tag.on("mouseleave", mouseLeaveHandler);
+  tag.off("click", clickHandler);
+  tag.find("iframe").css("pointer-events", "auto");
 
+mouseLeaveHandler = () ->
+  tag = $(this);
+  tag.on("click", clickHandler);
+  tag.off("mouseleave", mouseLeaveHandler);
+  tag.find("iframe").css("pointer-events", "none");
 
-resize_map = () ->
-  im = $("iframe#mapa");
-  max_height = parseInt(im.parent().css("max-height"));
-  loc_text_height = $('#location-text div').height();
-  im.width(im.parent().width()).height(Math.min(max_height, loc_text_height));
 
 $(window).on 'resize', ->
   fit_viewport( $('#main-slider .carousel .item') );
-  resize_map()
 
 $(document).on 'click','#main-navbar .navbar-collapse.in, #tournaments-navbar .navbar-collapse.in', (e) ->
   $(this).collapse('hide') if $(e.target).is('a')
@@ -31,7 +37,7 @@ $(document).on 'ready page:change', ->
     openMode: "click"
   })
   fit_viewport( $('#main-slider .carousel .item') );
-  resize_map();
+  $('.map-frame').on("click", clickHandler);
 
   # affixed nav
   $('#main-navbar').affix({offset: {top: $('#lang-switcher').outerHeight(true)}})

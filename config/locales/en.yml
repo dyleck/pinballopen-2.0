@@ -25,7 +25,7 @@ en:
           self:   'Information'
           description:     "Description"
           location:    'Location'
-          hotels:   'Hotels'
+          hotels:   'Accomodation'
           contact:  'Contact'
           faq:      'FAQ'
         tournaments:
@@ -63,7 +63,7 @@ en:
       location:
         header:     "Location"
       hotels:
-        header:     "Hotels"
+        header:     "Accomodation"
       faq:
         header:     "Frequently asked questions"
         question1:  "Question 1"

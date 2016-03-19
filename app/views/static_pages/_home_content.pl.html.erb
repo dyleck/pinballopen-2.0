@@ -1,63 +1,86 @@
-<% content_for :description do %>
-    <div class="text-center fa-3x header">
-      Turnieje
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4 text-center border">
-        <div class="fa-2x bold">
-          Modern and 80's
-        </div>
-        <div class="fa-stack fa-5x">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-user fa-stack-1x fa-black"></i>
-        </div>
-        <div>
-          <p>To dwa turnieje w których walczysz w pojedynkę o sławę i cenne nagrody.</p>
-        </div>
-        <div class="fa-2x">Koszt: <%= format_currency(120) %></div>
-        <div>
-          <%= link_to "Szczegóły", tournament_main_path, class: "btn btn-lg btn-danger details" %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 text-center border">
-        <div class="fa-2x bold">
-          Team Competition
-        </div>
-        <div class="fa-stack fa-5x">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-users fa-stack-1x fa-black"></i>
-        </div>
-        <div>
-          <p>Stwórz drużynę i pokaż wszystkim, jak skutecznie potraficie współpracować przy grze na flipperach.</p>
-        </div>
-        <div class="fa-2x">Koszt <%= format_currency(15) %></div>
-        <div>
-          <%= link_to "Szczegóły", tournament_team_path, class: "btn btn-lg btn-danger details" %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 text-center border">
-        <div class="fa-2x bold">
-          Stern Trophy
-        </div>
-        <div class="fa-stack fa-5x">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-trophy fa-stack-1x fa-black"></i>
-        </div>
-        <div>
-          <p>Zmierz się na fabrycznie nowych maszynach marki Stern.</p>
-        </div>
-        <div class="fa-2x">Udział darmowy</div>
-        <div>
-          <%= link_to "Szczegóły", "#", class: "btn btn-lg btn-danger details" %>
-        </div>
-      </div>
-    </div>
+<% content_for :header do %>
+    Turnieje
 <% end %>
 
-<% content_for :location do %>
-  Opis miejsca. Napisać co to za miejsce, jakie są tam dostępne atrakcje itp.<br>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel augue dictum orci iaculis blandit. Nunc ut interdum velit. Suspendisse commodo cursus luctus. Etiam dignissim quam sem, et volutpat ligula venenatis sed. Nunc suscipit, nulla non tempor molestie, purus sapien efficitur nisi, quis placerat leo magna ac mi. Donec luctus convallis augue facilisis dapibus. Quisque maximus gravida ex, non feugiat est egestas quis. In sodales, turpis nec placerat porta, dui arcu laoreet dui, non volutpat ex turpis ac mauris. Fusce luctus id odio sit amet porta.<br>
-  Praesent id ultricies leo, nec auctor nulla. Nam aliquet aliquam odio, eget euismod felis pellentesque id. Nulla in placerat sem. Sed efficitur egestas eros id tincidunt. Nulla elementum tincidunt volutpat. Aliquam in magna vitae mauris mattis iaculis. Suspendisse ac ipsum molestie, sollicitudin felis in, varius mi. Mauris neque ipsum, rhoncus id hendrerit non, finibus ut ante. Sed a magna ut justo pulvinar vehicula. Curabitur dictum, quam nec commodo consequat, sem elit luctus nisl, ac tempor nisl velit at urna. Phasellus id tincidunt mauris. Ut eu tempor ex. Praesent sed tempus mauris.
+<% content_for :modern do %>
+  Zmierz się z najlepszymi na maszynch posiadających graficzny wyświetlacz (DMD).
+<% end %>
+
+<% content_for :modern_link do %>
+    <%= link_to "Więcej", tournament_main_path, class: "btn btn-lg btn-danger details" %>
+<% end %>
+
+<% content_for :eighties do %>
+    Pokonaj innych, grając na maszynach powstałych w latach osiemdziesiątych.
+<% end %>
+
+<% content_for :eighties_link do %>
+    <%= link_to "Więcej", tournament_team_path, class: "btn btn-lg btn-danger details" %>
+<% end %>
+
+<% content_for :stern do %>
+    Zmierz się na fabrycznie nowych maszynach marki Stern.
+<% end %>
+
+<% content_for :stern_link do %>
+    <%= link_to "Więcej", "#", class: "btn btn-lg btn-danger details" %>
+<% end %>
+
+<% content_for :price_main do %>
+    Za jedną cenę <%= format_currency(120) %><span class="super"><small>*</small></span> weźmiesz udział w aż 3 turniejach!<br>
+<% end %>
+
+<% content_for :price_disclaimer do %>
+    <span class="super">*</span>Dla członków SFF z opłaconymi składkami cena udziału to <%= format_currency(90) %>. Przy opłacie po 01.06.2015 lub
+    na miejscu, cena udziału wynosi <%= format_currency(150) %>
+<% end %>
+
+<% content_for :team do %>
+    Stwórz drużynę i pokaż wszystkim, jak skutecznie potraficie współpracować przy grze na flipperach.
+<% end %>
+
+<% content_for :team_link do %>
+    <%= link_to "Więcej", tournament_team_path, class: "btn btn-lg btn-danger details" %>
+<% end %>
+
+<% content_for :team_price do %>
+    Koszt: <%= format_currency(15) %>
+<% end %>
+
+<% content_for :bop do %>
+    Mamy BoP 2.0 i jesteśmy ciekawi kto zostanie Grand Champion'em. Może to właśnie Ty?
+<% end %>
+
+<% content_for :bop_link do %>
+    <%= link_to "Więcej", tournament_bop_path, class: "btn btn-lg btn-danger details" %>
+<% end %>
+
+<% content_for :bop_price do %>
+    Koszt: <%= format_currency(5) %> za każdą próbę
+<% end %>
+
+<% content_for :kids do %>
+    Zapraszamy wszystkie dzieci w wieku do 12 lat, do rywalizacji i najlepszej zabawy na świecie.
+<% end %>
+
+<% content_for :kids_link do %>
+    <%= link_to "Więcej", "#", class: "btn btn-lg btn-danger details" %>
+<% end %>
+
+<% content_for :kids_price do %>
+    Udział DARMOWY!
+<% end %>
+
+<% content_for :location_description do %>
+    <h4 class="text-center">
+      Nasza impreza odbędzie się w <b><a href="www.portlodz.com">"Porcie Łodź"</a></b>, jednym z największych
+      centrów handlowych w Polsce.
+    </h4>
+    <h4 class="text-center">
+      Doskonała lokalizacja Portu, otoczona siatką połączeń komunikacyjnych,
+      zapewni Wam łatwy dojazd na naszą imprezę. Dodatkowo miejsce to zapewnia dostęp do najlepszych sklepów,
+      restauracji, kawiarni i butików z modą.
+    </h4>
 <% end %>
 
 <% content_for :question1 do %>

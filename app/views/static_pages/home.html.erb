@@ -87,34 +87,180 @@
 <section id="description" class="emerald">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <!--<h1 class="text-center"><%= t(".description.header") %></h1>-->
-        <div class="justify" style="font-size: 16px;">
-          <%= yield :description %>
-        </div>
+            <div class="col-xs-12 col-sm-4 text-center">
+              <div class="hidden-xs">
+                <hr>
+              </div>
+              <div class="fa-2x bold">
+                Modern
+              </div>
+              <div class="fa-stack fa-5x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-trophy fa-stack-1x fa-black"></i>
+              </div>
+              <div>
+                <p>
+                  <%= yield :modern %>
+                </p>
+              </div>
+              <div>
+                <%= yield :modern_link %>
+              </div>
+              <div class="visible-xs-block">
+                <hr>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center">
+              <div class="hidden-xs">
+                <hr>
+              </div>
+              <div class="fa-2x bold">
+                80's
+              </div>
+              <div class="fa-stack fa-5x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-trophy fa-stack-1x fa-black"></i>
+              </div>
+              <div>
+                <p>
+                  <%= yield :eighties %>
+                </p>
+              </div>
+              <div>
+                <%= yield :eighties_link %>
+              </div>
+              <div class="visible-xs-block">
+                <hr>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center">
+              <div class="hidden-xs visible-sm-block visible-md-block visible-lg-block">
+                <hr>
+              </div>
+              <div class="fa-2x bold">
+                Stern Trophy
+              </div>
+              <div class="fa-stack fa-5x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-trophy fa-stack-1x fa-black"></i>
+              </div>
+              <div>
+                <p>
+                  <%= yield :stern %>
+                </p>
+              </div>
+              <div>
+                <%= yield :stern_link %>
+              </div>
+            </div>
+            <div class="col-xs-12 text-center">
+              <div class="price_info">
+                <%= yield :price_main %>
+              </div>
+              <div class="price-disclaimer">
+                <%= yield :price_disclaimer %>
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <hr>
+            </div>
+          </div>
+
+    <div class="row">
+
+            <div class="col-xs-12 col-sm-4 text-center">
+              <div class="fa-2x bold">
+                Team
+              </div>
+              <div class="fa-stack fa-5x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-users fa-stack-1x fa-black"></i>
+              </div>
+              <div>
+                <p>
+                  <%= yield :team %>
+                </p>
+              </div>
+              <div>
+                <%= yield :team_link %>
+              </div>
+              <div class="price_info">
+                <%= yield :team_price %>
+              </div>
+              <div>
+                <hr>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 text-center">
+              <div class="fa-2x bold">
+                Bride of Pinbot 2.0
+              </div>
+              <div class="fa-stack fa-5x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-euro fa-stack-1x fa-black"></i>
+              </div>
+              <div>
+                <p>
+                  <%= yield :bop %>
+                </p>
+              </div>
+              <div>
+                <%= yield :bop_link %>
+              </div>
+              <div class="price_info">
+                <%= yield :bop_price %>
+              </div>
+              <div>
+                <hr>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 text-center">
+              <div class="fa-2x bold">
+                Kids
+              </div>
+              <div class="fa-stack fa-5x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-child fa-stack-1x fa-black"></i>
+              </div>
+              <div>
+                <p>
+                  <%= yield :kids %>
+                </p>
+              </div>
+              <div>
+                <%= yield :kids_link %>
+              </div>
+              <div class="price_info">
+                <%= yield :kids_price %>
+              </div>
+              <div class="hidden-xs">
+                <hr>
+              </div>
+            </div>
+
+          </div>
+  </div>
+</section>
+
+<section id="location" class="violet justify">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="map-frame">
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4230311.240704754!2d14.707424672948015!3d51.99950843313029!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7960f6ca5e5c499d!2zUG9ydCDFgcOzZMW6!5e0!3m2!1sen!2spl!4v1458405035139"></iframe>
       </div>
     </div>
   </div>
 </section>
 
-<section id="location" class="violet justify">
+<section id="location-description" class="violet justify">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <h1 class="text-center"><%= t(".location.header") %></h1>
-      </div>
+      <%= yield :location_description %>
     </div>
     <div class="row">
-      <div class="row-height">
-        <div id="col-mapa" class="col-xs-12 col-md-5 col-height" style="max-height: 350px;">
-          <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2472.5799332558845!2d19.41137735155191!3d51.70413180402064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x7960f6ca5e5c499d!2zUG9ydCDFgcOzZMW6!5e0!3m2!1spl!2spl!4v1455565151491" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div id="location-text" class="col-xs-12 col-md-7 col-height">
-          <div class="justify">
-            <%= yield :location %>
-          </div>
-        </div>
-      </div>
+      <%= yield :location_how_to_get_here %>
     </div>
   </div>
 </section>
@@ -130,24 +276,36 @@
       <div class="col-xs-12 col-sm-6">
         <div class="row">
           <div class="col-xs-6">
-            <img src="http://www.ma.com/wp-content/uploads/2013/10/morris-adjmi-architects-wythe-hotel-3.jpg" width="100%">
+            <img src="http://static.meteor24.pl/images/base/7/6561/86407_40.jpg" width="100%">
           </div>
           <div class="col-xs-6">
-            <h3>Hotel1</h3>
-            <p>Address line1<br>Address line2<br>Phone: +48123456789</p>
-            <p>Cena: 100 pln</p>
+            <h4><b>Willa Poru Roku</b></h4>
+            <p>
+              ul. Rudzka 65<br>
+              93-423 Łódź<br>
+              <i class="fa fa-phone fa-1x"></i> +48123456789<br>
+              <i class="fa fa-envelope fa-1x"></i> <a href="mailto: willa@poryroku.com">willa@poryroku.com</a><br>
+              <i class="fa fa-link fa-1x"></i> <a href="http://www.poryroku.com">www.poryroku.com</a>
+            </p>
+            <p>Cena: od 40 PLN</p>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6">
         <div class="row">
           <div class="col-xs-6">
-            <img src="https://www.bluesunhotels.com/EasyEdit/UserFiles/PageImages/hotel-elaphusa-bol-brac/hotel-elaphusa-bol-brac-635342950708455391-1_728_409.jpeg" width="100%">
+            <img src="http://www.zajazdrubin.pl/img/galeria/DSC_0023.jpg" width="100%">
           </div>
           <div class="col-xs-6">
-            <h3>Hotel2</h3>
-            <p>Address line1<br>Address line2<br>Phone: +48123456789</p>
-            <p>Cena: 100 pln</p>
+            <h4><b>Zajazd Rubin</b></h4>
+            <p>
+              ul. Scaleniowa 11<br>
+              93-436 Łódź<br>
+              <i class="fa fa-phone fa-1x"></i> +48123456789<br>
+              <i class="fa fa-envelope fa-1x"></i> <a href="mailto: rubin@zajazdrubin.pl">rubin@zajazdrubin.pl</a><br>
+              <i class="fa fa-link fa-1x"></i> <a href="http://www.zajazdrubin.pl">www.zajazdrubin.pl</a>
+            </p>
+            <p>Cena: od 120 pln</p>
           </div>
         </div>
       </div>
