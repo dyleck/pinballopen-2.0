@@ -49,7 +49,7 @@ class Order < ActiveRecord::Base
           "quantity_#{index + 1}": 1,
        })
     end
-    "#{Rails.configuration.x.paypal_url}/cgi-bin/webscr/?" + {cmd: "_s-xclick",encrypted: encrypt_for_paypal(options)}.to_query
+    "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr/?" + {cmd: "_s-xclick",encrypted: encrypt_for_paypal(options)}.to_query
   end
 
   private
