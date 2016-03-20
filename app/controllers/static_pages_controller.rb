@@ -12,14 +12,18 @@ class StaticPagesController < ApplicationController
   end
 
   def tournament_clasic
+  end
 
+  def tournament_team
   end
 
   def tournament_bop
-
   end
 
-  def tournament_martians
+  def tournament_stern
+  end
+
+  def tournament_kids
   end
 
   def bank_transfer

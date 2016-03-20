@@ -1,41 +1,41 @@
-<% provide :title, "Main" %>
+<% provide :title, "Modern" %>
 <%= render 'tournament_nav' %>
 <%= render 'tournament_main_content' %>
 
 <div class="container">
   <div class="row jumbotron text-center">
     <div class="col-xs-12">
-      <h1>Main Tournament</h1>
+      <h1>Modern</h1>
     </div>
   </div>
 </div>
 
-<section id="rules">
+<div id="rules">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-12 justify">
         <%= yield :rules %>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section id="flippers">
+<div id="flippers">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-
+      <div class="col-xs-12 justify">
+        <%= yield :flippers %>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section id="prizes">
+<div id="prizes">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-
+      <div class="col-xs-12 justify">
+        <%= yield :prizes %>
       </div>
     </div>
   </div>
-</section>
+</div>
