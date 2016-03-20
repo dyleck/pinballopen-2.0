@@ -19,3 +19,5 @@
 /config/environments/development.rb
 /.idea
 /app/certs/*
+/Gemfile.lock
+/config/secrets.yml
