@@ -1,0 +1,17 @@
+Hello <%= @user.first_name %>!
+
+Thank You for registering into Polish Pinball Open 2016.
+
+Your order's id is <%= @order.id %>.
+
+Please make a bank transfer of <%= number_to_currency @order.total_price, unit: "EUR", format: "%n %u" %> using below details:
+
+Stowarzyszenie Fanów Flipperów
+PKO BP
+PL 11 2222 3333 4444 5555 6666 7777
+
+As soon as your payment is completed status of your order will be marked as payed
+and you will receive email with cofirmation.
+
+Best Regards,
+PPO 2016 Team

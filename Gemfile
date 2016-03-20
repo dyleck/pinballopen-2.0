@@ -14,6 +14,7 @@ gem 'bcrypt', '~> 3.1'
 gem 'jquery-ui-rails'
 gem 'font-awesome-rails'
 gem 'puma'
+gem 'rest-client'
 
 group :development do
   gem 'web-console', '~> 2.0'

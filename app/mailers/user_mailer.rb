@@ -24,4 +24,16 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, subject: "Członkostwo SFF potwierdzone" #TODO t
   end
+
+  def bank_transfer_info(order)
+    @user = order.user
+    @order = order
+    mail to: @user.email, subject: "PPO 2016 - registration order details" #TODO t
+  end
+
+  def confirm_payment(order)
+    @user = order.user
+    @order = order
+    mail to: "marcin.dylewski@dylux.net", subject: "PPO 2016 - potwierdź płatność, id: #{@order.id}, user: #{@user.full_name}"
+  end
 end

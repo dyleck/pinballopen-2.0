@@ -115,6 +115,8 @@ en:
       choose_payment_type: "Choose payment type"
       checkout:           "Checkout"
       cart_is_empty:      "Your cart is empty"
+      bank_transfer:      "Bank transfer"
+      paypal:             "PayPal"
   account_activations:
     edit:
       account:

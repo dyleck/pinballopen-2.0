@@ -23,4 +23,14 @@ class UserMailerPreview < ActionMailer::Preview
     user = User.first
     UserMailer.sff_confirmed(user)
   end
+
+  def bank_transfer_info
+    order = Order.last
+    UserMailer.bank_transfer_info(order)
+  end
+
+  def confirm_payment
+    order = Order.last
+    UserMailer.confirm_payment(order)
+  end
 end

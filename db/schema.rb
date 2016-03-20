@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316213847) do
+ActiveRecord::Schema.define(version: 20160320110126) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer  "product_id"
@@ -28,10 +28,11 @@ ActiveRecord::Schema.define(version: 20160316213847) do
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
     t.boolean  "payed"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "payment_type"
     t.string   "locale"
+    t.boolean  "payment_confirmed"
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id"

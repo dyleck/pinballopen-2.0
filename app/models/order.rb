@@ -2,7 +2,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
   has_many :order_items, dependent: :destroy
 
-  PAYMENT_TYPES = [ "Bank Transfer", "PayPal" ]
+  PAYMENT_TYPES = [ "bank_transfer", "paypal" ]
   PAYPAL_CERT_PEM = File.read("#{Rails.root}/app/certs/paypal_cert.pem")
   APP_CERT_PEM = File.read("#{Rails.root}/app/certs/app_cert.pem")
   APP_KEY_PEM = File.read("#{Rails.root}/app/certs/app_key.pem")
@@ -24,18 +24,23 @@ class Order < ActiveRecord::Base
     end
   end
 
-  def paypal_url
+  def total_price
+    self.order_items.map {|item| item.price }.sum{|p| p}
+  end
+
+  def paypal_url(notify_uri, return_url)
     options = {
-        business: "sprzedawca@flippery.org.pl",
+        business: "#{Rails.application.secrets.paypal_business_email}",
         cmd:      "_cart",
         upload:   1,
-        return:   "#{Rails.configuration.x.protocol}://#{Rails.configuration.x.host}:#{Rails.configuration.x.port}://",
+        return:   return_url,
         invoice:  self.id,
         currency_code: case self.locale
                          when "pl" then "PLN"
                          when "en" then "EUR"
                          else "EUR"
-                       end
+                       end,
+        notify_url: "#{Rails.application.secrets.app_host_external}#{notify_uri}"
     }
     order_items.each_with_index do |item, index|
       options.merge!({

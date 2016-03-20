@@ -9,9 +9,18 @@ class OrdersController < ApplicationController
   end
 
   def update
-    if @current_order.update_attributes(order_params)
-      redirect_to @current_order.paypal_url
-      @current_order
+    if @current_order.update_attributes(order_params.merge!({payed: true}))
+      if params[:order][:payment_type] == 'paypal'
+        paypal_url = @current_order.paypal_url(payment_confirmations_path, user_url(@current_order.user))
+        @current_order = session[:order_id] = nil
+        redirect_to paypal_url
+      else
+        @current_order.update_attribute(:payed, true)
+        UserMailer.bank_transfer_info(@current_order).deliver_now
+        UserMailer.confirm_payment(@current_order).deliver_now
+        session[:order_id] = @current_order = nil
+        redirect_to bank_transfer_path(@current_order)
+      end
     else
       redirect_to new_order_path
     end
@@ -19,7 +28,7 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:payment_type)
+      params.require(:order).permit(:payment_type, :payed)
     end
 
     def user_activated?

@@ -20,6 +20,9 @@ class StaticPagesController < ApplicationController
   end
 
   def tournament_martians
-
   end
+
+  def bank_transfer
+  end
+
 end

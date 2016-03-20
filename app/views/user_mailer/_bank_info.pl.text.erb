@@ -1,0 +1,16 @@
+Witaj <%= @user.first_name %>!
+
+Dziękujemy za zgłoszenie chęci udziału w turnieju Polish Pinball Open 2016.
+
+Numer twojego zamówienia to: <%= @order.id %>
+
+Prosimy o przelew kwoty <%= number_to_currency @order.total_price, unit: "zł", format: "%n %u" %> na poniższy rachunek:
+
+Stowarzyszenie Fanów Flipperów
+PKO BP
+11 2222 3333 4444 5555 6666 7777
+
+Z chwilą zaksięgowania wpłaty status Twojego zamówienia zostanie ulegnie zmianie na zapłacony.
+
+Pozdrawiamy,
+Zespół PPO 2016

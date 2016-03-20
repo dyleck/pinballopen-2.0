@@ -15,12 +15,14 @@
     <% end %>
       <tr class="cart-total">
         <td>Total</td>
-        <td class="total-cell"><%= format_currency(@current_order.order_items.map {|item| item.price }.sum{|p| p}) %></td>
+        <td class="total-cell"><%= format_currency(@current_order.total_price) %></td>
         <td class="noborder"></td>
       </tr>
   </table>
     <%= form_for @current_order do |f| %>
-      <%= f.select :payment_type, Order::PAYMENT_TYPES, prompt: t('.choose_payment_type') %>
+        <%= f.select :payment_type,
+                     options_for_select(Order::PAYMENT_TYPES.map {|payment| [t(".#{payment}"), payment] }),
+                     prompt: t('.choose_payment_type') %>
       <%= f.button t('.checkout'), class: "btn btn-danger pull-right" %>
     <% end %>
 <% else %>

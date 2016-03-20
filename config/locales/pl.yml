@@ -115,6 +115,8 @@ pl:
       choose_payment_type: "Wybierz sposób płatności"
       checkout:           "Zapłać"
       cart_is_empty:      "Twój koszyk jest pusty"
+      bank_transfer:      "Przelew bankowy"
+      paypal:             "PayPal"
   account_activations:
     edit:
       account:

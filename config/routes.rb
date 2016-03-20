@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'payment_confirmations/new'
+
+  get 'payment_confirmations/create'
+
   root 'static_pages#home'
   get '/:locale' => 'static_pages#home'
   scope '(:locale)' do
@@ -15,6 +19,7 @@ Rails.application.routes.draw do
     get 'tournament_bop' => 'static_pages#tournament_bop'
     get 'tournament_martians' => 'static_pages#tournament_martians'
     get 'tournament_team' => 'static_pages#tournament_team'
+    get 'bank_transfer' => 'static_pages#bank_transfer'
     get 'signup'    => 'users#new'
     post 'login' => 'sessions#create'
     delete 'logout' => 'sessions#destroy'
@@ -22,6 +27,7 @@ Rails.application.routes.draw do
 
   scope 'admin' do
     resources :products
+    resources :payment_confirmations, only: [:create, :edit, :update]
     get 'sff_validations' => 'sff_validations#index'
   end
 
