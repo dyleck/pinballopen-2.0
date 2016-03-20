@@ -1,0 +1,11 @@
+<% orders.each do |order| %>
+  <tr>
+    <td><%= order.id %></td>
+    <td>
+      <% order.order_items.each do |item| %>
+        <%= item.product.name == "t-shirt" ? "#{item.product.name} - #{item.size}" : "#{item.product.name}" %><br>
+      <% end %>
+    </td>
+    <td><%= order.payment_confirmed? ? "yes" : "no" %></td>
+  </tr>
+<% end %>

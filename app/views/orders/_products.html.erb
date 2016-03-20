@@ -1,6 +1,7 @@
 <% one_timers = [] %>
 <% one_timers = Product.where(name: ["main", "team"]) %>
-<% (Product.all - (one_timers & @current_order.order_items.map(&:product))).each do |product| %>
+<% (Product.all - ( one_timers &
+                    Order.where(user: current_user).map{|o| o.order_items.map(&:product)}.flatten) ).each do |product| %>
     <% price = product.discount_if_sff_local_price current_user.sff_validated? %>
     <div class="row">
       <%= form_for :order_item, url: order_items_path, remote: true, html: { class: "row-eq-height" } do |f| %>
