@@ -8,6 +8,8 @@ class PaymentConfirmationsController < ApplicationController
         if order
           order.update_attribute(:payment_confirmed, true)
         end
+      else
+        render status: 500
       end
     end
   end
