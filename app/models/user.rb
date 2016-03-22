@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   attr_accessor :activation_token
   attr_accessor :reset_token
 
+  has_one :team
+
   validates :first_name, presence: true, length: { maximum: 50 }
   validates :last_name, presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 },

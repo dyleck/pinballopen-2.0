@@ -1,0 +1,18 @@
+<%= form_for @team do |f| %>
+<div class="panel panel-default panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <%= f.text_field :name %>
+      <%= f.submit "Zapisz", class: "btn btn-xs btn-danger pull-right" %>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <%= select_tag "users[]", options_for_select([["pierwszy",1], ["drugi",2]]) %>
+    </div>
+    <div>
+      <%= select_tag "users[]", options_for_select([["pierwszy",1], ["drugi",2]]) %>
+    </div>
+  </div>
+</div>
+<% end %>

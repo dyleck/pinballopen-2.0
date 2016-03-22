@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  #TODO: complete manual payment confirmations
   get 'payment_confirmations/new'
 
   get 'payment_confirmations/create'
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
     resources :users
     resources :account_activations, only: [:edit, :update]
     resources :password_resets, only: [:edit, :update, :new, :create]
+    resources :teams, only: [:new, :create, :edit, :update]
     get 'about'     => 'static_pages#about'
     get 'contact'   => 'static_pages#contact'
     get 'tournament_main' => 'static_pages#tournament_main'
