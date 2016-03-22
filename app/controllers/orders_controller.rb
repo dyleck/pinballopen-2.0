@@ -9,6 +9,11 @@ class OrdersController < ApplicationController
   end
 
   def update
+    if order_contains?("team") && !order_contains?("main")
+      flash[:danger] = "You cannot buy team without main" # TODO t
+      redirect_to new_order_path
+      return
+    end
     if @current_order.update_attributes(order_params.merge!({payed: true}))
       if params[:order][:payment_type] == 'paypal'
         paypal_url = @current_order.paypal_url(payment_confirmations_path, user_url(@current_order.user))
@@ -35,5 +40,9 @@ class OrdersController < ApplicationController
       if !current_user.activated?
         redirect_to root_url
       end
+    end
+
+    def order_contains?(item)
+      @current_order.order_items.map{|item| item.product.name}.include?(item)
     end
 end

@@ -6,6 +6,14 @@
         <%= item.product.name == "t-shirt" ? "#{item.product.name} - #{item.size}" : "#{item.product.name}" %><br>
       <% end %>
     </td>
-    <td><%= order.payment_confirmed? ? "yes" : "no" %></td>
+    <td>
+      <% if order.payment_confirmed? %>
+        yes
+      <% else %>
+        no
+        <%= link_to "Zapłać PayPal", order.paypal_url(payment_confirmations_path, user_url(order.user)), #TODO t
+          class: "btn btn-primary btn-xs" %>
+      <% end %>
+    </td>
   </tr>
 <% end %>
