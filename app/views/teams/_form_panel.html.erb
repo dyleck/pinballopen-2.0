@@ -1,18 +1,19 @@
 <%= form_for @team do |f| %>
+    <% users = User.all_that_paid_for_main - [current_user] %>
 <div class="panel panel-default panel-info">
   <div class="panel-heading">
     <h3 class="panel-title">
       <%= f.text_field :name %>
+      <%= f.hidden_field :captain, value: current_user.id %>
       <%= f.submit "Zapisz", class: "btn btn-xs btn-danger pull-right" %>
     </h3>
   </div>
   <div class="panel-body">
+    <% 2.times do %>
     <div>
-      <%= select_tag "users[]", options_for_select([["pierwszy",1], ["drugi",2]]) %>
+      <%= select_tag "team[users][]", options_for_select(users.map{|user| [user.full_name, user.id]}) %>
     </div>
-    <div>
-      <%= select_tag "users[]", options_for_select([["pierwszy",1], ["drugi",2]]) %>
-    </div>
+    <% end %>
   </div>
 </div>
 <% end %>

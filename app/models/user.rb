@@ -3,7 +3,10 @@ class User < ActiveRecord::Base
   attr_accessor :activation_token
   attr_accessor :reset_token
 
-  has_one :team
+  has_many :orders
+  has_many :order_items, through: :orders
+  has_many :products, through: :order_items
+  belongs_to :team
 
   validates :first_name, presence: true, length: { maximum: 50 }
   validates :last_name, presence: true, length: { maximum: 50 }
@@ -20,6 +23,12 @@ class User < ActiveRecord::Base
   def User.digest(password)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
     BCrypt::Password.create(password, cost: cost)
+  end
+
+  def User.all_that_paid_for_main
+    User.joins(:orders, :products).where(
+                                      "orders.payment_confirmed": true,
+                                      "products.name": "main").distinct
   end
 
   def full_name

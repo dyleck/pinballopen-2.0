@@ -1,0 +1,7 @@
+<div class="col-xs-12">
+  <% @teams.each do |team| %>
+    <div class="<%= cycle "light", ["light","dark"] %>">
+      <%= team.name %>
+    </div>
+  <% end %>
+</div>
