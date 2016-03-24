@@ -67,4 +67,11 @@ class User < ActiveRecord::Base
     self.reset_token = User.new_token
     update_attribute :reset_digest, User.digest(reset_token)
   end
+
+  def team_captain?
+    User.joins(:orders,:products).where(
+                                     "orders.payment_confirmed": true,
+                                     "products.name": "team",
+                                      "orders.user_id": self.id).count > 0
+  end
 end

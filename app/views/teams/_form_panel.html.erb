@@ -1,10 +1,10 @@
-<%= form_for @team do |f| %>
+<%= form_for @team, remote: true do |f| %>
     <% users = User.all_that_paid_for_main - [current_user] %>
 <div class="panel panel-default panel-info">
   <div class="panel-heading">
     <h3 class="panel-title">
       <%= f.text_field :name %>
-      <%= f.hidden_field :captain, value: current_user.id %>
+      <%= f.hidden_field :captain_id, value: current_user.id %>
       <%= f.submit "Zapisz", class: "btn btn-xs btn-danger pull-right" %>
     </h3>
   </div>

@@ -3,6 +3,10 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new(name: "Set your team's name")
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -15,13 +19,20 @@ class TeamsController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update
     if @team.update_attributes(team_params)
       respond_to do |format|
+        format.js
         format.html { redirect_to @team }
       end
+    else
+      @team.errors
     end
   end
 
@@ -38,9 +49,8 @@ class TeamsController < ApplicationController
     end
 
     def team_params
-      p = params.require(:team).permit(:name, :captain, :users => [])
+      p = params.require(:team).permit(:name, :captain_id, :users => [])
       p[:users].map!{|user| User.find_by(id: user)}
-      p[:captain] = User.find_by(id: p[:captain])
       p
     end
 end

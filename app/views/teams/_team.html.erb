@@ -2,7 +2,7 @@
   <div class="panel-heading">
     <h3 class="panel-title">
       <%= @team.name ? @team.name : "Set your team's name" %>
-      <%= link_to "Edytuj", edit_team_path(@team), class: "btn btn-xs btn-danger pull-right" %>
+      <%= link_to "Edytuj", edit_team_path(@team), class: "btn btn-xs btn-danger pull-right", remote: true %>
     </h3>
   </div>
   <div class="panel-body">
