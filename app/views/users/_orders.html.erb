@@ -11,8 +11,8 @@
         yes
       <% else %>
         no
-        <%= link_to "Zapłać PayPal", order.paypal_url(payment_confirmations_path, user_url(order.user)), #TODO t
-          class: "btn btn-primary btn-xs" %>
+        <%= link_to t(".pay_with_paypal"), order.paypal_url(payment_confirmations_path, user_url(order.user)),
+          class: "btn btn-primary btn-xs pull-right" %>
       <% end %>
     </td>
   </tr>

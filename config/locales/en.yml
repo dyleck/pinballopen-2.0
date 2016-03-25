@@ -96,9 +96,23 @@ en:
         send:             "Send activation mail"
       account:
         not_activated:    "Account is not activated"
+      your_orders:        "Your orders"
+      order_id:           "Order #"
+      items:              "Items"
+      payed:              "Payed"
+      new_team_desc:      >
+                            You have made a team payment which means that you can become a captain of your own team.
+                            Press the button below to choose your team's members.
+                            <span style="color: red">
+                            List will present the persons which have payed for main tournament and their payment is
+                            registered. If you don't see someone of your friends please try to add them later.
+                            </span>
+      create_team:        "Create team"
     update:
       no_permissions:     "You don't have permissions to updated that field"
       updated:            "Data updated"
+    orders:
+      pay_with_paypal:    "Pay with PayPal"
   shared:
     form_errors:
       description:        "Your form contains errors"
@@ -106,6 +120,8 @@ en:
     new:
       order:
         self:             "Cart"
+    update:
+      team_without_main:  "In order to create team you need to pay for main tournament too"
     products:
       size:               "size"
       to_cart:            "To cart"
@@ -140,3 +156,10 @@ en:
       header:             "Account activation"
     password_reset:
       subject:            "PPO 2016 - Password reset"
+    bank_transfer_info:
+      subject:            "PPO 2016 - bank transfer details"
+    payment_confirmed:
+      subject:            "PPO 2016 - payment registered"
+  teams:
+    new:
+      default_name:       "Your team's name"

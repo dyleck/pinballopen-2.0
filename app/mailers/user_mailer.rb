@@ -22,18 +22,25 @@ class UserMailer < ApplicationMailer
 
   def sff_confirmed(user)
     @user = user
-    mail to: user.email, subject: "Członkostwo SFF potwierdzone" #TODO t
+    mail to: user.email, subject: "Członkostwo SFF potwierdzone"
   end
 
   def bank_transfer_info(order)
     @user = order.user
     @order = order
-    mail to: @user.email, subject: "PPO 2016 - registration order details" #TODO t
+    mail to: @user.email, subject: t(".subject")
   end
 
   def confirm_payment(order)
     @user = order.user
     @order = order
     mail to: "marcin.dylewski@dylux.net", subject: "PPO 2016 - potwierdź płatność, id: #{@order.id}, user: #{@user.full_name}"
+  end
+
+  def payment_confirmed(order)
+    @order = order
+    @user = @order.user
+    I18n.locale = @order.locale.to_sym
+    mail to: @user.email, subject: t(".subject")
   end
 end

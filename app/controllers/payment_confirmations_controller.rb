@@ -1,5 +1,7 @@
 class PaymentConfirmationsController < ApplicationController
   protect_from_forgery except: [:create]
+  before_action :redirect_to_login_if_not_logged_in, except: [:create]
+  before_action :redirect_to_root_if_not_admin, except: [:create]
 
   def create
     if validate_paypal_ipn(request.raw_post)
@@ -14,12 +16,18 @@ class PaymentConfirmationsController < ApplicationController
     end
   end
 
-  def edit
-
+  def index
+    @orders = Order.where(payment_type: "bank_transfer", payment_confirmed: [false, nil])
   end
 
   def update
-
+    @order = Order.find_by(id: params[:id])
+    if @order && @order.update_attribute(:payment_confirmed, true)
+      UserMailer.payment_confirmed(@order).deliver_now
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   private

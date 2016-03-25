@@ -33,4 +33,9 @@ class UserMailerPreview < ActionMailer::Preview
     order = Order.last
     UserMailer.confirm_payment(order)
   end
+
+  def payment_confirmed
+    order = Order.last
+    UserMailer.payment_confirmed(order)
+  end
 end

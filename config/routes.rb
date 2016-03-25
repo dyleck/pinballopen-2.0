@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  #TODO: complete manual payment confirmations
-  get 'payment_confirmations/new'
-
-  get 'payment_confirmations/create'
-
   root 'static_pages#home'
   get '/:locale' => 'static_pages#home'
   scope '(:locale)' do
@@ -30,7 +25,7 @@ Rails.application.routes.draw do
 
   scope 'admin' do
     resources :products
-    resources :payment_confirmations, only: [:create, :edit, :update]
+    resources :payment_confirmations, only: [:index, :create, :update]
     get 'sff_validations' => 'sff_validations#index'
   end
 

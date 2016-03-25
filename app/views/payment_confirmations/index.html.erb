@@ -1,0 +1,39 @@
+<% provide :title, "Płatności" %>
+<div class="container" id="payment_confirmation">
+  <div class="row header">
+    <div class="col-xs-7">
+      Imię i nazwiko
+    </div>
+    <div class="col-xs-2">
+      Płatność#
+    </div>
+    <div class="col-xs-2">
+      Suma
+    </div>
+    <div class="col-xs-1">
+      Akcja
+    </div>
+  </div>
+  <% @orders.each do |order| %>
+    <!--<div class="row <%= cycle("light", "dark") %>" id="order-<%= order.id %>">-->
+    <div class="row underline" id="order-<%= order.id %>">
+      <div class="col-xs-7">
+        <%= order.user.full_name %>
+      </div>
+      <div class="col-xs-2">
+        <%= order.id %>
+      </div>
+      <div class="col-xs-2">
+        <%= format_currency(order.total_price, locale: order.locale) %>
+      </div>
+      <div class="col-xs-1">
+        <%= link_to "Potwierdź",
+                    payment_confirmation_path(order.id),
+                    method: :patch,
+                    class: "btn btn-xs btn-danger",
+                    remote: true
+        %>
+      </div>
+    </div>
+  <% end %>
+</div>

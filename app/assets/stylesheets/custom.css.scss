@@ -533,3 +533,24 @@
     color: black;
   }
 }
+
+#payment_confirmation {
+  .row {
+    &:first-child {
+      margin-top: 20px !important;
+    }
+    padding-top: 5px;
+  }
+  .header {
+    background-color: blue;
+    color: yellow;
+  }
+  .dark {
+    background-color: #333333;
+    color: white;
+  }
+
+  .underline {
+    border-bottom: 1px solid gray;
+  }
+}

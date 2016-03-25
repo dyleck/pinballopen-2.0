@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
   def update
     if order_contains?("team") && !order_contains?("main")
-      flash[:danger] = "You cannot buy team without main" # TODO t
+      flash[:danger] = t(".team_without_main")
       redirect_to new_order_path
       return
     end

@@ -41,7 +41,7 @@
               <div class="panel panel-default panel-info">
                 <div class="panel-heading">
                   <a href="#panel-orders" data-toggle="collapse">
-                    <h3 class="panel-title">Zamówienia</h3> <!-- TODO t -->
+                    <h3 class="panel-title"><%= t(".your_orders") %></h3>
                   </a>
                 </div>
                 <div id="panel-orders" class="panel-collapse collapse in">
@@ -49,9 +49,9 @@
                     <table class="table table-striped table-responsive">
                       <thead>
                       <tr>
-                        <td>Id</td> <!-- TODO 3 t -->
-                        <td>Items</td>
-                        <td>Payed?</td>
+                        <td><%= t(".order_id") %></td>
+                        <td><%= t(".items") %></td>
+                        <td><%= t(".payed") %></td>
                       </tr>
                       </thead>
                       <tbody>
@@ -78,15 +78,9 @@
                         <h3 class="panel-title">Stwórz drużynę</h3>
                       </div>
                       <div class="panel-body">
-                        <p> <!-- TODO t -->
-                          Dokonałeś płatności za turniej drużynowy, co oznacza że wyraziłeś chęć zostania kapitanem
-                          własnej drużyny. Kliknij w przycisk poniżej i wybierz członków swojej drużyny.
-                          <span style="color: red">
-                            Na liście będą widoczne tylko osoby, których płatność za udział w głównym turnieju została
-                            potwierdzona. Jeśli nie widzisz kogoś ze swoich znajomych, spróbuj dodać go później.
-                          </span>
+                        <p><%= t(".new_team_desc").html_safe %>
                           <p class="text-center">
-                            <%= link_to "Utwórz drużynę", new_team_path, class: "btn btn-primary", remote: true %> <!-- TODO t -->
+                            <%= link_to t(".create_team"), new_team_path, class: "btn btn-primary", remote: true %>
                           </p>
                         </p>
                       </div>

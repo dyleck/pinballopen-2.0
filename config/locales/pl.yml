@@ -96,9 +96,23 @@ pl:
         send:             "Wyślij maila aktywacyjnego"
       account:
         not_activated:    "Konto nie jest aktywowane"
+      your_orders:        "Twoje zamówienia"
+      order_id:           "Nr zamówienia"
+      items:              "Pozycje"
+      payed:              "Zapłacono"
+      new_team_desc:      >
+                            Dokonałeś płatności za turniej drużynowy, co oznacza że wyraziłeś chęć zostania kapitanem
+                            własnej drużyny. Kliknij w przycisk poniżej i wybierz członków swojej drużyny.
+                            <span style="color: red">
+                            Na liście będą widoczne tylko osoby, których płatność za udział w głównym turnieju została
+                            potwierdzona. Jeśli nie widzisz kogoś ze swoich znajomych, spróbuj dodać go później.
+                            </span>
+      create_team:        "Utwórz drużynę"
     update:
       no_permissions:     "Nie masz uprawnień do edycji tego pola"
       updated:            "Dane zaktualizowane"
+    orders:
+      pay_with_paypal:    "Zapłać PayPalem"
   shared:
     form_errors:
       description:        "Twój formularz zawiera błędy"
@@ -106,6 +120,8 @@ pl:
     new:
       order:
         self:             "Koszyk"
+    update:
+      team_without_main:  "Żeby założyć drużynę, musisz również zapłacić za udział w turnieju głównym"
     products:
       size:               "rozmiar"
       to_cart:            "Dodaj"
@@ -140,3 +156,10 @@ pl:
       header:             "Aktywacja konta"
     password_reset:
       subject:            "PPO 2016 - Zmiana hasła"
+    bank_transfer_info:
+      subject:            "PPO 2016 - dane do przelewu"
+    payment_confirmed:
+      subject:            "PPO 2016 - płatność zarejestrowana"
+  teams:
+    new:
+      default_name:       "Nazwa Twojej drużyny"

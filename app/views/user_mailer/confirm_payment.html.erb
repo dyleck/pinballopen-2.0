@@ -1,7 +1,9 @@
 <p>
-  Użytkownik <%= @user.full_name %> złożył zamówienie o numerze <%= @order.id %>. W celu potwierdzenia płatności
-  użyj poniższego linku:
+  Użytkownik <%= @user.full_name %> złożył zamówienie o numerze <%= @order.id %>.
 </p>
 <p>
-  <%= link_to "Potwierdzenie płatności", "#" %>
+  Przejdź do strony potwierdzenia płatności i kliknij na przycisk "Potwierdź"
+</p>
+<p>
+  <%= link_to "Potwierdzenie płatności", payment_confirmations_url %>
 </p>
