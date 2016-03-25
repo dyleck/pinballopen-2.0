@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
   before_action :set_team, only: [:edit, :update, :show]
 
   def new
-    @team = Team.new(name: "Set your team's name")
+    @team = Team.new(name: "Set your team's name") #TODO t
     respond_to do |format|
       format.html
       format.js
