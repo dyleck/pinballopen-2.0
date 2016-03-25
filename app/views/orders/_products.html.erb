@@ -3,6 +3,7 @@
 <% (Product.all - ( one_timers &
                     Order.where(user: current_user).map{|o| o.order_items.map(&:product)}.flatten) ).each do |product| %>
     <% price = product.discount_if_sff_local_price current_user.sff_validated? %>
+    <% next if product.name == "team" && Team.count >= Team::MAX %>
     <div class="row">
       <div class="col-xs-12 corner-lu corner-rd">
         <%= form_for :order_item, url: order_items_path, remote: true do |f| %>
@@ -19,6 +20,10 @@
                       <b><%= t(".size") %></b>
                       <%= f.select :size, %w[XXL XL L M S], html: {class: "pull-left"} %>
                     </div>
+                <% elsif product.name == "team" %>
+                    <div class="vcenter pull-left">
+                      <%= t(".places_left") %>: <b><%= Team.count >= Team::MAX ? 0 : Team::MAX - Team.count %></b>
+                    </div>
                 <% end %>
                 <span class="price vcenter"><%= format_currency(price) %></span>
                 <%= f.button t('.to_cart'), class: "btn btn-sm btn-primary" %>
@@ -28,5 +33,3 @@
       </div>
     </div>
 <% end %>
-
-

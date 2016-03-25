@@ -4,6 +4,7 @@ class Team < ActiveRecord::Base
 
   validates :captain_id, presence: true
 
+  MAX = 12
   def members
     [User.find_by(id: [self.captain_id])] + self.users.map{|u| u}
   end

@@ -1,5 +1,7 @@
 class UserMailer < ApplicationMailer
 
+  SKARBNIK = "jaro.vip@wp.pl"
+  DEV = "marcin.dylewski@dylux.net"
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -34,7 +36,7 @@ class UserMailer < ApplicationMailer
   def confirm_payment(order)
     @user = order.user
     @order = order
-    mail to: "marcin.dylewski@dylux.net", subject: "PPO 2016 - potwierdź płatność, id: #{@order.id}, user: #{@user.full_name}"
+    mail to: [UserMailer::SKARBNIK, UserMailer::DEV], subject: "PPO 2016 - potwierdź płatność, id: #{@order.id}, user: #{@user.full_name}"
   end
 
   def payment_confirmed(order)
