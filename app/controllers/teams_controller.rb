@@ -14,6 +14,7 @@ class TeamsController < ApplicationController
     if @team.save
       respond_to do |format|
         format.html { redirect_to @team }
+        format.js
       end
     end
   end

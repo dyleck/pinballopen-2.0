@@ -69,13 +69,30 @@
       <% if current_user.team_captain? %>
           <div class="row">
             <div class="col-xs-12">
-              <div id="team">
               <% if @team = Team.find_by(captain_id: current_user.id) %>
                 <%= render @team %>
               <% else %>
-                <%= link_to "Utwórz drużynę", new_team_path, class: "btn btn-primary", remote: true %> <!-- TODO t -->
+                  <div id="team">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Stwórz drużynę</h3>
+                      </div>
+                      <div class="panel-body">
+                        <p> <!-- TODO t -->
+                          Dokonałeś płatności za turniej drużynowy, co oznacza że wyraziłeś chęć zostania kapitanem
+                          własnej drużyny. Kliknij w przycisk poniżej i wybierz członków swojej drużyny.
+                          <span style="color: red">
+                            Na liście będą widoczne tylko osoby, których płatność za udział w głównym turnieju została
+                            potwierdzona. Jeśli nie widzisz kogoś ze swoich znajomych, spróbuj dodać go później.
+                          </span>
+                          <p class="text-center">
+                            <%= link_to "Utwórz drużynę", new_team_path, class: "btn btn-primary", remote: true %> <!-- TODO t -->
+                          </p>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
               <% end %>
-              </div>
             </div>
           </div>
       <% end %>
