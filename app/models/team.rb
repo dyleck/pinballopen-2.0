@@ -1,6 +1,6 @@
 class Team < ActiveRecord::Base
   alias_attribute :captain, :user
-  has_many :users
+  has_many :users, dependent: :nullify
 
   validates :captain_id, presence: true
 

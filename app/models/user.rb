@@ -26,9 +26,16 @@ class User < ActiveRecord::Base
   end
 
   def User.all_that_paid_for_main
-    User.joins(:orders, :products).where(
-                                      "orders.payment_confirmed": true,
-                                      "products.name": "main").distinct
+    payed_for_main = User.joins(:orders, :products).where(
+          "orders.payment_confirmed": true,
+          "products.name": "main"
+    ).distinct
+    payed_for_team = User.joins(:orders, :products).where(
+                                                      "orders.payment_confirmed": true,
+                                                      "products.name": "team"
+    ).distinct
+    assigned_to_teams = User.where.not(team: nil)
+    payed_for_main - payed_for_team - assigned_to_teams
   end
 
   def full_name
