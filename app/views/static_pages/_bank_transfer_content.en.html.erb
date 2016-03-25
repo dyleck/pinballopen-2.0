@@ -1,0 +1,24 @@
+<% content_for :order do %>
+    Your order's number is <b><%= @order.id %></b>.
+<% end %>
+
+<% content_for :make_transfer do %>
+    <div class="text-center">
+      <p>
+        Please make the bank transfer using below details:
+      </p>
+      <p>
+        <b>
+          Stowarzyszenie Fanów Flipperów<br>
+          02-372 Warszawa<br>
+          ul. Opaczewska 31A m.12
+        </b>
+      </p>
+      <p>
+        Bank PEKAO SA<br>
+        Account: <b>PL 09 1240 5950 1111 0010 6580 8462</b><br>
+        Title: <b>Order <%= @order.id %></b><br>
+        Amount: <b><%= format_currency(@order.total_price) %></b>
+      </p>
+    </div>
+<% end %>

@@ -75,6 +75,8 @@ en:
         rules:      "Rules"
         flippers:   "Flippers"
         prizes:     "Prizes"
+    bank_transfer:
+      title:        "Bank account"
   users:
     new:
       signup:

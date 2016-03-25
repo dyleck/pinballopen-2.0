@@ -75,6 +75,8 @@ pl:
         rules:      "Zasady"
         flippers:   "Flippery"
         prizes:     "Nagrody"
+    bank_transfer:
+      title:        "Konto bankowe"
   users:
     new:
       signup:

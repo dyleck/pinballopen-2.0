@@ -1,0 +1,11 @@
+<% provide :title, t('.title') %>
+<% render 'bank_transfer_content' %>
+
+<div class=container">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <p class="text-center">
+      <%= yield :order %>
+    </p>
+    <%= yield :make_transfer %>
+  </div>
+</div>

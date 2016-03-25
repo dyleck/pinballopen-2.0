@@ -23,8 +23,8 @@ class OrdersController < ApplicationController
         @current_order.update_attribute(:payed, true)
         UserMailer.bank_transfer_info(@current_order).deliver_now
         UserMailer.confirm_payment(@current_order).deliver_now
+        redirect_to bank_transfer_path(id: @current_order.id)
         session[:order_id] = @current_order = nil
-        redirect_to bank_transfer_path(@current_order)
       end
     else
       redirect_to new_order_path

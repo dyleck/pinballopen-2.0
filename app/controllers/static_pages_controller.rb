@@ -27,6 +27,7 @@ class StaticPagesController < ApplicationController
   end
 
   def bank_transfer
+    @order = Order.find_by(id: params[:id])
   end
 
 end
