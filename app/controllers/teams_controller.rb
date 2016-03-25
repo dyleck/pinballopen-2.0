@@ -51,7 +51,7 @@ class TeamsController < ApplicationController
 
     def team_params
       p = params.require(:team).permit(:name, :captain_id, :users => [])
-      p[:users].map!{|user| User.find_by(id: user)}
+      p[:users].map!{|user| User.find_by(id: user)}.compact!
       p
     end
 end

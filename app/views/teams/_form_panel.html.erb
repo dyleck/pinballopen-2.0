@@ -11,7 +11,20 @@
   <div class="panel-body">
     <% 2.times do |index| %>
     <div class="form-group">
-      <%= select_tag "team[users][]", options_for_select(users.map{|user| [user.full_name, user.id]}, nil), class: "form-control" %>
+      <%=
+        if (team_user = @team.users[index]).nil?
+          select_tag "team[users][]",
+                       options_for_select(users.map{|user| [user.full_name, user.id]}),
+                       prompt: "wybierz",
+                       class: "form-control"
+        else
+
+          select_tag "team[users][]",
+                      options_for_select(users.map{|user| [user.full_name, user.id]},
+                                         team_user.id),
+                      class: "form-control"
+        end
+      %>
     </div>
     <% end %>
   </div>

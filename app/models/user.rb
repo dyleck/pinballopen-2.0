@@ -74,4 +74,14 @@ class User < ActiveRecord::Base
                                      "products.name": "team",
                                       "orders.user_id": self.id).count > 0
   end
+
+  def team_with_override
+    if team_without_override.nil? and team_captain?
+      Team.find_by(captain_id: self.id)
+    else
+      team_without_override
+    end
+  end
+  alias_method_chain :team, :override
+
 end
