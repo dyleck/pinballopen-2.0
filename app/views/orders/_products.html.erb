@@ -4,22 +4,29 @@
                     Order.where(user: current_user).map{|o| o.order_items.map(&:product)}.flatten) ).each do |product| %>
     <% price = product.discount_if_sff_local_price current_user.sff_validated? %>
     <div class="row">
-      <%= form_for :order_item, url: order_items_path, remote: true, html: { class: "row-eq-height" } do |f| %>
-          <%= f.hidden_field :price, value: price %>
-          <%= f.hidden_field :product_id, value: product.id %>
-          <div class="col-xs-6 underline flex-bottom no-margin">
-            <%= product.name %>
-            <% if product.name == 't-shirt' %>
-                <%= t(".size") %>
-                <%= f.select :size, %w[XXL XL L M S] %>
-            <% end %>
-          </div>
-          <div class="col-xs-3 text-right underline flex-bottom no-margin">
-            <%= format_currency(price) %>
-          </div>
-          <div class="col-xs-3 no-margin">
-            <%= f.button t('.to_cart'), class: "btn btn-xs btn-info pull-right" %>
-          </div>
-      <% end %>
+      <div class="col-xs-12 corner-lu corner-rd">
+        <%= form_for :order_item, url: order_items_path, remote: true do |f| %>
+            <%= f.hidden_field :price, value: price %>
+            <%= f.hidden_field :product_id, value: product.id %>
+            <div class="col-xs-12 underline header corner-lu border">
+              <%= product.name %>
+            </div>
+            <div class="col-xs-12 description corner-rd border">
+              <%= t(".#{product.name}_html") %>
+              <div class="overline text-right as-table">
+                <% if product.name == 't-shirt' %>
+                    <div class="vcenter pull-left">
+                      <b><%= t(".size") %></b>
+                      <%= f.select :size, %w[XXL XL L M S], html: {class: "pull-left"} %>
+                    </div>
+                <% end %>
+                <span class="price vcenter"><%= format_currency(price) %></span>
+                <%= f.button t('.to_cart'), class: "btn btn-sm btn-primary" %>
+              </div>
+            </div>
+        <% end %>
+      </div>
     </div>
 <% end %>
+
+

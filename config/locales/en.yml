@@ -125,6 +125,19 @@ en:
     products:
       size:               "size"
       to_cart:            "To cart"
+      main_html:          >
+                            Participation in three main tournaments - <b>Modern</b>, <b>80's</b> and <b>Stern Trophy</b><br>
+                            <span class="warning">In order to be able to participate in Team tournament you must pay
+                            for main event too!</span>
+      team_html:          >
+                            This product entitles you to create your own team. When the payment is registered
+                            you will have additional functionality on profile page that enables you to add two other
+                            players to form a team.<br>
+                            <span class="warning">This product <u>should be bought by team's captain only!</u> Others player
+                            can be added to the team as soon as their payment for main tournament is registered!</span>
+      t-shirt_html:       >
+                            T-shirt that was prepared specially for PPO 2016 event. If you would like to buy several
+                            pieces you must add it several times remembering to choose proper size each time.
     order:
       product:
         remove:           "Remove"

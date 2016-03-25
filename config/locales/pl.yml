@@ -125,6 +125,19 @@ pl:
     products:
       size:               "rozmiar"
       to_cart:            "Dodaj"
+      main_html:          >
+                            Udział w trzech głównych turniejach - <b>Modern</b>, <b>80's</b>, <b>Stern Trophy</b>.<br>
+                            <span class="warning">Udział w turnieju głównym jest wymagany, żeby można było zagrać w
+                            turnieju drużynowym!</span>
+      team_html:          >
+                            Ten produkt uprawnia Cię do utworzenia własnej drużyny. Kiedy płatność zostanie
+                            zarejestrowana, na Twojej stronie profilowej pojawi się dodatkowa funkcjonalność
+                            umożliwiająca zaproszenie do drużyny dwóch innych graczy.<br>
+                            <span class="warning">Ten produkt powinien kupić tylko kapitan drużyny! Pozostali gracze
+                            będą mogli dołączyć do drużyny po opłaceniu turnieju głównego!</span>
+      t-shirt_html:       >
+                            Koszulka przygotowana specjalnie z okazji PPO 2016. Jeśli chcesz kupić kilka sztuk, musisz
+                            za każdym razem dodać je do koszyka, pamiętając o wybraniu odpowiedniego rozmiaru.
     order:
       product:
         remove:           "Usuń"
