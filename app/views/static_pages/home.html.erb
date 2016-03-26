@@ -9,7 +9,7 @@
       <li data-target="#main-slider" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="item active" style="background-image: url(assets/slider/scared.jpg)">
+      <div class="item active" style="background-image: url(<%= asset_path('slider/scared.jpg') %>">
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
@@ -18,8 +18,8 @@
                 <h1 class="animation animated-item-2 slider-huge text-right"><%= t(".slide1.place") %></h1>
               </div>
               <div class="carousel-content top-alligned-row pull-left">
-                <img src="assets/sff-small.png" class="org-logo"><br>
-                <img src="assets/ecs-small.png" class="org-logo">
+                <img src="<%= asset_path('sff-small.png') %>" class="org-logo"><br>
+                <img src="<%= asset_path('ecs-small.png') %>" class="org-logo">
               </div>
             </div>
           </div>
