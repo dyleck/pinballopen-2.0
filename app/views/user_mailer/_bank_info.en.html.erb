@@ -11,8 +11,10 @@
   Please make a bank transfer of <b><%= number_to_currency @order.total_price, unit: "EUR", format: "%n %u" %></b>
   using below details:<br><br>
   <b>Stowarzyszenie Fanów Flipperów</b><br>
-  PKO BP<br>
-  PL 11 2222 3333 4444 5555 6666 7777<br>
+  <b></b>
+  Bank: PEKAO SA<br>
+  Account number: <b>PL 09 1240 5950 1111 0010 6580 8462</b><br>
+  Title: <b>Order #<%= @order.id %></b>
 </p>
 <p>
   As soon as your payment is completed status of your order will be marked as payed and you will receive email with

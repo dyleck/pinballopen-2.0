@@ -18,7 +18,7 @@
         Bank PEKAO SA<br>
         Account: <b>PL 09 1240 5950 1111 0010 6580 8462</b><br>
         Title: <b>Order <%= @order.id %></b><br>
-        Amount: <b><%= format_currency(@order.total_price) %></b>
+        Amount: <b><%= format_currency(@order.total_price, locale: @order.locale) %></b>
       </p>
     </div>
 <% end %>

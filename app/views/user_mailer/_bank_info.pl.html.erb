@@ -11,8 +11,10 @@
   Prosimy o przelew kwoty <b><%= number_to_currency @order.total_price, unit: "zł", format: "%n %u" %></b>
   na poniższy rachunek:<br><br>
   <b>Stowarzyszenie Fanów Flipperów</b><br>
-  PKO BP<br>
-  11 2222 3333 4444 5555 6666 7777<br>
+  <b></b>
+  Bank: PEKAO SA<br>
+  Nr konta: <b>PL 09 1240 5950 1111 0010 6580 8462</b><br>
+  Tytułem: <b>Zamówienie nr <%= @order.id %></b>
 </p>
 <p>
   Z chwilą zaksięgowania wpłaty status Twojego zamówienia ulegnie zmianie na zapłacony.

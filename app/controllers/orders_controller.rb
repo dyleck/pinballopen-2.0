@@ -31,6 +31,14 @@ class OrdersController < ApplicationController
     end
   end
 
+  def destroy
+    @order = Order.find_by(id: params[:id])
+    @order.destroy
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     def order_params
       params.require(:order).permit(:payment_type, :payed)

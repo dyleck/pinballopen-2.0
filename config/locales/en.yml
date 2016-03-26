@@ -115,6 +115,12 @@ en:
       updated:            "Data updated"
     orders:
       pay_with_paypal:    "Pay with PayPal"
+      paid:               "YES"
+      not_paid:           "NO"
+      cancel:             "Cancel"
+      paypal:             "Go to PayPal"
+      bank_transfer:      "Show transfer details"
+      total:              "Total amount"
   shared:
     form_errors:
       description:        "Your form contains errors"
@@ -172,7 +178,7 @@ en:
     password_reset:
       subject:            "PPO 2016 - Password reset"
     bank_transfer_info:
-      subject:            "PPO 2016 - bank transfer details"
+      subject:            "PPO 2016 - order #"
     payment_confirmed:
       subject:            "PPO 2016 - payment registered"
   teams:

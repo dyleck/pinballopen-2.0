@@ -115,6 +115,12 @@ pl:
       updated:            "Dane zaktualizowane"
     orders:
       pay_with_paypal:    "Zapłać PayPalem"
+      paid:               "TAK"
+      not_paid:           "NIE"
+      cancel:             "Anuluj"
+      paypal:             "Przejdź do PayPal"
+      bank_transfer:      "Pokaż dane przelewu"
+      total:              "Kwota całkowita"
   shared:
     form_errors:
       description:        "Twój formularz zawiera błędy"
@@ -172,7 +178,7 @@ pl:
     password_reset:
       subject:            "PPO 2016 - Zmiana hasła"
     bank_transfer_info:
-      subject:            "PPO 2016 - dane do przelewu"
+      subject:            "PPO 2016 - Zamównie nr "
     payment_confirmed:
       subject:            "PPO 2016 - płatność zarejestrowana"
   teams:

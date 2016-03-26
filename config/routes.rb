@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get '/:locale' => 'static_pages#home'
   scope '(:locale)' do
-    resources :orders, only: [:new, :update, :create]
+    resources :orders, only: [:new, :update, :create, :destroy]
     resources :order_items, only: [:create, :destroy]
     resources :users
     resources :account_activations, only: [:edit, :update]

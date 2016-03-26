@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.account_activation(@user).deliver_now
       if params[:user][:sff_member] == "1"
-        UserMailer.sff_confirmation_required(@user).deliver_now
+        UserMailer.sff_confirmation_required(@user).deliver_now #TODO sent to admins?
       end
       flash[:success] = t("account_activations.edit.link.sent")
       log_in @user

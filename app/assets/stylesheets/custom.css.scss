@@ -586,3 +586,43 @@
     color: white;
   }
 }
+
+#orders {
+  .panel-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    .row {
+      margin-top: 4px;
+      &:last-child {
+        margin-bottom: 4px;
+      }
+    }
+    .light {
+      background-color: antiquewhite;
+    }
+    .dark {
+      background-color: burlywood;
+    }
+    .underline {
+      border-bottom: 1px solid black;
+      margin-bottom: 2px;
+    }
+    .paid {
+      color: green;
+      font-weight: bold;
+    }
+    .not-paid {
+      color: red;
+      font-weight: bold;
+    }
+    span {
+      &:first-child {
+        padding-left: 10px;
+        padding-right: 10px;
+        border-bottom: 2px solid black;
+      }
+      font-size: 1.1em;
+      border-bottom: 1px dotted black;
+    }
+  }
+}
