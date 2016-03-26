@@ -16,7 +16,4 @@
 //= require jquery-polyglot.language.switcher
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery.prettyPhoto
-//= require jquery.isotope.min
-//= require main
 //= require_tree .
