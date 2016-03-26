@@ -25,14 +25,24 @@ mouseLeaveHandler = () ->
   tag.off("mouseleave", mouseLeaveHandler);
   tag.find("iframe").css("pointer-events", "none");
 
+alignDescRows = (objects) ->
+  heights = objects.map () ->
+    $(this).height()
+  .get()
+  maxHeight = Math.max.apply(null, heights)
+  objects.height(maxHeight)
 
-$(window).on 'resize', ->
+$(window).on 'resize orientationchange', ->
   fit_viewport( $('#main-slider .carousel .item') );
+  alignDescRows($('#description .desc-row-1'));
+  alignDescRows($('#description .desc-row-2'));
 
 $(document).on 'click','#main-navbar .navbar-collapse.in, #tournaments-navbar .navbar-collapse.in', (e) ->
   $(this).collapse('hide') if $(e.target).is('a')
 
 $(document).on 'ready page:change', ->
+  alignDescRows($('#description .desc-row-1'));
+  alignDescRows($('#description .desc-row-2'));
   $('.polyglot-language-switcher').polyglotLanguageSwitcher({
     openMode: "click"
   })
