@@ -20,9 +20,9 @@ pl:
   layouts:
     header:
       menu:
-        home:     'Strona domowa'
+        home:     'Główna'
         info:
-          self:   'Informacje'
+          self:   'Info'
           description:     'Opis imprezy'
           location:    'Lokalizacja'
           hotels:   'Zakwaterowanie'

@@ -20,9 +20,9 @@ en:
   layouts:
     header:
       menu:
-        home:     'Home page'
+        home:     'Home'
         info:
-          self:   'Information'
+          self:   'Info'
           description:     "Description"
           location:    'Location'
           hotels:   'Accomodation'
