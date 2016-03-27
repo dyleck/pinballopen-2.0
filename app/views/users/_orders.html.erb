@@ -4,7 +4,7 @@
         Numer: <b><%= order.id %></b>
       </div>
       <div class="col-xs-6 text-right underline <%= order.payment_confirmed? ? "paid" : "not-paid" %>">
-        <%= order.payment_confirmed? ? "zapłacone" : "brak płatności" %>
+        <%= order.payment_confirmed? ? t('.paid') : t('.not_paid') %>
       </div>
       <div class="col-xs-12 text-center">
         <span><b><%= "#{t(".total")}: #{format_currency(order.total_price, locale: order.locale)}" %></b></span><br>

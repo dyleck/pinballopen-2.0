@@ -115,10 +115,13 @@ pl:
       updated:            "Dane zaktualizowane"
     index:
       header:             "Zarejestrowani gracze"
+      number:             "Numer"
+      full_name:          "Imię i nazwisko"
+      payment:            "Płatność"
     orders:
       pay_with_paypal:    "Zapłać PayPalem"
-      paid:               "TAK"
-      not_paid:           "NIE"
+      paid:               "zapłacone"
+      not_paid:           "brak płatności"
       cancel:             "Anuluj"
       paypal:             "Przejdź do PayPal"
       bank_transfer:      "Pokaż dane przelewu"
@@ -184,7 +187,14 @@ pl:
     payment_confirmed:
       subject:            "PPO 2016 - płatność zarejestrowana"
   teams:
+    form_panel:
+      save:               "Zapisz"
+    team:
+      edit:               "Edytuj"
     new:
       default_name:       "Nazwa Twojej drużyny"
     index:
       header:             "Zarejestrowane drużyny"
+      number:             "Numer"
+      name:               "Nazwa"
+      members:            "Członkowie"

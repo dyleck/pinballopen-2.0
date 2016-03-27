@@ -5,7 +5,7 @@
     <h3 class="panel-title">
       <%= f.text_field :name %>
       <%= f.hidden_field :captain_id, value: current_user.id %>
-      <%= f.submit "Zapisz", class: "btn btn-xs btn-danger pull-right" %>
+      <%= f.submit t(".save"), class: "btn btn-xs btn-danger pull-right" %>
     </h3>
   </div>
   <div class="panel-body">

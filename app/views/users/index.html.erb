@@ -5,13 +5,13 @@
       <hr>
     </div>
     <div class="col-xs-2 col-sm-1 col-sm-offset-3 text-center">
-      Id
+      <%= t('.number') %>
     </div>
-    <div class="col-xs-7 col-sm-3">
-      Imię i nazwisko
+    <div class="col-xs-7 col-sm-3 text-center">
+      <%= t('.full_name') %>
     </div>
     <div class="col-xs-3 col-sm-2 text-center">
-      Płatność
+      <%= t('.payment') %>
     </div>
   </div>
   <% @users.each do |user| %>
@@ -19,7 +19,7 @@
     <div class="col-xs-2 col-sm-1 col-sm-offset-3 text-center">
       <%= user.id %>
     </div>
-    <div class="col-xs-7 col-sm-3">
+    <div class="col-xs-7 col-sm-3 text-center">
     <%= user.full_name %>
     </div>
     <div class="col-xs-3 col-sm-2 text-center">

@@ -5,13 +5,13 @@
       <hr>
     </div>
     <div class="col-xs-2 col-sm-1 col-sm-offset-3 text-center">
-      Id
+      <%= t(".number") %>
     </div>
-    <div class="col-xs-5 col-sm-2">
-      Nazwa
+    <div class="col-xs-5 col-sm-2 text-center">
+      <%= t(".name") %>
     </div>
     <div class="col-xs-5 col-sm-3 text-center">
-      Członkowie
+      <%= t(".members") %>
     </div>
   </div>
   <% @teams.each do |team| %>
@@ -19,7 +19,7 @@
         <div class="col-xs-2 col-sm-1 col-sm-offset-3 text-center">
           <%= team.id %>
         </div>
-        <div class="col-xs-5 col-sm-2">
+        <div class="col-xs-5 col-sm-2 text-center">
           <%= team.name %>
         </div>
         <div class="col-xs-5 col-sm-3 text-center">
