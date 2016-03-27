@@ -16,7 +16,7 @@
         <% if !order.payment_confirmed? %>
           <%= link_to t(".cancel"), order_path(order), method: :delete, remote: true, class: "btn btn-xs btn-danger" %>
           <%= link_to t(".#{order.payment_type}"),
-                      order.payment_type == "paypal" ? order.paypal_url : bank_transfer_path(id: order.id),
+                      order.payment_type == "paypal" ? order.paypal_url(payment_confirmations_path, user_url(order.user)) : bank_transfer_path(id: order.id),
                       class: "btn btn-xs btn-primary" %>
         <% end %>
       </div>

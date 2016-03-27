@@ -50,6 +50,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.all_that_ordered_main
+  end
+
   private
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :sff_member, :sff_validated, :admin)

@@ -113,6 +113,8 @@ en:
     update:
       no_permissions:     "You don't have permissions to updated that field"
       updated:            "Data updated"
+    index:
+      header:             "Registered players"
     orders:
       pay_with_paypal:    "Pay with PayPal"
       paid:               "YES"

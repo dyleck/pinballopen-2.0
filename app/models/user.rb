@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
     BCrypt::Password.create(password, cost: cost)
   end
 
-  def User.all_that_paid_for_main
+  def User.all_that_paid_for_main_and_not_for_team
     payed_for_main = User.joins(:orders, :products).where(
           "orders.payment_confirmed": true,
           "products.name": "main"
@@ -36,6 +36,10 @@ class User < ActiveRecord::Base
     ).distinct
     assigned_to_teams = User.where.not(team: nil)
     payed_for_main - payed_for_team - assigned_to_teams
+  end
+
+  def User.all_that_ordered_main
+    User.joins(:products).where("products.name": "main").distinct.order(:id)
   end
 
   def full_name
@@ -91,4 +95,7 @@ class User < ActiveRecord::Base
   end
   alias_method_chain :team, :override
 
+  def main_payed?
+    self.orders.joins(:products).where("products.name": "main", "orders.payment_confirmed": true).length > 0
+  end
 end

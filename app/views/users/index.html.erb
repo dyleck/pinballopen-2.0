@@ -1,0 +1,30 @@
+<div class="container" id="users">
+  <div class="row header">
+    <div class="col-xs-12 text-center">
+      <h3><%= t(".header") %></h3>
+      <hr>
+    </div>
+    <div class="col-xs-2 col-sm-1 col-sm-offset-3 text-center">
+      Id
+    </div>
+    <div class="col-xs-7 col-sm-3">
+      Imię i nazwisko
+    </div>
+    <div class="col-xs-3 col-sm-2 text-center">
+      Płatność
+    </div>
+  </div>
+  <% @users.each do |user| %>
+  <div class="row alert-<%= user.main_payed? ? "success" : "danger" %> <%= "loggedin" if !current_user.nil? && current_user == user %>">
+    <div class="col-xs-2 col-sm-1 col-sm-offset-3 text-center">
+      <%= user.id %>
+    </div>
+    <div class="col-xs-7 col-sm-3">
+    <%= user.full_name %>
+    </div>
+    <div class="col-xs-3 col-sm-2 text-center">
+      <%= user.main_payed? ? "ok" : "none" %>
+    </div>
+  </div>
+  <% end %>
+</div>

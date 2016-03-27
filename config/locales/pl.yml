@@ -113,6 +113,8 @@ pl:
     update:
       no_permissions:     "Nie masz uprawnień do edycji tego pola"
       updated:            "Dane zaktualizowane"
+    index:
+      header:             "Zarejestrowani gracze"
     orders:
       pay_with_paypal:    "Zapłać PayPalem"
       paid:               "TAK"

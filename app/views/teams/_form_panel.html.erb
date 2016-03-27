@@ -1,5 +1,5 @@
 <%= form_for @team, remote: true do |f| %>
-  <% users = User.all_that_paid_for_main + @team.users - [current_user] %>
+  <% users = User.all_that_paid_for_main_and_not_for_team + @team.users - [current_user] %>
 <div class="panel panel-default panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">
