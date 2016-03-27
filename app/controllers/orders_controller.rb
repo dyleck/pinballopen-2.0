@@ -51,6 +51,10 @@ class OrdersController < ApplicationController
     end
 
     def order_contains?(item)
-      @current_order.order_items.map{|item| item.product.name}.include?(item)
+      orders = current_user.orders.joins(:products)
+                   .where("products.name": item,
+                          "orders.payed": true)
+                   .map{|order| order.order_items.map{|item| item.product.name}}.flatten
+      @current_order.order_items.map{|item| item.product.name}.+(orders).include?(item)
     end
 end

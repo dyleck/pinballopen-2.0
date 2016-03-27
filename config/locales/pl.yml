@@ -186,3 +186,5 @@ pl:
   teams:
     new:
       default_name:       "Nazwa Twojej drużyny"
+    index:
+      header:             "Zarejestrowane drużyny"

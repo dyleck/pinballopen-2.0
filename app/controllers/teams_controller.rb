@@ -10,6 +10,7 @@ class TeamsController < ApplicationController
   end
 
   def create
+    current_user.update_attribute :team, nil
     @team = Team.new(team_params)
     if @team.save
       respond_to do |format|

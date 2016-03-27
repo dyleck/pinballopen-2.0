@@ -186,3 +186,5 @@ en:
   teams:
     new:
       default_name:       "Your team's name"
+    index:
+      header:             "Registered Teams"

@@ -625,7 +625,7 @@
   }
 }
 
-#users {
+@mixin list {
   margin-top: 3px;
   & > div {
     margin-top: 3px;
@@ -649,6 +649,26 @@
     }
     h3 {
       margin-top: 10px;
+    }
+  }
+}
+
+#users {
+  @include list;
+}
+
+#teams {
+  @include list;
+  .light {
+    background-color: #ddd;
+  }
+  .dark {
+    background-color: #bbb;
+  }
+  span:first-child {
+    font-weight:bold;
+    &:after {
+      content: " (K)";
     }
   }
 }
