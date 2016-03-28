@@ -1,5 +1,6 @@
 <% provide :title, "BoP 2.0" %>
 <%= render 'tournament_nav' %>
+<% render 'tournament_bop_content' %>
 
 <div class="container">
   <div class="row jumbotron text-center">
@@ -13,7 +14,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-
+        <%= yield :rules %>
       </div>
     </div>
   </div>
@@ -23,7 +24,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-
+        <%= yield :flippers %>
       </div>
     </div>
   </div>
@@ -33,7 +34,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-
+        <%= yield :prizes %>
       </div>
     </div>
   </div>
