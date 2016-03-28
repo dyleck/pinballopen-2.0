@@ -7,7 +7,7 @@
         <%= order.payment_confirmed? ? t('.paid') : t('.not_paid') %>
       </div>
       <div class="col-xs-12 text-center">
-        <span><b><%= "#{t(".total")}: #{format_currency(order.total_price, locale: order.locale)}" %></b></span><br>
+        <span><b><%= "#{t(".total")}: " %><%= format_currency(order.total_price, locale: order.locale).html_safe %></b></span><br>
         <% order.order_items.each do |item| %>
             <span><%= "#{item.product.name} #{item.size}" %></span><br>
         <% end %>
