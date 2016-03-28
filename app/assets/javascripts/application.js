@@ -16,4 +16,5 @@
 //= require jquery-polyglot.language.switcher
 //= require jquery_ujs
 //= require turbolinks
+//= require imagesloaded.pkgd.min
 //= require_tree .

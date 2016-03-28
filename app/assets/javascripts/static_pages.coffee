@@ -34,6 +34,10 @@ alignDescRows = (objects) ->
 
 $(window).on 'resize orientationchange', ->
   fit_viewport( $('#main-slider .carousel .item') );
+  flippers = $('#flippers .translite');
+  flippers.css("height", "");
+  alignDescRows(flippers)
+  alignDescRows($('#flippers .flipper-name'));
   alignDescRows($('#description .desc-row-1'));
   alignDescRows($('#description .desc-row-2'));
 
@@ -43,6 +47,9 @@ $(document).on 'click','#main-navbar .navbar-collapse.in, #tournaments-navbar .n
 $(document).on 'ready page:change', ->
   alignDescRows($('#description .desc-row-1'));
   alignDescRows($('#description .desc-row-2'));
+  alignDescRows($('#flippers .flipper-name'));
+  $('#flippers').imagesLoaded () ->
+    alignDescRows($('#flippers .translite'))
   $('.polyglot-language-switcher').polyglotLanguageSwitcher({
     openMode: "click"
   })

@@ -244,6 +244,19 @@
   </div>
 </section>
 
+<!--<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>-->
+<section id="flippers" class=""> <!-- TODO create class -->
+  <div class="container-fluid">
+    <div class="row">
+      <% Flipper.all.each do |flipper| %>
+        <div class="col-xs-6 col-sm-3 col-md-2 translite">
+          <%= render flipper, flipper: flipper %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
 <section id="location" class="violet justify">
   <div class="container-fluid">
     <div class="row">
