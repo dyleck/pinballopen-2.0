@@ -12,7 +12,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.2'
 gem 'bcrypt', '~> 3.1'
 gem 'jquery-ui-rails'
-gem 'font-awesome-rails'
 gem 'puma'
 gem 'rest-client'
 
