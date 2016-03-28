@@ -24,6 +24,7 @@ en:
         info:
           self:   'Info'
           description:     "Description"
+          flippers:         "List of Pinballs"
           location:    'Location'
           hotels:   'Accomodation'
           contact:  'Contact'
@@ -70,7 +71,8 @@ en:
         question2:  "Question 2"
         question3:  "Question 3"
         question4:  "Question 4"
-    tournament_nav:
+      flippers:
+        header:     "List of Pinballs"
       menu:
         rules:      "Rules"
         flippers:   "Flippers"

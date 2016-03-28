@@ -248,6 +248,11 @@
 <section id="flippers" class=""> <!-- TODO create class -->
   <div class="container-fluid">
     <div class="row">
+      <div class="col-xs-12 text-center">
+        <h1><%= t(".flippers.header") %></h1>
+      </div>
+    </div>
+    <div class="row">
       <% Flipper.all.each do |flipper| %>
         <div class="col-xs-6 col-sm-3 col-md-2 translite">
           <%= render flipper, flipper: flipper %>

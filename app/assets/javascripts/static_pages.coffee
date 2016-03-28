@@ -77,6 +77,6 @@ $(document).on 'ready page:change', ->
       return
     else
       e.preventDefault()
-      body.animate({ scrollTop: $( href.substr(index) ).offset().top }, 500, ->
+      body.animate({ scrollTop: $( href.substr(index) ).offset().top - 50 }, 500, ->
         window.location.hash = href.substr(index+1))
 

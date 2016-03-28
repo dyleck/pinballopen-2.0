@@ -674,7 +674,15 @@
 }
 
 #flippers {
+  background-color: black;
+  color: cornsilk;
   p {
     margin: 0;
+    font-weight: 900;
+    font-size: 1.2em;
+  }
+  h1,h2,h3 {
+    margin-bottom: 50px;
+    margin-top: 0px;
   }
 }

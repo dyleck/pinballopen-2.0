@@ -24,6 +24,7 @@ pl:
         info:
           self:   'Info'
           description:     'Opis imprezy'
+          flippers:         "Lista Flipperów"
           location:    'Lokalizacja'
           hotels:   'Zakwaterowanie'
           contact:  'Kontakt'
@@ -70,6 +71,8 @@ pl:
         question2:  "Pytanie numer 2"
         question3:  "Pytanie numer 3"
         question4:  "Pytanie numer 4"
+      flippers:
+        header:     "Lista Flipperów"
     tournament_nav:
       menu:
         rules:      "Zasady"
