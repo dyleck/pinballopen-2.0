@@ -32,6 +32,7 @@ class Order < ActiveRecord::Base
   def paypal_url(notify_uri, return_url)
     options = {
         business: "#{Rails.application.secrets.paypal_business_email}",
+        cert_id: "#{Rails.application.secrets.paypal_cert_id}",
         cmd:      "_cart",
         upload:   1,
         return:   return_url,
@@ -50,6 +51,7 @@ class Order < ActiveRecord::Base
           "quantity_#{index + 1}": 1,
        })
     end
+    "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr/?" + options.to_query
     "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr/?" + {cmd: "_s-xclick",encrypted: encrypt_for_paypal(options)}.to_query
   end
 
