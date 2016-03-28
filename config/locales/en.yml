@@ -60,7 +60,7 @@ en:
         place:    "Lodz"
         register: "Register"
       description:
-        header:     "Event's description"
+        header:     "Tournaments"
       location:
         header:     "Location"
       hotels:

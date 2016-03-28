@@ -23,7 +23,7 @@ pl:
         home:     'Główna'
         info:
           self:   'Info'
-          description:     'Opis imprezy'
+          description:     'Turnieje'
           flippers:         "Lista Flipperów"
           location:    'Lokalizacja'
           hotels:   'Zakwaterowanie'
