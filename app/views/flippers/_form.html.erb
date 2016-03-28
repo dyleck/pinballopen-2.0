@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= form_for @flipper do |f| %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :short_name %>
+          <%= f.text_field :short_name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :translite_url %>
+          <%= f.text_field :translite_url, class: "form-control" %>
+        </div>
+        <%= f.submit "Zapisz" %>
+      <% end %>
+    </div>
+  </div>
+</div>

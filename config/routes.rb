@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-
   root 'static_pages#home'
+
   get '/:locale' => 'static_pages#home'
   scope '(:locale)' do
     resources :orders, only: [:new, :update, :create, :destroy]
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   scope 'admin' do
     resources :products
     resources :payment_confirmations, only: [:index, :create, :update]
+    resources :flippers
     get 'sff_validations' => 'sff_validations#index'
   end
 

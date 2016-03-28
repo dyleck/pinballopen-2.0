@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      Name <!-- TODO t -->
+    </div>
+    <div class="col-sm-2">
+      Short Name <!-- TODO t -->
+    </div>
+    <div class="col-sm-2">
+      Translite <!-- TODO t -->
+    </div>
+    <div class="col-sm-4">
+      Akcje
+    </div>
+  </div>
+  <% @flippers.each do |flipper| %>
+    <div class="row">
+      <div class="col-sm-3">
+        <%= flipper.name %>
+      </div>
+      <div class="col-sm-2">
+        <%= flipper.short_name %>
+      </div>
+      <div class="col-sm-2">
+        <%= image_tag flipper.translite_url, width: "100%" %>
+      </div>
+      <div class="col-sm-4">
+        <%= link_to "Pokaż", flipper, class: "btn btn-sm btn-info" %>
+        <%= link_to "Edytuj", edit_flipper_path(flipper), class: "btn btn-sm btn-warning" %>
+        <%= link_to "Usuń", flipper, method: :delete, class: "btn btn-sm btn-danger" %>
+      </div>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <%= link_to "Dodaj nowy", new_flipper_path, class: "btn btn-md btn-primary" %>
+    </div>
+  </div>
+</div>
