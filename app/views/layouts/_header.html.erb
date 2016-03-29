@@ -51,7 +51,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i> <%= t('.menu.info.self') %> <i class="fa fa-angle-down"></i></a>
             <ul class="dropdown-menu">
-            <% %w[description flippers location hotels faq contact].each do |anchor| %>
+            <% %w[description flippers location hotels contact].each do |anchor| %>
               <li>
               <%= link_to url_for(controller: :static_pages, action: :home, anchor: anchor) do %>
                 <%= t(".menu.info.#{anchor}") %>
