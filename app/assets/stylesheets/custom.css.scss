@@ -47,7 +47,8 @@
     margin-top: 10px;
   }
   .btn-xl {
-    font-size: 2.5em;
+    font-size: 4em;
+    margin-bottom: 20px;
   }
 }
 
@@ -61,7 +62,8 @@
     margin-top: 5px;
   }
   .btn-xl {
-    font-size: 2em;
+    font-size: 3em;
+    margin-bottom: 15px;
   }
 }
 
@@ -122,7 +124,7 @@
     margin-top: 2px;
   }
   .btn-xl {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 }
 
@@ -136,7 +138,7 @@
     margin-top: 2px;
   }
   .btn-xl {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 }
 
@@ -535,12 +537,17 @@
 }
 
 #location-description {
+  padding-top: 15px;
   a {
     color: yellow;
     &:hover {
       text-decoration: underline;
       color: white;
     }
+  }
+  .justify {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
