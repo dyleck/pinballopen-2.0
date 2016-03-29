@@ -6,6 +6,13 @@
     </h3>
   </div>
   <div class="panel-body">
+    <% if local_assigns[:msg] %>
+        <div class="alert alert-danger">
+          <% msg.each do |message| %>
+            <%= "#{message}<br>".html_safe %>
+          <% end %>
+        </div>
+    <% end %>
     <% @team.members.each_with_index do |user, index| %>
       <div class="<%= index == 0 ? "captain" : cycle("light",["light","dark"]) %>">
         <%= user.full_name %>

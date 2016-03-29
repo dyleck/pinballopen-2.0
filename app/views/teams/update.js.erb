@@ -1,1 +1,1 @@
-$('#team').html("<%= j(render @team) %>")
+$('#team').html("<%= j(render(@team, msg: @message)) %>")

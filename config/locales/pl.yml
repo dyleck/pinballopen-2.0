@@ -201,3 +201,4 @@ pl:
       number:             "Numer"
       name:               "Nazwa"
       members:            "Członkowie"
+    user_in_other_team:   "jest w innej drużynie. Wybierz ponownie."

@@ -200,3 +200,4 @@ en:
       number:             "Number"
       name:               "Name"
       members:            "Members"
+    user_in_other_team:   "is in another team. Choose again."

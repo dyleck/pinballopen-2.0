@@ -11,11 +11,19 @@ class TeamsController < ApplicationController
 
   def create
     current_user.update_attribute :team, nil
-    @team = Team.new(team_params)
-    if @team.save
+    if User.where(id: params[:team][:users]).map(&:team).compact.length != params[:team][:users].map{|u| u == "" ? nil : u}.compact.length
+      # Users taken
+      flash.now[:danger] = "Users are taken" #TODO t
       respond_to do |format|
-        format.html { redirect_to @team }
         format.js
+      end
+    else
+      @team = Team.new(team_params)
+      if @team.save
+        respond_to do |format|
+          format.html { redirect_to @team }
+          format.js
+        end
       end
     end
   end
@@ -28,13 +36,20 @@ class TeamsController < ApplicationController
   end
 
   def update
-    if @team.update_attributes(team_params)
+    if users_already_assigned?
+      # Users taken
       respond_to do |format|
         format.js
-        format.html { redirect_to @team }
       end
     else
-      @team.errors
+      if @team.update_attributes(team_params)
+        respond_to do |format|
+          format.js
+          format.html { redirect_to @team }
+        end
+      else
+        @team.errors #TODO errors handling
+      end
     end
   end
 
@@ -54,5 +69,20 @@ class TeamsController < ApplicationController
       p = params.require(:team).permit(:name, :captain_id, :users => [])
       p[:users].map!{|user| User.find_by(id: user)}.compact!
       p
+    end
+
+    def users_already_assigned?
+      @message = []
+      User.where(id: params[:team][:users]).compact.each do |user|
+        next if user.team.nil?
+        if user.team.id.to_s != params[:id]
+          @message << "#{user.full_name} #{t("teams.user_in_other_team")}"
+        end
+      end
+      if @message.empty?
+        @message = nil
+      else
+        @message
+      end
     end
 end
