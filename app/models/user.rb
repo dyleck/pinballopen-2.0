@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
             uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
-  before_save { self.email.downcase! }
+  before_save :email_downcase, :name_capitalize
   before_create :create_activation_digest
 
   has_secure_password
@@ -98,4 +98,14 @@ class User < ActiveRecord::Base
   def main_payed?
     self.orders.joins(:products).where("products.name": "main", "orders.payment_confirmed": true).length > 0
   end
+
+  private
+    def email_downcase
+      self.email.downcase!
+    end
+
+    def name_capitalize
+      self.first_name.capitalize!
+      self.last_name.capitalize!
+    end
 end
