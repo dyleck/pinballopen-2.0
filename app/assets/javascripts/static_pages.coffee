@@ -12,7 +12,10 @@ fit_viewport = (item) ->
   header_height = $('header').outerHeight(true) - 1;
   new_height = ($(window).height() - header_height);
   if ($(document).width() >= 768)
-    new_height /= 2;
+    if new_height > 800
+      new_height = (new_height / 2) + 150;
+    else
+      new_height = 450
   item.height( new_height );
 
 clickHandler = () ->
