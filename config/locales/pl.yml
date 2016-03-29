@@ -60,7 +60,7 @@ pl:
         place:    "Łódź"
         register: "Rejestracja"
       description:
-        header:     "Opis imprezy"
+        header:     "Turnieje"
       location:
         header:     "Lokalizacja"
       hotels:

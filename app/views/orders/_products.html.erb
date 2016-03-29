@@ -13,6 +13,9 @@
               <%= product.name %>
             </div>
             <div class="col-xs-12 description corner-rd border">
+              <% if product.name == 't-shirt' %>
+                  <%= image_tag asset_path('t-shirt.jpg'), width: "100%", id: "t-shirt" %>
+              <% end %>
               <%= t(".#{product.name}_html") %>
               <div class="overline text-right as-table">
                 <% if product.name == 't-shirt' %>

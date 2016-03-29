@@ -383,6 +383,11 @@
 #products {
   $crnr: 10px;
 
+  #t-shirt {
+    float: left;
+    max-width: 450px;
+    margin-right: 5px;
+  }
   .underline {
     border-bottom: 1px solid gray;
     margin-bottom: 0px !important;
