@@ -26,6 +26,9 @@
                     <% if !@user.activated %>
                         <tr>
                           <td colspan="2">
+                            <div>
+                              <%= t(".activation_not_received") %>
+                            </div>
                             <%= button_to t(".activation.send"), account_activation_path, method: :patch %>
                           </td>
                         </tr>

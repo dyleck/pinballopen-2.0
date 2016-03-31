@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if !@user.activated? && flash.empty?
-      flash[:warning] = t(".account.not_activated")
+      flash.now[:warning] = t(".account.not_activated")
     end
   end
 

@@ -112,6 +112,10 @@ en:
                             registered. If you don't see someone of your friends please try to add them later.
                             </span>
       create_team:        "Create team"
+      activation_not_received:  >
+                                  If you haven't received activation mail please check your spam folder first. If after
+                                  30 minutes the mail still haven't arrived, then click button below to send another one
+                                  (previous activation link will not work anymore).
     update:
       no_permissions:     "You don't have permissions to updated that field"
       updated:            "Data updated"

@@ -17,7 +17,7 @@ class AccountActivationsController < ApplicationController
       user.create_activation_digest
       if user.save
         UserMailer.account_activation(user).deliver_now
-        flash[:warning] = t(".link.sent")
+        flash[:warning] = t("account_activations.edit.link.sent")
         redirect_to user
       end
     end

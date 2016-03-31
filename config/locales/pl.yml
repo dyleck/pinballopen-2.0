@@ -113,6 +113,10 @@ pl:
                             potwierdzona. Jeśli nie widzisz kogoś ze swoich znajomych, spróbuj dodać go później.
                             </span>
       create_team:        "Utwórz drużynę"
+      activation_not_received:  >
+                                  Jeśli nie otrzymałeś maila aktywacyjnego, w pierwszej kolejności sprawdź swój folder
+                                  ze Spamem. Jeśli po upływie 30 minut mail dalej nie doszedł, wygeneruj go ponownie
+                                  klikając w poniższy przycisk (poprzedni link aktywacyjny przestanie wówczas działać).
     update:
       no_permissions:     "Nie masz uprawnień do edycji tego pola"
       updated:            "Dane zaktualizowane"
