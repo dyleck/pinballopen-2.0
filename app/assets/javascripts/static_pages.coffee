@@ -55,9 +55,7 @@ $(document).on 'ready page:change', ->
   alignDescRows($('#flippers .flipper-name'));
   $('#flippers').imagesLoaded () ->
     alignDescRows($('#flippers .translite'))
-  $('.polyglot-language-switcher').polyglotLanguageSwitcher({
-    openMode: "click"
-  })
+
   fit_viewport( $('#main-slider .carousel .item') );
   $('.map-frame').on("click", clickHandler);
 
@@ -84,4 +82,3 @@ $(document).on 'ready page:change', ->
       e.preventDefault()
       body.animate({ scrollTop: $( href.substr(index) ).offset().top - 50 }, 500, ->
         window.location.hash = href.substr(index+1))
-

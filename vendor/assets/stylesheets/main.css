@@ -337,7 +337,7 @@ body > section {
   display: inline-block;
 }
 #main-slider .carousel .item {
-  background-position: 50%;
+  /*background-position: 50%;*/
   background-repeat: no-repeat;
   background-size: cover;
   left: 0 !important;

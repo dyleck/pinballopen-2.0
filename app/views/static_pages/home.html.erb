@@ -1,15 +1,15 @@
 <% provide(:title, "Home") %>
 <% render 'static_pages/home_content' %>
 
-<section id="main-slider" class="no-margin" data-ride="carousel">
-  <div class="carousel slide wet-asphalt auto">
+<section class="no-margin" id="main-slider">
+  <div class="carousel wet-asphalt" id="main-slider-content" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-      <li data-target="#main-slider" data-slide-to="1"></li>
-      <li data-target="#main-slider" data-slide-to="2"></li>
+      <li data-target="#main-slider-content" data-slide-to="0" class="active"></li>
+      <li data-target="#main-slider-content" data-slide-to="1"></li>
+      <li data-target="#main-slider-content" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="item active" style="background-image: url(<%= asset_path('slider/scared.jpg') %>)">
+      <div class="item active" style="background-image: url(<%= asset_path('slider/grzyby-klasyk.jpg') %>)">
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
@@ -38,8 +38,9 @@
           </div>
         </div>
       </div><!--/.item-->
+
+      <div class="item" style="background-image: url(<%= asset_path("ppo2015/sala-wide.jpg") %>); ">
 <!--
-      <div class="item" style="background-image: url(assets/slider/grzyby-klasyk.jpg); ">
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
@@ -52,9 +53,11 @@
             </div>
           </div>
         </div>
-      </div>&lt;!&ndash;/.item&ndash;&gt;
 -->
-<!--      <div class="item" style="background-image: url(assets/slider/obraski.jpg)">
+      </div><!--/.item-->
+
+      <div class="item" style="background-image: url(assets/slider/obraski.jpg)">
+<!--
         <div class="container">
           <div class="row">
             <div class="col-sm-6">
@@ -64,6 +67,7 @@
                 <a class="btn btn-md animation animated-item-3" href="#">Learn More</a>
               </div>
             </div>
+
             <div class="col-sm-6 hidden-xs animation animated-item-4">
               <div class="centered">
                 <div class="embed-container">
@@ -71,15 +75,17 @@
                 </div>
               </div>
             </div>
+
           </div>
         </div>
-      </div>&lt;!&ndash;/.item&ndash;&gt;-->
+-->
+      </div><!--/.item-->
     </div><!--/.carousel-inner -->
   </div><!--/.carousel-->
-  <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+  <a class="prev hidden-xs" href="#main-slider-content" data-slide="prev">
     <i class="fa fa-angle-left fa-2x"></i>
   </a>
-  <a class="next hidden-xs" href="#main-slider" data-slide="next">
+  <a class="next hidden-xs" href="#main-slider-content" data-slide="next">
     <i class="fa fa-angle-right fa-2x"></i>
   </a>
 </section><!--/#main-slider-->

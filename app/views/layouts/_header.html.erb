@@ -3,10 +3,21 @@
   <div class="container" id="lang-switcher">
     <div class="row">
       <div class="col-xs-12">
-        <div class="polyglot-language-switcher pull-left" <%= "data-selected-lang=#{I18n.locale}"%>>
+        <div class="pull-left">
+          <span>
+            <%= link_to url_for(params.merge({locale: :pl})) do %>
+                <%= image_tag asset_path("flags/pl.png"), alt: "Polski" %> Polski
+            <% end %>
+          </span>
+          <span>
+            <%= link_to url_for(params.merge({locale: :en})) do %>
+                <%= image_tag asset_path("flags/gb.png"), alt: "English" %> English
+            <% end %>
+          </span>
+<!--
           <ul style="display: none">
             <li>
-              <%= link_to url_for(params.merge({ locale: :en })), data: {:lang_id => "en"} do %>
+              <%= link_to url_for(params.merge({locale: :en})) do %>
                   <%= image_tag "flags/gb.png", alt: "English" %> English
               <% end %>
             </li>
@@ -16,6 +27,8 @@
               <% end %>
             </li>
           </ul>
+-->
+
         </div>
       </div>
     </div>
@@ -49,7 +62,7 @@
             <% end %>
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i> <%= t('.menu.info.self') %> <i class="fa fa-angle-down"></i></a>
+            <a href="http://www.onet.pl" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i> <%= t('.menu.info.self') %> <i class="fa fa-angle-down"></i></a>
             <ul class="dropdown-menu">
             <% %w[description flippers location hotels contact].each do |anchor| %>
               <li>
@@ -66,6 +79,11 @@
                 <%= link_to t("teams.index.header"), teams_path %>
               </li>
             </ul>
+          </li>
+          <li>
+            <%= link_to photos_path do %>
+              <i class="fa fa-camera"></i> Galeria
+            <% end %>
           </li>
           <% if logged_in? %>
           <li class="dropdown">

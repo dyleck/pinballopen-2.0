@@ -30,4 +30,8 @@ class StaticPagesController < ApplicationController
     @order = Order.find_by(id: params[:id])
   end
 
+  def photos
+
+  end
+
 end

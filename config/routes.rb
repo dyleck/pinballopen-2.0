@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     get 'tournament_team' => 'static_pages#tournament_team'
     get 'tournament_kids' => 'static_pages#tournament_kids'
     get 'bank_transfer/:id' => 'static_pages#bank_transfer', :as => :bank_transfer
+    get 'photos' => 'static_pages#photos'
     get 'signup'    => 'users#new'
     post 'login' => 'sessions#create'
     delete 'logout' => 'sessions#destroy'
