@@ -32,6 +32,15 @@ module SessionsHelper
     end
   end
 
+  def redirect_to_root_if_not_current_user(param = nil)
+    if current_user.id.to_s == params[:id] ||
+        ( !param.nil? && current_user.respond_to?(param) && current_user.send(param) )
+      return true
+    else
+      redirect_to root_path
+    end
+  end
+
   def redirect_to_root_if_not_admin
     if !logged_in? || !current_user.admin?
       redirect_to root_path

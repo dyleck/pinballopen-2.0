@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :redirect_to_login_if_not_logged_in, only: [:update]
+  before_action :redirect_to_login_if_not_logged_in, only: [:update, :show]
+  before_action only: [:update] { redirect_to_root_if_not_current_user(:admin) }
+  before_action :redirect_to_root_if_not_current_user, only: [:show]
 
   def new
     @user = User.new
