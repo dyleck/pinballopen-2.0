@@ -58,7 +58,7 @@ pl:
       slide1:
         date:     "04-05 Czerwca 2016"
         place:    "Łódź"
-        register: "Rejestracja"
+        register: "Zarejestruj się"
       expand:   "Kliknij by rozwinąć"
       collapse: "Kliknij by zwinąć"
       description:

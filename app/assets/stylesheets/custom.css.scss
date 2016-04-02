@@ -162,12 +162,14 @@
 }
 
 .carousel-content .btn {
-  @include red_glow;
 }
 
 #main-slider .carousel .btn {
   border: solid 5px red;
   background: rgba(0,0,0, 0.8);
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
 }
 
 #main-slider .carousel .btn:hover {
@@ -729,4 +731,32 @@ header {
 
 #flippers-grid {
   display: none;
+}
+
+#slide-1 {
+  .container {
+    position: relative;
+  }
+  #logo-ppo {
+    height: 100%;
+    padding-bottom: 100px;
+    position: absolute;
+    left: -100px;
+  }
+  .btn-xl {
+    @include red_glow;
+    border-radius: 15px;
+  }
+  .pinball-orgs {
+    position: absolute;
+    bottom: 100px;
+    right: 0px;
+    z-index: 1;
+  }
+  .register {
+    position: absolute;
+    right: 25%;
+    top: 40%;
+    z-index: 1;
+  }
 }

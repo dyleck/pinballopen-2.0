@@ -9,17 +9,40 @@
       <li data-target="#main-slider-content" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="item active" style="background-image: url(<%= asset_path('slider/grzyby-klasyk.jpg') %>)">
+      <div class="item active" id="slide-1" style="background-image: url(<%= asset_path("slider/fire-playfield.jpg") %>);">
+        <div class="container" style="height:100%;">
+          <img id="logo-ppo" src="<%= asset_path("ppo-logo.png") %>"/>
+          <div>
+            <h1 class="animation animated-item-1 slider-huge text-right"><%= t(".slide1.date") %></h1>
+            <h1 class="animation animated-item-2 slider-huge text-right"><%= t(".slide1.place") %></h1>
+            <div class="register">
+              <%= link_to signup_url, class: "btn btn-xl animation animated-item-3" do %>
+                  <%= t(".slide1.register") %>
+              <% end %>
+            </div>
+          </div>
+          <div class="pinball-orgs">
+            <img src="<%= asset_path('sff-small.png') %>" class="org-logo">
+            <img src="<%= asset_path('ecs-small.png') %>" class="org-logo">
+          </div>
+        </div>
+
+<!--
+    <div class="carousel-inner">
+      <div class="item active" style="background-image: url(<%= asset_path('slider/fire-playfield.jpg') %>)">
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
-              <div class="carousel-content top-aligned-row pull-right">
+              <div class="top-aligned-row pull-right">
                 <h1 class="animation animated-item-1 slider-huge text-right"><%= t(".slide1.date") %></h1>
                 <h1 class="animation animated-item-2 slider-huge text-right"><%= t(".slide1.place") %></h1>
               </div>
-              <div class="carousel-content top-alligned-row pull-left">
-                <img src="<%= asset_path('sff-small.png') %>" class="org-logo"><br>
-                <img src="<%= asset_path('ecs-small.png') %>" class="org-logo">
+&lt;!&ndash;
+              <div class="top-alligned-row pull-left">
+              </div>
+&ndash;&gt;
+              <div class="pull-left">
+                <img src="<%= asset_path("ppo-logo.png") %>"/>
               </div>
             </div>
           </div>
@@ -37,7 +60,8 @@
             </div>
           </div>
         </div>
-      </div><!--/.item-->
+      </div>&lt;!&ndash;/.item&ndash;&gt;
+-->
 
       <div class="item" style="background-image: url(<%= asset_path("ppo2015/sala-wide.jpg") %>); ">
 <!--
@@ -81,6 +105,7 @@
 -->
       </div><!--/.item-->
     </div><!--/.carousel-inner -->
+
   </div><!--/.carousel-->
   <a class="prev hidden-xs" href="#main-slider-content" data-slide="prev">
     <i class="fa fa-angle-left fa-2x"></i>
