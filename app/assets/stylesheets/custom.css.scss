@@ -46,7 +46,7 @@
     margin-top: 10px;
   }
   .btn-xl {
-    font-size: 4em;
+    font-size: 3em;
     margin-bottom: 20px;
   }
 }
@@ -61,7 +61,7 @@
     margin-top: 5px;
   }
   .btn-xl {
-    font-size: 3em;
+    font-size: 2.5em;
     margin-bottom: 15px;
   }
 }
@@ -110,34 +110,6 @@
   }
   .dropdown-toggle {
     transition: none;
-  }
-}
-
-@media screen and (min-width: 321px) and (max-width: 767px) {
-  .slider-huge {
-    font-size: 25px;
-  }
-  .org-logo {
-    width: 50px;
-    height: 50px;
-    margin-top: 2px;
-  }
-  .btn-xl {
-    font-size: 2em;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .slider-huge {
-    font-size: 20px;
-  }
-  .org-logo {
-    width: 50px;
-    height: 50px;
-    margin-top: 2px;
-  }
-  .btn-xl {
-    font-size: 2em;
   }
 }
 
@@ -733,30 +705,175 @@ header {
   display: none;
 }
 
+
+/* ----- */
+@media screen and (min-width: 321px) and (max-width: 767px) {
+  .slider-huge {
+    font-size: 25px;
+  }
+  .org-logo {
+    width: 50px;
+    height: 50px;
+    margin-top: 2px;
+  }
+  .btn-xl {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .slider-huge {
+    font-size: 20px;
+  }
+  .org-logo {
+    width: 50px;
+    height: 50px;
+    margin-top: 2px;
+  }
+  .btn-xl {
+    font-size: 2em;
+  }
+}
+
+/* ---- */
+
 #slide-1 {
   .container {
     position: relative;
   }
-  #logo-ppo {
-    height: 100%;
-    padding-bottom: 100px;
-    position: absolute;
-    left: -100px;
+  @media screen and (min-width: 1400px) {
+    $bottom-spacing: 100px;
+    #logo-ppo {
+      height: 100%;
+      padding-bottom: $bottom-spacing;
+      position: absolute;
+      left: -100px;
+    }
+    .btn-xl {
+      @include red_glow;
+      border-radius: 15px;
+    }
+    .pinball-orgs {
+      position: absolute;
+      bottom: $bottom-spacing;
+      right: 0px;
+      z-index: 1;
+    }
+    .register {
+      position: absolute;
+      right: 25%;
+      top: 40%;
+      z-index: 1;
+    }
   }
-  .btn-xl {
-    @include red_glow;
-    border-radius: 15px;
+
+  @media screen and (min-width: 1200px) and (max-width: 1399px) {
+    $bottom-spacing: 50px;
+    #logo-ppo {
+      height: 100%;
+      padding-bottom: $bottom-spacing;
+      position: absolute;
+      left: 0px;
+    }
+    .btn-xl {
+      @include red_glow;
+      border-radius: 15px;
+    }
+    .pinball-orgs {
+      position: absolute;
+      bottom: $bottom-spacing;
+      right: 0px;
+      z-index: 1;
+    }
+    .register {
+      position: absolute;
+      right: 25%;
+      top: 40%;
+      z-index: 1;
+    }
   }
-  .pinball-orgs {
-    position: absolute;
-    bottom: 100px;
-    right: 0px;
-    z-index: 1;
+
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    $bottom-spacing: 50px;
+    #logo-ppo {
+      height: 100%;
+      padding-bottom: $bottom-spacing;
+      padding-top: 50px;
+      position: absolute;
+      left: 0px;
+    }
+    .btn-xl {
+      @include red_glow;
+      border-radius: 15px;
+    }
+    .pinball-orgs {
+      position: absolute;
+      bottom: $bottom-spacing;
+      right: 0px;
+      z-index: 1;
+    }
+    .register {
+      position: absolute;
+      right: 15%;
+      top: 40%;
+      z-index: 1;
+    }
   }
-  .register {
-    position: absolute;
-    right: 25%;
-    top: 40%;
-    z-index: 1;
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    $bottom-spacing: 50px;
+    #logo-ppo {
+      height: 75%;
+      padding-bottom: $bottom-spacing;
+      padding-top: 50px;
+      position: absolute;
+      left: 0px;
+    }
+    .btn-xl {
+      @include red_glow;
+      border-radius: 15px;
+    }
+    .pinball-orgs {
+      position: absolute;
+      bottom: $bottom-spacing;
+      right: 0px;
+      z-index: 1;
+    }
+    .register {
+      position: absolute;
+      right: 10%;
+      top: 40%;
+      z-index: 1;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    $bottom-spacing: 20px;
+    #logo-ppo {
+      width: 100%;
+      padding-bottom: $bottom-spacing;
+      padding-top: 50px;
+      position: absolute;
+      left: 0px;
+    }
+    .btn-xl {
+      @include red_glow;
+      border-radius: 15px;
+    }
+    .pinball-orgs {
+      position: absolute;
+      bottom: $bottom-spacing;
+      right: 0px;
+      z-index: 1;
+    }
+    .register {
+      position: absolute;
+      bottom: 80px;
+      z-index: 1;
+      left: 50%;
+      .btn {
+        position: relative;
+        left: -50%;
+      }
+    }
   }
 }
