@@ -15,11 +15,6 @@
           <div>
             <h1 class="animation animated-item-1 slider-huge text-right"><%= t(".slide1.date") %></h1>
             <h1 class="animation animated-item-2 slider-huge text-right"><%= t(".slide1.place") %></h1>
-            <div class="register">
-              <%= link_to signup_url, class: "btn btn-xl animation animated-item-3" do %>
-                  <%= t(".slide1.register") %>
-              <% end %>
-            </div>
           </div>
           <div class="pinball-orgs">
             <img src="<%= asset_path('sff-small.png') %>" class="org-logo">
@@ -58,6 +53,13 @@
   <a class="next hidden-xs" href="#main-slider-content" data-slide="next">
     <i class="fa fa-angle-right fa-2x"></i>
   </a>
+  <div class="container" id="btn-register">
+    <div class="col-xs-12 text-center">
+      <%= link_to signup_url, class: "slider-huge btn btn-xl animation animated-item-3" do %>
+          <%= t(".slide1.register") %>
+      <% end %>
+    </div>
+  </div>
 </section><!--/#main-slider-->
 
 <section id="description" class="emerald">

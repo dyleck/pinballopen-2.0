@@ -672,24 +672,6 @@ header {
   display: none;
 }
 
-.btn-xl {
-  @media screen and (min-width: 1400px) {
-    font-size: 4em;
-  }
-  @media screen and (min-width: 1200px) and (max-width: 1399px) {
-    font-size: 3em;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    font-size: 2.5em;
-  }
-  @media screen and (min-width: 481px) and (max-width: 767px) {
-    font-size: 1.5em;
-  }
-  @media screen and (max-width: 480px) {
-    font-size: 1em;
-  }
-}
-
 .org-logo {
   @media screen and (min-width: 1200px) {
     width: 100px;
@@ -717,19 +699,19 @@ header {
   @include red_glow;
 
   @media screen and (min-width: 1400px) {
-    font-size: 4em;
+    font-size: 2.5em;
   }
   @media screen and (min-width: 1200px) and (max-width: 1399px) {
-    font-size: 3em;
+    font-size: 2.5em;
   }
   @media screen and (min-width: 768px) and (max-width: 1199px) {
-    font-size: 2.5em;
+    font-size: 2em;
   }
   @media screen and (min-width: 480px) and (max-width: 767px) {
     font-size: 1.5em;
   }
   @media screen and (max-width: 479px) {
-    font-size: 1em;
+    font-size: 1.5em;
   }
 }
 
@@ -746,20 +728,10 @@ header {
       position: absolute;
       left: -100px;
     }
-    .btn-xl {
-      @include red_glow;
-      border-radius: 15px;
-    }
     .pinball-orgs {
       position: absolute;
       bottom: $bottom-spacing;
       right: 0px;
-      z-index: 1;
-    }
-    .register {
-      position: absolute;
-      right: 25%;
-      top: 40%;
       z-index: 1;
     }
   }
@@ -773,20 +745,10 @@ header {
       position: absolute;
       left: 0px;
     }
-    .btn-xl {
-      @include red_glow;
-      border-radius: 15px;
-    }
     .pinball-orgs {
       position: absolute;
       bottom: $bottom-spacing;
       right: 0px;
-      z-index: 1;
-    }
-    .register {
-      position: absolute;
-      right: 25%;
-      top: 40%;
       z-index: 1;
     }
   }
@@ -801,20 +763,10 @@ header {
       position: absolute;
       left: 0px;
     }
-    .btn-xl {
-      @include red_glow;
-      border-radius: 15px;
-    }
     .pinball-orgs {
       position: absolute;
       bottom: $bottom-spacing;
       right: 0px;
-      z-index: 1;
-    }
-    .register {
-      position: absolute;
-      right: 15%;
-      top: 40%;
       z-index: 1;
     }
   }
@@ -829,20 +781,10 @@ header {
       position: absolute;
       left: 0px;
     }
-    .btn-xl {
-      @include red_glow;
-      border-radius: 15px;
-    }
     .pinball-orgs {
       position: absolute;
       bottom: $bottom-spacing;
       right: 0px;
-      z-index: 1;
-    }
-    .register {
-      position: absolute;
-      right: 10%;
-      top: 40%;
       z-index: 1;
     }
   }
@@ -856,25 +798,11 @@ header {
       position: absolute;
       left: 0px;
     }
-    .btn-xl {
-      @include red_glow;
-      border-radius: 15px;
-    }
     .pinball-orgs {
       position: absolute;
       bottom: $bottom-spacing;
       right: 0px;
       z-index: 1;
-    }
-    .register {
-      position: absolute;
-      bottom: 50px;
-      z-index: 1;
-      left: 50%;
-      .btn {
-        position: relative;
-        left: -50%;
-      }
     }
   }
 
@@ -882,31 +810,18 @@ header {
     background-image: image-url("slider/fire-playfield.jpg");
     $bottom-spacing: 20px;
     #logo-ppo {
-      width: 100%;
+      width: 80%;
+      margin-left: 10%;
+      margin-top: 15%;
       padding-bottom: $bottom-spacing;
-      padding-top: 0px;
       position: absolute;
       left: 0px;
-    }
-    .btn-xl {
-      @include red_glow;
-      border-radius: 15px;
     }
     .pinball-orgs {
       position: absolute;
       bottom: $bottom-spacing;
       right: 0px;
       z-index: 1;
-    }
-    .register {
-      position: absolute;
-      bottom: 50px;
-      z-index: 1;
-      left: 50%;
-      .btn {
-        position: relative;
-        left: -50%;
-      }
     }
   }
 }
@@ -922,33 +837,6 @@ header {
   @media screen and (max-width: 767px) {
     background-image: image-url("photos/9.jpg");
   }
-  /*
-  @media screen and (min-width: 1400px) {
-    .animated-item-1 {
-      position: absolute;
-      bottom: 3.5em;
-      right: 50px;
-    }
-    .animated-item-3 {
-      position: absolute;
-      bottom: 1.5em;
-      right: 50px;
-    }
-  }
-  @media screen and (min-width: 1200px) and (max-width: 1399px) {
-    .animated-item-1 {
-      position: absolute;
-      bottom: 3.5em;
-      right: 50px;
-    }
-    .animated-item-3 {
-      position: absolute;
-      bottom: 1.5em;
-      right: 50px;
-    }
-  }
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-  */
   @media screen and (min-width: 768px) {
     .animated-item-1 {
       position: absolute;
@@ -1060,5 +948,27 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
+  }
+}
+
+#main-slider {
+  background-color: black;
+  #btn-register {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: black;
+    .btn {
+      border: solid 5px red;
+      background: rgba(0,0,0, 0.8);
+      border-radius: 15px;
+      -moz-border-radius: 15px;
+      -webkit-border-radius: 15px;
+    }
+
+    .btn:hover {
+      background-color: rgba(0,0,0, 1);
+      @include yellow_glow;
+      border-color: yellow;
+    }
   }
 }

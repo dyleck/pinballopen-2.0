@@ -9,7 +9,7 @@ fit_viewport = (item) ->
 #  else
 #    new_height = 600;
 #  item.height( new_height );
-  header_height = $('header').outerHeight(true) - 1;
+  header_height = $('header').outerHeight(true) + $('#btn-register').outerHeight(true) - 1;
   new_height = ($(window).height() - header_height);
   if ($(document).width() >= 768)
     if new_height > 800
@@ -59,6 +59,7 @@ $(document).on 'page:change', ->
     $('#flippers-grid').slideToggle(500, ->
       $('#flippers .translite').imagesLoaded () ->
         alignDescRows($('#flippers .translite'));
+        alignDescRows($('#flippers .flipper-name'));
     );
   )
   $('#flippers-footer a').on("click", (e) ->
