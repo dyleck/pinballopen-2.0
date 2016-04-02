@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery-ui/effect-shake
+//= require jquery.xgallerify.min
 //= require bootstrap
 //= require jquery_ujs
 //= require turbolinks
