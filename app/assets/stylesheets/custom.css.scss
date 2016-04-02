@@ -716,6 +716,7 @@ header {
 }
 
 #slide-1 {
+  font-size: 1.5em;
   .container {
     position: relative;
   }
@@ -827,6 +828,7 @@ header {
 }
 
 #slide-2 {
+  font-size: 1.5em;
   position: relative;
   .container-fluid {
     height: 100%;
@@ -862,6 +864,7 @@ header {
     }
   }
   @media screen and (max-width: 479px) {
+    font-size: 0.8em;
     .animated-item-1 {
       position: absolute;
       top: 1em;
@@ -884,6 +887,7 @@ header {
 }
 
 #slide-3 {
+  font-size: 1.6em;
   position: relative;
   .container {
     height: 100%;
@@ -915,6 +919,7 @@ header {
     }
   }
   @media screen and (max-width: 479px) {
+    font-size: 1.0em;
     .animated-item-1 {
       position: absolute;
       left: 50%;
