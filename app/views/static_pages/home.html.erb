@@ -2,14 +2,14 @@
 <% render 'static_pages/home_content' %>
 
 <section class="no-margin" id="main-slider">
-  <div class="carousel wet-asphalt" id="main-slider-content" data-ride="carousel">
+  <div class="carousel wet-asphalt" id="main-slider-content">
     <ol class="carousel-indicators">
       <li data-target="#main-slider-content" data-slide-to="0" class="active"></li>
       <li data-target="#main-slider-content" data-slide-to="1"></li>
       <li data-target="#main-slider-content" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="item active" id="slide-1" style="background-image: url(<%= asset_path("slider/fire-playfield.jpg") %>);">
+      <div class="item active" id="slide-1">
         <div class="container" style="height:100%;">
           <img id="logo-ppo" src="<%= asset_path("ppo-logo.png") %>"/>
           <div>
@@ -28,82 +28,26 @@
         </div>
       </div>
 
-<!--
-    <div class="carousel-inner">
-      <div class="item active" style="background-image: url(<%= asset_path('slider/fire-playfield.jpg') %>)">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="top-aligned-row pull-right">
-                <h1 class="animation animated-item-1 slider-huge text-right"><%= t(".slide1.date") %></h1>
-                <h1 class="animation animated-item-2 slider-huge text-right"><%= t(".slide1.place") %></h1>
-              </div>
-&lt;!&ndash;
-              <div class="top-alligned-row pull-left">
-              </div>
-&ndash;&gt;
-              <div class="pull-left">
-                <img src="<%= asset_path("ppo-logo.png") %>"/>
-              </div>
-            </div>
+      <div class="item" id="slide-2">
+        <div class="container-fluid">
+          <div class="animation animated-item-1 slider-huge">
+            <span>Największa impreza<br>flipperowa w Polsce</span>
+          </div>
+          <div class="animation animated-item-3 slider-huge">
+            <span>3 Główne Turnieje</span>
           </div>
         </div>
-        <div class="container carousel-bottom">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="carousel-content">
-                <div class="text-center">
-                  <%= link_to signup_url, class: "btn btn-xl animation animated-item-3" do %>
-                    <%= t(".slide1.register") %>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>&lt;!&ndash;/.item&ndash;&gt;
--->
-
-      <div class="item" style="background-image: url(<%= asset_path("ppo2015/sala-wide.jpg") %>); ">
-<!--
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="carousel-content center centered">
-                <h2 class="boxed animation animated-item-1">Clean, Crisp, Powerful and Responsive Web Design</h2>
-                <p class="boxed animation animated-item-2">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                <br>
-                <a class="btn btn-md animation animated-item-3" href="#">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
--->
       </div><!--/.item-->
 
-      <div class="item" style="background-image: url(assets/slider/obraski.jpg)">
-<!--
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="carousel-content centered">
-                <h2 class="animation animated-item-1">Powerful and Responsive Web Design Theme</h2>
-                <p class="animation animated-item-2">Pellentesque habitant morbi tristique senectus et netus et malesuada fames</p>
-                <a class="btn btn-md animation animated-item-3" href="#">Learn More</a>
-              </div>
-            </div>
-
-            <div class="col-sm-6 hidden-xs animation animated-item-4">
-              <div class="centered">
-                <div class="embed-container">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/9wUu4KeYjzU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                </div>
-              </div>
-            </div>
-
+      <div class="item" id="slide-3">
+        <div class="container-fluid">
+          <div class="animation animated-item-1 slider-huge">
+            <span>Ponad 70 maszyn</span>
+          </div>
+          <div class="animation animated-item-3 slider-huge">
+            <span>Strefa Free Play</span>
           </div>
         </div>
--->
       </div><!--/.item-->
     </div><!--/.carousel-inner -->
 
