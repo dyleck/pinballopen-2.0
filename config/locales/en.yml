@@ -59,6 +59,8 @@ en:
         date:     "04-05 of June 2016"
         place:    "Lodz"
         register: "Register"
+      expand:   "Click to expand"
+      collapse: "Click to Collapse"
       description:
         header:     "Tournaments"
       location:

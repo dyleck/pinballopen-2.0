@@ -53,9 +53,9 @@ $(document).on 'page:change', ->
   fit_viewport( $('#main-slider .carousel .item') );
   $('.map-frame').on("click", clickHandler);
 
-  $('#flippers-header a').on("click", (e) ->
+  $('#flippers-header a, #flippers-footer a').on("click", (e) ->
     e.preventDefault();
-    $(this).find("i").toggleClass("fa-angle-down").toggleClass("fa-angle-up");
+    $('#flippers-header a i').toggleClass("fa-angle-down").toggleClass("fa-angle-up");
     $('#flippers-grid').slideToggle(500, ->
       $('#flippers .translite').imagesLoaded () ->
         alignDescRows($('#flippers .translite'));

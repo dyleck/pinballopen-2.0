@@ -59,6 +59,8 @@ pl:
         date:     "04-05 Czerwca 2016"
         place:    "Łódź"
         register: "Rejestracja"
+      expand:   "Kliknij by rozwinąć"
+      collapse: "Kliknij by zwinąć"
       description:
         header:     "Turnieje"
       location:
