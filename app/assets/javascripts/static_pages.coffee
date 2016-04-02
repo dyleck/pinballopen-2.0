@@ -49,12 +49,22 @@ $(window).on 'resize orientationchange', ->
 $(document).on 'click','#main-navbar .navbar-collapse.in, #tournaments-navbar .navbar-collapse.in', (e) ->
   $(this).collapse('hide') if $(e.target).is('a')
 
+$(document).on 'page:change', ->
+  fit_viewport( $('#main-slider .carousel .item') );
+  $('.map-frame').on("click", clickHandler);
+
+  $('#flippers-header a').on("click", (e) ->
+    e.preventDefault();
+    $(this).find("i").toggleClass("fa-angle-down").toggleClass("fa-angle-up");
+    $('#flippers-grid').slideToggle(500, ->
+      $('#flippers .translite').imagesLoaded () ->
+        alignDescRows($('#flippers .translite'));
+    );
+  )
+
 $(document).on 'ready', ->
   alignDescRows($('#description .desc-row-1'));
   alignDescRows($('#description .desc-row-2'));
-
-  fit_viewport( $('#main-slider .carousel .item') );
-  $('.map-frame').on("click", clickHandler);
 
   # affixed nav
   $('#main-navbar').affix({offset: {top: $('#lang-switcher').outerHeight(true)}})
@@ -68,7 +78,6 @@ $(document).on 'ready', ->
     $(this).find('#modal-flash').hide();
 
   # animated scrolling on a.click
-  # TODO Fix the default action when not an page with anchor
   body = $('html, body')
   $('header a, #tournaments-navbar a').click (e) ->
     href = $.attr(this, 'href')
@@ -79,11 +88,3 @@ $(document).on 'ready', ->
       e.preventDefault()
       body.animate({ scrollTop: $( href.substr(index) ).offset().top - 50 }, 500, ->
         window.location.hash = href.substr(index+1))
-  $('#flippers-header a').on("click", (e) ->
-    e.preventDefault();
-    $(this).find("i").toggleClass("fa-angle-down").toggleClass("fa-angle-up");
-    $('#flippers-grid').slideToggle(500, ->
-      $('#flippers .translite').imagesLoaded () ->
-        alignDescRows($('#flippers .translite'));
-    );
-  )
