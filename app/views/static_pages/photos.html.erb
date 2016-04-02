@@ -1,3 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12" id="youtube">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/9wUu4KeYjzU?rel=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
 <div class="container-fluid">
   <div class="row">
     <div id="photos">
@@ -41,4 +48,20 @@
       lastRow:"fullwidth",
     }).css("opacity", "1");
   });
+/*  var $allVideos = $("iframe[src^='//www.youtube.com']"),
+      $fluidEl = $('#making-of')
+  $allVideos.each(function() {
+    $(this).data('aspectRatio', this.height / this.width)
+        .removeAttr("height")
+        .removeAttr("width");
+  });
+
+  $(window).resize(function() {
+    var newWidth = $fluidEl.width();
+    $allVideos.each(function() {
+      var $el = $(this);
+      $el.width(newWidth)
+          .height(newWidth * $el.data('aspectRatio'));
+    });
+  }).resize();*/
 </script>
