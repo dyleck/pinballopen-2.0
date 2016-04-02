@@ -259,11 +259,14 @@
 <section id="flippers" class="flippers-home"> <!-- TODO create class -->
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 text-center">
-        <h1><%= t(".flippers.header") %></h1>
+      <div class="col-xs-12 text-center" id="flippers-header">
+        <a href="#">
+          <h1><%= t(".flippers.header") %> <i class="fa fa-angle-down"></i></h1>
+          <p>Click to show</p>
+        </a>
       </div>
     </div>
-    <div class="row">
+    <div class="row" id="flippers-grid">
       <% Flipper.all.each do |flipper| %>
         <div class="col-xs-6 col-sm-3 col-md-2 translite">
           <%= render flipper, flipper: flipper %>

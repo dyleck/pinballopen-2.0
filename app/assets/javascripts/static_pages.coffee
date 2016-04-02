@@ -49,12 +49,9 @@ $(window).on 'resize orientationchange', ->
 $(document).on 'click','#main-navbar .navbar-collapse.in, #tournaments-navbar .navbar-collapse.in', (e) ->
   $(this).collapse('hide') if $(e.target).is('a')
 
-$(document).on 'ready page:change', ->
+$(document).on 'ready', ->
   alignDescRows($('#description .desc-row-1'));
   alignDescRows($('#description .desc-row-2'));
-  alignDescRows($('#flippers .flipper-name'));
-  $('#flippers').imagesLoaded () ->
-    alignDescRows($('#flippers .translite'))
 
   fit_viewport( $('#main-slider .carousel .item') );
   $('.map-frame').on("click", clickHandler);
@@ -82,3 +79,11 @@ $(document).on 'ready page:change', ->
       e.preventDefault()
       body.animate({ scrollTop: $( href.substr(index) ).offset().top - 50 }, 500, ->
         window.location.hash = href.substr(index+1))
+  $('#flippers-header a').on("click", (e) ->
+    e.preventDefault();
+    $(this).find("i").toggleClass("fa-angle-down").toggleClass("fa-angle-up");
+    $('#flippers-grid').slideToggle(500, ->
+      $('#flippers .translite').imagesLoaded () ->
+        alignDescRows($('#flippers .translite'));
+    );
+  )

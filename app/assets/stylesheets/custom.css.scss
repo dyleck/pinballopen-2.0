@@ -685,6 +685,14 @@
 }
 
 #flippers {
+  #flippers-header {
+    a, a:hover {
+      color: white;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+  }
   &.flippers-home {
     background-color: black;
     color: cornsilk;
@@ -694,7 +702,7 @@
       font-size: 1.2em;
     }
     h1,h2,h3 {
-      margin-bottom: 50px;
+      margin-bottom: 0px;
       margin-top: 0px;
     }
   }
@@ -713,4 +721,12 @@ header {
     }
     */
   }
+}
+
+#photos {
+  opacity: 0;
+}
+
+#flippers-grid {
+  display: none;
 }
