@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  get 'contacts/new'
+
+  get 'contacts/create'
+
   root 'static_pages#home'
 
   get '/:locale' => 'static_pages#home'
   scope '(:locale)' do
+    resources :contacts, only: [:create]
     resources :orders, only: [:new, :update, :create, :destroy]
     resources :order_items, only: [:create, :destroy]
     resources :users

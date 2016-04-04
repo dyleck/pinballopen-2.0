@@ -2,11 +2,7 @@ class UserMailer < ApplicationMailer
 
   SKARBNIK = "marcin.dylewski@dylux.net"
   DEV = "marcin.dylewski@dylux.net"
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.account_activation.subject
-  #
+
   def account_activation(user)
     @user = user
     mail to: user.email, subject: t(".subject")
@@ -44,5 +40,10 @@ class UserMailer < ApplicationMailer
     @user = @order.user
     I18n.locale = @order.locale.to_sym
     mail to: @user.email, subject: t(".subject")
+  end
+
+  def contact(from, subject, message)
+    @message = message
+    mail from: from, to: UserMailer::DEV, subject: subject
   end
 end

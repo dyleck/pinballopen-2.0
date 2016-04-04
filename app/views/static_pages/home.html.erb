@@ -365,6 +365,29 @@
 -->
 
 <section id="contact">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= form_for :contact, url: url_for(contacts_path), method: :post do |f| %>
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :subject %>
+            <%= f.text_field :subject, class: "form-control" %>
+          </div>
+          <div class="form-group text-area">
+            <%= f.label :message %>
+            <%= f.text_area :message, rows: 10 %>
+          </div>
+          <%= f.submit "Wyślij", class: "btn btn-md btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!--
+<section id="contact">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -390,3 +413,4 @@
     </div>
   </div>
 </section>
+-->
