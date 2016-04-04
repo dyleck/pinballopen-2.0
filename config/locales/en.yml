@@ -82,6 +82,7 @@ en:
         prizes:     "Prizes"
       subject:        "Subject"
       message:        "Message"
+      contact:        "Ask a question"
     bank_transfer:
       title:        "Bank account"
   users:

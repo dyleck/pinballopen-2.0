@@ -78,6 +78,7 @@ pl:
         header:     "Lista Flipperów"
       subject:        "Temat"
       message:        "Wiadomość"
+      contact:        "Zadaj pytanie"
     tournament_nav:
       menu:
         rules:      "Zasady"

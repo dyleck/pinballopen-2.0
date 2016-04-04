@@ -366,6 +366,9 @@
 
 <section id="contact">
   <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1><%= t(".contact") %></h1>
+    </div>
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= form_for :contact, url: url_for(contacts_path), method: :post do |f| %>
           <div class="form-group">
