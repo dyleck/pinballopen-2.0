@@ -55,6 +55,7 @@ pl:
       forgot:           "zapomniałem hasło"
   static_pages:
     home:
+      need_to_register: "Żeby móc dokonać płatności musisz się zarejestrować i aktywować konto."
       slide1:
         date:     "04-05 Czerwca 2016"
         place:    "Łódź"

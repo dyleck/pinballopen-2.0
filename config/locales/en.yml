@@ -23,7 +23,7 @@ en:
         home:     'Home'
         info:
           self:   'Info'
-          description:     "Description"
+          description:     "Tournaments"
           flippers:         "List of Pinballs"
           location:    'Location'
           hotels:   'Accomodation'
@@ -55,6 +55,7 @@ en:
       forgot:           "forgot password"
   static_pages:
     home:
+      need_to_register: "In order to make payment you need to register and activate your account"
       slide1:
         date:     "04-05 of June 2016"
         place:    "Lodz"
