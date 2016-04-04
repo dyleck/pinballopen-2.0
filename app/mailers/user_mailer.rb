@@ -19,7 +19,7 @@ class UserMailer < ApplicationMailer
 
   def sff_confirmation_required(user)
     @user = user
-    mail to: "marcin.dylewski@dylux.net", subject: "Potwierdź opłacenie składek użytkownika #{user.full_name}"
+    mail to: [UserMailer::SKARBNIK, UserMailer::DEV], subject: "Potwierdź opłacenie składek użytkownika #{user.full_name}"
   end
 
   def sff_confirmed(user)
