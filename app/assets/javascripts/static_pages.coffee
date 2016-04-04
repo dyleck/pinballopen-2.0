@@ -71,6 +71,12 @@ $(document).on 'page:change', ->
     );
     $('html, body').animate({ scrollTop: $('#flippers').offset().top - 50 }, 500);
   )
+  # affixed nav
+  $('#main-navbar').affix({offset: {top: $('#lang-switcher').outerHeight(true)}})
+  $('#main-navbar').on 'affix.bs.affix', ->
+    $(this).parent().next().css({ marginTop: $(this).outerHeight(true)})
+  $('#main-navbar').on 'affix-top.bs.affix', ->
+    $(this).parent().next().css({ marginTop: 0})
 
 
 $(document).on 'ready', ->
