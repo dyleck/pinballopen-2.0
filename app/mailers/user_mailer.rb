@@ -44,6 +44,6 @@ class UserMailer < ApplicationMailer
 
   def contact(from, subject, message)
     @message = message
-    mail from: from, to: UserMailer::DEV, subject: subject
+    mail reply_to: from, to: UserMailer::DEV, subject: subject
   end
 end
