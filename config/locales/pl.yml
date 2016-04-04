@@ -117,8 +117,8 @@ pl:
       create_team:        "Utwórz drużynę"
       activation_not_received:  >
                                   Jeśli nie otrzymałeś maila aktywacyjnego, w pierwszej kolejności sprawdź swój folder
-                                  ze Spamem. Jeśli po upływie 30 minut mail dalej nie doszedł, wygeneruj go ponownie
-                                  klikając w poniższy przycisk (poprzedni link aktywacyjny przestanie wówczas działać).
+                                  ze Spamem. Po upływie 15 minut, poniżej pojawi się przycisk, którym możesz wygenerować
+                                  maila aktywacyjnego ponownie. Wówczas poprzedni link przestanie działać.
     update:
       no_permissions:     "Nie masz uprawnień do edycji tego pola"
       updated:            "Dane zaktualizowane"

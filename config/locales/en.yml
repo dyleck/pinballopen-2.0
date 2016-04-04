@@ -115,9 +115,10 @@ en:
                             </span>
       create_team:        "Create team"
       activation_not_received:  >
-                                  If you haven't received activation mail please check your spam folder first. If after
-                                  30 minutes the mail still haven't arrived, then click button below to send another one
-                                  (previous activation link will not work anymore).
+                                  If you haven't received activation mail please check your spam folder first. If you
+                                  haven't received mail within 15 minutes you will have an opportunity to generate it
+                                  again using button that will be displayed below. Generating fresh activiation mail
+                                  will make the old cease to work.
     update:
       no_permissions:     "You don't have permissions to updated that field"
       updated:            "Data updated"

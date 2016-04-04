@@ -55,8 +55,14 @@
   </a>
   <div class="container" id="btn-register">
     <div class="col-xs-12 text-center">
-      <%= link_to signup_url, class: "slider-huge btn btn-xl animation animated-item-3" do %>
+      <% if !current_user.nil? && current_user.activated? %>
+        <%= link_to new_order_path, class: "slider-huge btn btn-xl animation animated-item-3" do %>
+          <%= t("layouts.header.menu.user.order") %>
+        <% end %>
+      <% else %>
+        <%= link_to signup_url, class: "slider-huge btn btn-xl animation animated-item-3" do %>
           <%= t(".slide1.register") %>
+        <% end %>
       <% end %>
     </div>
   </div>
