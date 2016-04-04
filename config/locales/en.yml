@@ -80,6 +80,8 @@ en:
         rules:      "Rules"
         flippers:   "Flippers"
         prizes:     "Prizes"
+      subject:        "Subject"
+      message:        "Message"
     bank_transfer:
       title:        "Bank account"
   users:

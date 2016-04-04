@@ -369,15 +369,15 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= form_for :contact, url: url_for(contacts_path), method: :post do |f| %>
           <div class="form-group">
-            <%= f.label :email %>
+            <%= f.label t("layouts.login_modal.email") %>
             <%= f.email_field :email, class: "form-control" %>
           </div>
           <div class="form-group">
-            <%= f.label :subject %>
+            <%= f.label t(".subject") %>
             <%= f.text_field :subject, class: "form-control" %>
           </div>
           <div class="form-group text-area">
-            <%= f.label :message %>
+            <%= f.label t(".message") %>
             <%= f.text_area :message, rows: 10 %>
           </div>
           <%= f.submit "Wyślij", class: "btn btn-md btn-primary" %>

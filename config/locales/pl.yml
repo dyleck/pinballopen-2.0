@@ -76,6 +76,8 @@ pl:
         question4:  "Pytanie numer 4"
       flippers:
         header:     "Lista Flipperów"
+      subject:        "Temat"
+      message:        "Wiadomość"
     tournament_nav:
       menu:
         rules:      "Zasady"
