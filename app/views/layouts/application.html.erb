@@ -26,13 +26,17 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-75943806-1', 'auto');
-    ga('send', 'pageview');
+//    ga('send', 'pageview');
 
   </script>
 </head><!--/head-->
 
 
 <body>
+<script>
+	ga('send', 'pageView');
+</script>
+
 <%= render 'layouts/header' %>
 
 <%= render 'shared/flash' %>

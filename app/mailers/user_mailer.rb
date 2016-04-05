@@ -1,7 +1,7 @@
 class UserMailer < ApplicationMailer
 
-  SKARBNIK = "marcin.dylewski@dylux.net"
-  DEV = "marcin.dylewski@dylux.net"
+  SKARBNIK = "jaroslaw.rupiewicz@flippery.org.pl"
+  DEV = "marcin.dylewski@flippery.org.pl"
 
   def account_activation(user)
     @user = user
