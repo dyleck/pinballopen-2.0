@@ -720,15 +720,16 @@ header {
 }
 
 #slide-1 {
-  font-size: 1.5em;
   .container {
     position: relative;
   }
   @media screen and (min-width: 1400px) {
     background-image: image-url("slider/fire-playfield.jpg");
-    $bottom-spacing: 50px;
+    $bottom-spacing: 20px;
+    $top-spacing: 20px;
     #logo-ppo {
       height: 100%;
+      padding-top: $top-spacing;
       padding-bottom: $bottom-spacing;
       position: absolute;
       left: -100px;
@@ -743,9 +744,11 @@ header {
 
   @media screen and (min-width: 1200px) and (max-width: 1399px) {
     background-image: image-url("slider/fire-playfield.jpg");
-    $bottom-spacing: 50px;
+    $bottom-spacing: 20px;
+    $top-spacing: 20px;
     #logo-ppo {
       height: 100%;
+      padding-top: $top-spacing;
       padding-bottom: $bottom-spacing;
       position: absolute;
       left: 0px;
@@ -760,9 +763,11 @@ header {
 
   @media screen and (min-width: 992px) and (max-width: 1199px) {
     background-image: image-url("slider/fire-playfield.jpg");
-    $bottom-spacing: 50px;
+    $bottom-spacing: 20px;
+    $top-spacing: 20px;
     #logo-ppo {
       height: 100%;
+      padding-top: $top-spacing;
       padding-bottom: $bottom-spacing;
       padding-top: 50px;
       position: absolute;
@@ -778,9 +783,11 @@ header {
 
   @media screen and (min-width: 768px) and (max-width: 991px) {
     background-image: image-url("slider/fire-playfield.jpg");
-    $bottom-spacing: 50px;
+    $bottom-spacing: 20px;
+    $top-spacing: 20px;
     #logo-ppo {
       height: 75%;
+      padding-top: $top-spacing;
       padding-bottom: $bottom-spacing;
       padding-top: 50px;
       position: absolute;
@@ -832,7 +839,7 @@ header {
 }
 
 #slide-2 {
-  font-size: 1.5em;
+  font-size: 1.3em;
   position: relative;
   .container-fluid {
     height: 100%;
@@ -868,7 +875,7 @@ header {
     }
   }
   @media screen and (max-width: 479px) {
-    font-size: 0.8em;
+    font-size: 0.7em;
     .animated-item-1 {
       position: absolute;
       top: 1em;
@@ -891,7 +898,7 @@ header {
 }
 
 #slide-3 {
-  font-size: 1.6em;
+  font-size: 1.5em;
   position: relative;
   .container {
     height: 100%;
@@ -923,7 +930,7 @@ header {
     }
   }
   @media screen and (max-width: 479px) {
-    font-size: 1.0em;
+    font-size: 0.8em;
     .animated-item-1 {
       position: absolute;
       left: 50%;
