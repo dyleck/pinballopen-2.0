@@ -146,6 +146,7 @@ en:
     new:
       order:
         self:             "Cart"
+      payment_management: "Payment managemnt is available on profile page."
     update:
       team_without_main:  "In order to create team you need to pay for main tournament too"
     products:

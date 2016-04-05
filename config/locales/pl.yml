@@ -146,6 +146,7 @@ pl:
     new:
       order:
         self:             "Koszyk"
+      payment_management: "Zarządzanie płatnościami dostępne jest na stronie Twojego profilu."
     update:
       team_without_main:  "Żeby założyć drużynę, musisz również zapłacić za udział w turnieju głównym"
     products:
