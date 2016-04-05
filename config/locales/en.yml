@@ -197,7 +197,7 @@ en:
     password_reset:
       subject:            "PPO 2016 - Password reset"
     bank_transfer_info:
-      subject:            "PPO 2016 - order #"
+      subject:            "PPO 2016 - PPO 2016 entry #"
     payment_confirmed:
       subject:            "PPO 2016 - payment registered"
   teams:

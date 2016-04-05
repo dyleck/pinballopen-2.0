@@ -197,7 +197,7 @@ pl:
     password_reset:
       subject:            "PPO 2016 - Zmiana hasła"
     bank_transfer_info:
-      subject:            "PPO 2016 - Zamównie nr "
+      subject:            "PPO 2016 - Wpisowe PPO 2016 nr "
     payment_confirmed:
       subject:            "PPO 2016 - płatność zarejestrowana"
   teams:
