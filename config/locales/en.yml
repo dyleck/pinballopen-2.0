@@ -213,4 +213,5 @@ en:
       number:             "Number"
       name:               "Name"
       members:            "Members"
+      only_created:       "Team will be listed here when captain create a team from his profile page."
     user_in_other_team:   "is in another team. Choose again."

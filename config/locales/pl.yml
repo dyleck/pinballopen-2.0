@@ -213,4 +213,5 @@ pl:
       number:             "Numer"
       name:               "Nazwa"
       members:            "Członkowie"
+      only_created:       "Drużyna pojawi się kiedy kapitan utworzy ją na swojej stronie profilowej."
     user_in_other_team:   "jest w innej drużynie. Wybierz ponownie."
