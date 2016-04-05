@@ -40,7 +40,7 @@ en:
           self:     'Log In'
         user:
           profile:  'Profile'
-          order:    'Payment'
+          order:    'Payed products'
           logout:   'Log out'
     login_modal:
       header:           "Log in"
