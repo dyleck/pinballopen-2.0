@@ -131,6 +131,7 @@ pl:
       number:             "Numer"
       full_name:          "Imię i nazwisko"
       payment:            "Płatność"
+      order_required:     "Jeśli nie ma Ciebie na liście, to znaczy że nie dokonałeś zakupu udziału w turnieju."
     orders:
       pay_with_paypal:    "Zapłać PayPalem"
       paid:               "zapłacone"

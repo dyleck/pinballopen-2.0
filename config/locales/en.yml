@@ -131,6 +131,7 @@ en:
       number:             "Number"
       full_name:          "Full name"
       payment:            "Payment"
+      order_required:     "If you are not shown here please buy a tournament entry first."
     orders:
       pay_with_paypal:    "Pay with PayPal"
       paid:               "paid"
