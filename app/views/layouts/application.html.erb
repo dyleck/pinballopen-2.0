@@ -33,9 +33,11 @@
 
 
 <body>
+<% if Rails.env.production? %>
 <script>
-//	ga('send', 'pageView');
+	ga('send', 'pageView');
 </script>
+<% end %>
 
 <%= render 'layouts/header' %>
 
