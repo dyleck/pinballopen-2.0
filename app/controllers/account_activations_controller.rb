@@ -6,7 +6,7 @@ class AccountActivationsController < ApplicationController
       user.update_attribute :activated, true
       log_in user
       flash[:success] = t(".account.activated")
-      redirect_to user
+      redirect_to new_order_path
     else
       redirect_to root_url
     end
