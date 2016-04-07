@@ -31,7 +31,8 @@ class StaticPagesController < ApplicationController
   end
 
   def photos
-
   end
 
+  def wait_for_sff
+  end
 end

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     get 'bank_transfer/:id' => 'static_pages#bank_transfer', :as => :bank_transfer
     get 'photos' => 'static_pages#photos'
     get 'signup'    => 'users#new'
+    get 'wait_for_sff' => 'static_pages#wait_for_sff'
     post 'login' => 'sessions#create'
     delete 'logout' => 'sessions#destroy'
   end
