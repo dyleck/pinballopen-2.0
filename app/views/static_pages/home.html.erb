@@ -2,7 +2,7 @@
 <% render 'static_pages/home_content' %>
 
 <section class="no-margin" id="main-slider">
-  <div class="carousel wet-asphalt" id="main-slider-content" data-ride="carousel">
+  <div class="carousel wet-asphalt" id="main-slider-content">
     <ol class="carousel-indicators">
       <li data-target="#main-slider-content" data-slide-to="0" class="active"></li>
       <li data-target="#main-slider-content" data-slide-to="1"></li>
@@ -10,16 +10,35 @@
     </ol>
     <div class="carousel-inner">
       <div class="item active" id="slide-1">
-        <div class="container" style="height:100%;">
+        <div class="container" id="logo-ppo-div" style="height:100%;">
           <img id="logo-ppo" src="<%= asset_path("ppo-logo.png") %>"/>
           <div>
             <h1 class="animation animated-item-1 slider-huge text-right"><%= t(".slide1.date") %></h1>
             <h1 class="animation animated-item-2 slider-huge text-right"><%= t(".slide1.place") %></h1>
           </div>
           <div class="pinball-orgs">
-            <img src="<%= asset_path('sff-small.png') %>" class="org-logo">
-            <img src="<%= asset_path('ecs-small.png') %>" class="org-logo">
+            <div>
+              <a href="http://www.flippery.org.pl"><img id="sff" src="<%= asset_path('sff-small.png') %>" class="org-logo"></a>
+              <a href="http://www.ifpapinball.com/ecs/"><img id="ifpa" src="<%= asset_path('ecs-small.png') %>" class="org-logo"></a>
+              <a href="http://www.flippery.pl"><img id="pe-el" src="<%= asset_path('flippery-logo.png') %>" class="org-logo"></a>
+            </div>
           </div>
+          <script type="text/javascript">
+            var alignLogos = (function() {
+              if ($(window).outerWidth(true) < 767) {
+                $orgs = $('.pinball-orgs')
+//                $orgs.imagesLoaded(function() {
+                  var orgs_width = $('.pinball-orgs').outerWidth(true);
+                  var doc_width = $(window).outerWidth(true);
+                  $('.pinball-orgs').css('left', (doc_width - orgs_width)/2 + "px");
+//                });
+              } else {
+                $('.pinball-orgs').css('left', "");
+              }
+            });
+            $(document).on("page:change", alignLogos);
+            $(window).on("resize orientationchange", alignLogos);
+          </script>
         </div>
       </div>
 
@@ -233,7 +252,6 @@
   </div>
 </section>
 
-<!--<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>-->
 <section id="flippers" class="flippers-home"> <!-- TODO create class -->
   <div class="container-fluid">
     <div class="row">

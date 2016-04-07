@@ -678,22 +678,40 @@ header {
 
 .org-logo {
   @media screen and (min-width: 1200px) {
-    width: 100px;
     height: 100px;
     margin-top: 10px;
   }
   @media screen and (min-width: 768px) and (max-width: 1199px) {
-    width: 70px;
     height: 70px;
     margin-top: 5px;
   }
   @media screen and (min-width: 480px) and (max-width: 767px) {
-    width: 50px;
     height: 50px;
     margin-top: 2px;
   }
   @media screen and (max-width: 479px) {
-    width: 30px;
+    height: 50px;
+  }
+}
+
+.flippery-org-logo {
+  @media screen and (min-width: 1200px) {
+    //width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    //width: 70px;
+    height: 70px;
+    margin-top: 5px;
+  }
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    //width: 50px;
+    height: 50px;
+    margin-top: 2px;
+  }
+  @media screen and (max-width: 479px) {
+    height: 50px;
   }
 }
 
@@ -813,26 +831,61 @@ header {
     .pinball-orgs {
       position: absolute;
       bottom: $bottom-spacing;
-      right: 0px;
       z-index: 1;
     }
   }
 
   @media screen and (max-width: 479px) {
+    #sff {
+      width: 42.6094px;
+      height: 50px;
+    }
+    #ifpa {
+      width: 54.7344px;
+      height: 50px;
+    }
+    #pe-el {
+      width: 78.875px;
+      height: 50px;
+    }
     background-image: image-url("slider/fire-playfield.jpg");
-    $bottom-spacing: 20px;
-    #logo-ppo {
-      width: 80%;
-      margin-left: 10%;
-      margin-top: 15%;
-      padding-bottom: $bottom-spacing;
-      position: absolute;
-      left: 0px;
+    $bottom-spacing: 40px;
+    @media screen and (max-height: 480px) {
+      #logo-ppo-div {
+        text-align: center;
+        #logo-ppo {
+          height: 60%;
+          margin-top: 20%;
+          padding-bottom: $bottom-spacing;
+          top: 15%;
+        }
+      }
+      .animated-item-1 {
+        position: absolute;
+        right: 5px;
+        top: 0;
+        margin-top: 10px;
+      }
+      .animated-item-2 {
+        position: absolute;
+        right: 5px;
+        top: 1.2em;
+        margin-top: 10px;
+      }
+    }
+    @media screen and (min-height: 481px) {
+      #logo-ppo {
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 20%;
+        padding-bottom: $bottom-spacing;
+        position: absolute;
+        left: 0px;
+      }
     }
     .pinball-orgs {
       position: absolute;
       bottom: $bottom-spacing;
-      right: 0px;
       z-index: 1;
     }
   }
