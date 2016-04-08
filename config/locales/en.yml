@@ -41,7 +41,7 @@ en:
           self:     'Log In'
         user:
           profile:  'Profile'
-          order:    'Payed products'
+          order:    'Payment'
           logout:   'Log out'
     login_modal:
       header:           "Log in"

@@ -41,7 +41,7 @@ pl:
           self:     'Zaloguj'
         user:
           profile:  'Profil'
-          order:    "Produkty płatne"
+          order:    "Płatność"
           logout:   'Wyloguj'
     login_modal:
       header:           "Wpisz się"
