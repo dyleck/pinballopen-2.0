@@ -1,7 +1,11 @@
 class UserMailer < ApplicationMailer
 
-  SKARBNIK = "jaroslaw.rupiewicz@flippery.org.pl"
-  DEV = "marcin.dylewski@flippery.org.pl"
+  if Rails.env.production?
+    SKARBNIK = "jaroslaw.rupiewicz@flippery.org.pl"
+  else
+    SKARBNIK = "marcin.dylewski@dylux.net"
+  end
+  DEV = "marcin.dylewski@dylux.net"
 
   def account_activation(user)
     @user = user

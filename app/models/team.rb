@@ -8,4 +8,8 @@ class Team < ActiveRecord::Base
   def members
     [User.find_by(id: [self.captain_id])] + self.users.map{|u| u}
   end
+
+  def Team.count_payed
+    Order.joins(:products).where("products.name": "team", "orders.payment_confirmed": true).count
+  end
 end

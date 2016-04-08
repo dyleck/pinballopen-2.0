@@ -25,7 +25,7 @@
                     </div>
                 <% elsif product.name == "team" %>
                     <div class="vcenter pull-left">
-                      <%= t(".places_left") %>: <b><%= Team.count >= Team::MAX ? 0 : Team::MAX - Team.count %></b>
+                      <%= t(".places_left") %>: <b><%= Team.count_payed >= Team::MAX ? 0 : Team::MAX - Team.count_payed %></b>
                     </div>
                 <% end %>
                 <span class="price vcenter"><%= format_currency(price) %></span>
