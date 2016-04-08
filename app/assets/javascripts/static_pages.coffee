@@ -39,12 +39,13 @@ alignDescRows = (objects) ->
 
 $(window).on 'resize orientationchange', ->
   fit_viewport( $('#main-slider .carousel .item') );
-  flippers = $('#flippers .translite');
-  flippers.css("height", "");
-  alignDescRows(flippers)
-  alignDescRows($('#flippers .flipper-name'));
-  alignDescRows($('#description .desc-row-1'));
-  alignDescRows($('#description .desc-row-2'));
+  if $('#flippers-grid').css("display") != "none"
+    flippers = $('#flippers .translite');
+    flippers.css("height", "initial");
+    alignDescRows(flippers)
+    alignDescRows($('#flippers .flipper-name'));
+    alignDescRows($('#description .desc-row-1'));
+    alignDescRows($('#description .desc-row-2'));
 
 $(document).on 'click','#main-navbar .navbar-collapse.in, #tournaments-navbar .navbar-collapse.in', (e) ->
   $(this).collapse('hide') if $(e.target).is('a')
