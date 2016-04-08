@@ -29,6 +29,7 @@ pl:
           hotels:   'Zakwaterowanie'
           contact:  'Kontakt'
           faq:      'FAQ'
+          gallery:  'Galeria'
         tournaments:
           self:     'Turnieje'
           main:       'Modern'

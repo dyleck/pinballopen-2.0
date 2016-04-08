@@ -29,6 +29,7 @@ en:
           hotels:   'Accomodation'
           contact:  'Contact'
           faq:      'FAQ'
+          gallery:  'Gallery'
         tournaments:
           self:     'Tournaments'
           main:       'Modern'
