@@ -1,1 +1,7 @@
-$('#team').html("<%= j(render(@team)) %>");
+<% if @team.nil? %>
+  <% @team = Team.new %>
+  <% @team.name = t("teams.new.default_name") %>
+  $('#team').html("<%= j(render('form_panel', msg: @message)) %>");
+<% else %>
+  $('#team').html("<%= j(render(@team)) %>");
+<% end %>

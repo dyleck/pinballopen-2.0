@@ -11,9 +11,7 @@ class TeamsController < ApplicationController
 
   def create
     current_user.update_attribute :team, nil
-    if User.where(id: params[:team][:users]).map(&:team).compact.length != params[:team][:users].map{|u| u == "" ? nil : u}.compact.length
-      # Users taken
-      flash.now[:danger] = "Users are taken" #TODO t
+    if users_already_assigned?
       respond_to do |format|
         format.js
       end

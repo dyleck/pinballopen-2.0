@@ -9,6 +9,13 @@
     </h3>
   </div>
   <div class="panel-body">
+    <% if local_assigns[:msg] %>
+        <div class="alert alert-danger">
+          <% msg.each do |message| %>
+            <%= message %>
+          <% end %>
+        </div>
+    <% end %>
     <% 2.times do |index| %>
     <div class="form-group">
       <%=
