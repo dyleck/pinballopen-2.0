@@ -1,9 +1,12 @@
 <div class="container">
   <div class="row">
+    <div class="col-sm-1">
+      id
+    </div>
     <div class="col-sm-3">
       Name <!-- TODO t -->
     </div>
-    <div class="col-sm-2">
+    <div class="col-sm-1">
       Short Name <!-- TODO t -->
     </div>
     <div class="col-sm-2">
@@ -15,14 +18,17 @@
   </div>
   <% @flippers.each do |flipper| %>
     <div class="row">
+      <div class="col-sm-1">
+        <%= flipper.id %>
+      </div>
       <div class="col-sm-3">
         <%= flipper.name %>
       </div>
-      <div class="col-sm-2">
+      <div class="col-sm-1">
         <%= flipper.short_name %>
       </div>
       <div class="col-sm-2">
-        <%= image_tag flipper.translite_url, width: "100%" %>
+        <%= image_tag asset_path("translites/#{flipper.id}.jpg"), width: "100%" %>
       </div>
       <div class="col-sm-4">
         <%= link_to "Pokaż", flipper, class: "btn btn-sm btn-info" %>
