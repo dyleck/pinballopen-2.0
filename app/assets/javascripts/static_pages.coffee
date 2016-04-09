@@ -58,18 +58,15 @@ $(document).on 'page:change', ->
     e.preventDefault();
     $('#flippers-header a i').toggleClass("fa-angle-down").toggleClass("fa-angle-up");
     $('#flippers-grid').slideToggle(500, ->
-      $('#flippers .translite').imagesLoaded () ->
-        alignDescRows($('#flippers .translite'));
+      $('#flippers').imagesLoaded () ->
         alignDescRows($('#flippers .flipper-name'));
+        alignDescRows($('#flippers .translite'));
     );
   )
   $('#flippers-footer a').on("click", (e) ->
     e.preventDefault();
     $('#flippers-header a i').toggleClass("fa-angle-down").toggleClass("fa-angle-up");
-    $('#flippers-grid').slideToggle(500, ->
-      $('#flippers .translite').imagesLoaded () ->
-        alignDescRows($('#flippers .translite'));
-    );
+    $('#flippers-grid').slideToggle(500);
     $('html, body').animate({ scrollTop: $('#flippers').offset().top - 50 }, 500);
   )
   # affixed nav
