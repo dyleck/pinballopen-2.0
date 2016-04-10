@@ -132,7 +132,7 @@ pl:
       number:             "Numer"
       full_name:          "Imię i nazwisko"
       payment:            "Płatność"
-      order_required:     "Jeśli nie ma Ciebie na liście, to znaczy że nie dokonałeś zakupu udziału w turnieju."
+      order_required:     "Gracze oznaczeni czerwonym kolorem, nie wybrali płatności za turniej główny."
       payment_missing:    "Brak"
       registration_missing: "Brak rejestracji"
       pay_with_paypal:    "Zapłać PayPalem"
