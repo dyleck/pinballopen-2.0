@@ -134,7 +134,7 @@ en:
       payment:            "Payment"
       order_required:     "Players marked in red did not chose any payment for main tournament."
       payment_missing:    "None"
-      registration_missing: "Not registered"
+      registration_missing: "Not selected"
     orders:
       pay_with_paypal:    "Pay with PayPal"
       paid:               "paid"

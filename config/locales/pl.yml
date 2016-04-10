@@ -134,7 +134,7 @@ pl:
       payment:            "Płatność"
       order_required:     "Gracze oznaczeni czerwonym kolorem, nie wybrali płatności za turniej główny."
       payment_missing:    "Brak"
-      registration_missing: "Brak rejestracji"
+      registration_missing: "Nie wybrano"
       pay_with_paypal:    "Zapłać PayPalem"
       paid:               "zapłacone"
       not_paid:           "brak płatności"
