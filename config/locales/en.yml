@@ -133,6 +133,8 @@ en:
       full_name:          "Full name"
       payment:            "Payment"
       order_required:     "If you are not shown here please buy a tournament entry first."
+      payment_missing:    "None"
+      registration_missing: "Not registered"
     orders:
       pay_with_paypal:    "Pay with PayPal"
       paid:               "paid"

@@ -21,7 +21,7 @@
     </div>
   </div>
   <% @users.each do |user| %>
-  <div class="row alert-<%= user.main_payed? ? "success" : "danger" %> <%= "loggedin" if !current_user.nil? && current_user == user %>">
+  <div class="row alert-<%= mark_if_ordered_or_payed(user) %>">
     <div class="col-xs-2 col-sm-1 col-sm-offset-3 text-center">
       <%= user.id %>
     </div>
@@ -29,7 +29,13 @@
     <%= user.full_name %>
     </div>
     <div class="col-xs-3 col-sm-2 text-center">
-      <%= user.main_payed? ? "ok" : "none" %>
+      <% if user.main_payed? %>
+        ok
+      <% elsif user.main_ordered? %>
+        <%= t(".payment_missing") %>
+      <% else %>
+        <%= t(".registration_missing") %>
+      <% end %>
     </div>
   </div>
   <% end %>

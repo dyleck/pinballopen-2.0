@@ -53,7 +53,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all_that_ordered_main
+    # @users = User.all_that_ordered_main
+    @users = User.all
   end
 
   private

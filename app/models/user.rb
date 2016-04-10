@@ -99,6 +99,10 @@ class User < ActiveRecord::Base
     self.orders.joins(:products).where("products.name": "main", "orders.payment_confirmed": true).length > 0
   end
 
+  def main_ordered?
+    self.orders.joins(:products).where("products.name": "main", "orders.payed": true).length > 0
+  end
+
   private
     def email_downcase
       self.email.downcase!
