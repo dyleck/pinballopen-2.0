@@ -1,8 +1,14 @@
+<% provide :title, "Gracze" %>
 <div class="container" id="users">
   <div class="row">
-    <div class="col-xs-12 alert alert-danger text-center">
-      <h3 class="hidden-xs"><b><%= t(".order_required") %></b></h3>
-      <p class="visible-xs-block text-center"><b><%= t(".order_required") %></b></p>
+    <div class="col-xs-12 alert-success text-center">
+      <%= t(".desc-paid") %>
+    </div>
+    <div class="col-xs-12 alert-warning text-center">
+      <%= t(".desc-not_paid") %>
+    </div>
+    <div class="col-xs-12 alert-danger text-center">
+      <%= t(".desc-no_order") %>
     </div>
   </div>
   <div class="row header">

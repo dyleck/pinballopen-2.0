@@ -135,12 +135,15 @@ en:
       order_required:     "Players marked in red did not chose any payment for main tournament."
       payment_missing:    "None"
       registration_missing: "Not selected"
+      desc-paid:          "Payment confirmed."
+      desc-not_paid:      "Order submited, waiting for payment to be registered."
+      desc-no_order:      "Log in, submit order using \"Payments\" menu and pay for it."
     orders:
       pay_with_paypal:    "Pay with PayPal"
       paid:               "paid"
       not_paid:           "not paid"
       cancel:             "Cancel"
-      paypal:             "Go to PayPal"
+      paypal:             "Pay using PayPal"
       bank_transfer:      "Show transfer details"
       total:              "Total amount"
   shared:

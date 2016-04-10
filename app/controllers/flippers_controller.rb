@@ -1,4 +1,7 @@
 class FlippersController < ApplicationController
+  before_action :redirect_to_login_if_not_logged_in
+  before_action :redirect_to_root_if_not_admin
+
   before_action :set_flipper, only: [:show, :create, :edit, :update, :destroy]
   def index
     @flippers = Flipper.all

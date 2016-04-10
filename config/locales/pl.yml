@@ -135,11 +135,15 @@ pl:
       order_required:     "Gracze oznaczeni czerwonym kolorem, nie wybrali płatności za turniej główny."
       payment_missing:    "Brak"
       registration_missing: "Nie wybrano"
+      desc-paid:          "Płatność potwierdzona."
+      desc-not_paid:      "Zamówienie złożone, oczekujemy na wpłatę."
+      desc-no_order:      "Zaloguj się, złóż zamówienie w menu \"Płatności\" oraz dokonaj wpłaty."
+    orders:
       pay_with_paypal:    "Zapłać PayPalem"
       paid:               "zapłacone"
       not_paid:           "brak płatności"
       cancel:             "Anuluj"
-      paypal:             "Przejdź do PayPal"
+      paypal:             "Zapłać PayPal'em"
       bank_transfer:      "Pokaż dane przelewu"
       total:              "Kwota całkowita"
   shared:
