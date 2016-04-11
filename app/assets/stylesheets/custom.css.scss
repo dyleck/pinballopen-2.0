@@ -233,6 +233,10 @@
 }
 
 #contact {
+  .row {
+    margin-left: initial;
+    margin-right: initial;
+  }
   form {
     border: 2px solid grey;
     border-radius: 10px;
