@@ -70,6 +70,17 @@ en:
         header:     "Timetable"
         day1:       "Saturday (04.06.2016)"
         day2:       "Sunday (05.06.2016)"
+        registration: "Registration"
+        team_quali: "Team qualifications"
+        eighties_quali: "80's qualifications"
+        stern_quali:  "Stern Trophy qualifications"
+        modern_quali: "Modern qualifications"
+        team_final:   "Team final"
+        stern_final:  "Stern Trophy final"
+        eigthies_final: "80's final"
+        modern_final: "Modern finals"
+        kids_tournament:  "Kids tournament"
+        decoration: "Awards and closing ceremony"
       location:
         header:     "Location"
       hotels:
