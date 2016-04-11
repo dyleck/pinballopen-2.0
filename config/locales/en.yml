@@ -25,6 +25,7 @@ en:
           self:   'Info'
           description:     "Tournaments"
           flippers:         "List of Pinballs"
+          timetable:        "Timetable"
           location:    'Location'
           hotels:   'Accomodation'
           contact:  'Contact'
@@ -65,6 +66,10 @@ en:
       collapse: "Click to Collapse"
       description:
         header:     "Tournaments"
+      timetable:
+        header:     "Timetable"
+        day1:       "Saturday (04.06.2016)"
+        day2:       "Sunday (05.06.2016)"
       location:
         header:     "Location"
       hotels:

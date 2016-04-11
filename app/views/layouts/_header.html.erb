@@ -27,7 +27,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to 'PPO 2016', root_path, class: 'navbar-brand' %>
+        <%= link_to 'Polish Pinball Open', root_path, class: 'navbar-brand' %>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -50,7 +50,7 @@
           <li class="dropdown">
             <a href="@" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-info-sign"></i> <%= t('.menu.info.self') %> <i class="fa fa-angle-down"></i></a>
             <ul class="dropdown-menu">
-            <% %w[description flippers location hotels contact].each do |anchor| %>
+            <% %w[description timetable flippers location hotels contact].each do |anchor| %>
               <li>
               <%= link_to url_for(controller: :static_pages, action: :home, anchor: anchor) do %>
                 <%= t(".menu.info.#{anchor}") %>

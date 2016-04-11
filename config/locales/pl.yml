@@ -25,6 +25,7 @@ pl:
           self:   'Info'
           description:     'Turnieje'
           flippers:         "Lista Flipperów"
+          timetable:        "Harmonogram"
           location:    'Lokalizacja'
           hotels:   'Zakwaterowanie'
           contact:  'Kontakt'
@@ -65,6 +66,21 @@ pl:
       collapse: "Kliknij by zwinąć"
       description:
         header:     "Turnieje"
+      timetable:
+        header:   "Harmonogram"
+        day1:     "Sobota (04.06.2016)"
+        day2:     "Niedziela (05.06.2016)"
+        registration: "Rejestracja"
+        team_quali: "Eliminacje Drużynowe"
+        eighties_quali: "Eliminacje 80's"
+        stern_quali:  "Eliminacje Stern Trophy"
+        modern_quali: "Eliminacje Modern"
+        team_final:   "Finał Drużynowy"
+        stern_final:  "Finał Stern Trophy"
+        eigthies_final: "Finał 80's"
+        modern_final: "Finały Modern"
+        kids_tournament:  "Turniej dla dzieci"
+        decoration: "Wręczenie nagród i zakończenie"
       location:
         header:     "Lokalizacja"
       hotels:

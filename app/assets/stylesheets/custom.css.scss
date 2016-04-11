@@ -1051,3 +1051,33 @@ header {
   color: red;
   font-weight: bold;
 }
+
+#timetable {
+  .day1 .row, .day2 .row {
+    @media screen and (max-width: 767px) {
+      font-size: 1.4em;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 1.7em;
+    }
+  }
+  h3 {
+    @media screen and (min-width: 768px) {
+      font-size: 2em;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 1.5em;
+    }
+  }
+  .time {
+    color: yellow;
+  }
+  .desc {
+    @media screen and (min-width: 768px) {
+      text-align: left;
+    }
+    @media screen and (max-wdith: 767px) {
+      text-align: center;
+    }
+  }
+}

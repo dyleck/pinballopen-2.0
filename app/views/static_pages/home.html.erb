@@ -1,6 +1,7 @@
 <% provide(:title, "Home") %>
 <% render 'static_pages/home_content' %>
 
+<h1 style="display: none">Polish Pinball Open 2016</h1>
 <section class="no-margin" id="main-slider">
   <div class="carousel wet-asphalt" id="main-slider-content" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -13,25 +14,23 @@
         <div class="container" id="logo-ppo-div" style="height:100%;">
           <img id="logo-ppo" src="<%= asset_path("ppo-logo.png") %>"/>
           <div>
-            <h1 class="animation animated-item-1 slider-huge text-right"><%= t(".slide1.date") %></h1>
-            <h1 class="animation animated-item-2 slider-huge text-right"><%= t(".slide1.place") %></h1>
+            <p class="animation animated-item-1 slider-huge text-right"><%= t(".slide1.date") %></p>
+            <p class="animation animated-item-2 slider-huge text-right"><%= t(".slide1.place") %></p>
           </div>
           <div class="pinball-orgs">
             <div>
-              <a href="http://www.flippery.org.pl"><img id="sff" src="<%= asset_path('sff-small.png') %>" class="org-logo"></a>
-              <a href="http://www.ifpapinball.com/ecs/"><img id="ifpa" src="<%= asset_path('ecs-small.png') %>" class="org-logo"></a>
-              <a href="http://www.flippery.pl"><img id="pe-el" src="<%= asset_path('flippery-logo.png') %>" class="org-logo"></a>
+              <a href="http://www.flippery.org.pl"><img id="sff" src="<%= asset_path('sff-small.png') %>" class="org-logo" alt="Stowarzyszenie Fanów Flipperów"></a>
+              <a href="http://www.ifpapinball.com/ecs/"><img id="ifpa" src="<%= asset_path('ecs-small.png') %>" class="org-logo" alt="IFPA ECS"></a>
+              <a href="http://www.flippery.pl"><img id="pe-el" src="<%= asset_path('flippery-logo.png') %>" class="org-logo" alt="flippery.pl"></a>
             </div>
           </div>
           <script type="text/javascript">
             var alignLogos = (function() {
               if ($(window).outerWidth(true) < 767) {
                 $orgs = $('.pinball-orgs')
-//                $orgs.imagesLoaded(function() {
                   var orgs_width = $('.pinball-orgs').outerWidth(true);
                   var doc_width = $(window).outerWidth(true);
                   $('.pinball-orgs').css('left', (doc_width - orgs_width)/2 + "px");
-//                });
               } else {
                 $('.pinball-orgs').css('left', "");
               }
@@ -91,7 +90,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 text-center">
-        <h1><%= t(".description.header") %></h1>
+        <h2><%= t(".description.header") %></h2>
       </div>
     </div>
     <div class="row">
@@ -252,12 +251,120 @@
   </div>
 </section>
 
+<section id="timetable" class="turquoise">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h2><%= t(".timetable.header") %></h2>
+    </div>
+    <div class="col-xs-12 col-md-6 text-center day1">
+      <hr>
+      <h3><%= t(".timetable.day1") %></h3>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 time">
+          10:00 - 11:00
+        </div>
+        <div class="col-xs-12 col-sm-7 desc">
+          <%= t(".timetable.registration") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 time">
+          11:00 - 19:00
+        </div>
+        <div class="col-xs-12 col-sm-7 desc">
+          <%= t(".timetable.team_quali") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 time">
+          11:00 - 19:00
+        </div>
+        <div class="col-xs-12 col-sm-7 desc">
+          <%= t(".timetable.eighties_quali") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 time">
+          11:00 - 19:00
+        </div>
+        <div class="col-xs-12 col-sm-7 desc">
+          <%= t(".timetable.stern_quali") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 time">
+          11:00 - 20:00
+        </div>
+        <div class="col-xs-12 col-sm-7 desc">
+          <%= t(".timetable.modern_quali") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 time">
+          20:00 - 21:00
+        </div>
+        <div class="col-xs-12 col-sm-7 desc">
+          <%= t(".timetable.team_final") %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6 text-center day2">
+      <hr>
+      <h3><%= t(".timetable.day2") %></h3>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 time">
+          10:30 - 12:00
+        </div>
+        <div class="col-xs-12 col-sm-7 desc">
+          <%= t(".timetable.stern_final") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 time">
+          10:30 - 12:00
+        </div>
+        <div class="col-xs-12 col-sm-7 desc">
+          <%= t(".timetable.eigthies_final") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 time">
+          12:00 - 20:00
+        </div>
+        <div class="col-xs-12 col-sm-7 desc">
+          <%= t(".timetable.modern_final") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 time">
+          12:00 - 15:00
+        </div>
+        <div class="col-xs-12 col-sm-7 desc">
+          <%= t(".timetable.kids_tournament") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 time">
+          20:00 - 21:00
+        </div>
+        <div class="col-xs-12 col-sm-7 desc">
+          <%= t(".timetable.decoration") %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
 <section id="flippers" class="flippers-home"> <!-- TODO create class -->
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 text-center" id="flippers-header">
         <a href="#">
-          <h1><%= t(".flippers.header") %> <i class="fa fa-angle-down"></i></h1>
+          <h2><%= t(".flippers.header") %> <i class="fa fa-angle-down"></i></h2>
           <p><%= t(".expand") %></p>
         </a>
       </div>
@@ -291,7 +398,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <%= image_tag asset_path('port-lodz-outside.jpg'), width: "100%" %>
+        <%= image_tag asset_path('port-lodz-outside.jpg'), width: "100%", alt: "port łódź" %>
       </div>
       <%= yield :location_description %>
     </div>
@@ -305,14 +412,14 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h1 class="text-center"><%= t(".hotels.header") %></h1>
+        <h2 class="text-center"><%= t(".hotels.header") %></h2>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
         <div class="row">
           <div class="col-xs-12 col-md-6">
-            <img src="http://static.meteor24.pl/images/base/7/6561/86407_40.jpg" width="100%">
+            <img src="http://static.meteor24.pl/images/base/7/6561/86407_40.jpg" width="100%" alt="hotel">
           </div>
           <div class="col-xs-12 col-md-6">
             <h4><b>Willa Poru Roku</b></h4>
@@ -330,7 +437,7 @@
       <div class="col-xs-12 col-sm-6">
         <div class="row">
           <div class="col-xs-12 col-md-6">
-            <img src="http://www.zajazdrubin.pl/img/galeria/DSC_0023.jpg" width="100%">
+            <img src="http://www.zajazdrubin.pl/img/galeria/DSC_0023.jpg" width="100%" alt="hotel">
           </div>
           <div class="col-xs-12 col-md-6">
             <h4><b>Zajazd Rubin</b></h4>
@@ -350,42 +457,10 @@
 </section>
 
 
-<!--
-<section id="faq" class="yellow-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1 class="text-center"><%= t(".faq.header") %></h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="panel-group" id="accordion">
-      <% %w[question1 question2 question3 question4].each_with_index do |question| %>
-        <div class="panel panel-default orange-border">
-          <div class="panel-heading yellow-dark">
-            <h4 class="panel-title">
-              <%= link_to "##{question}", data: { parent: "#accordion", toggle: "collapse" } do %>
-                <%= t(".faq.#{question}") %>
-              <% end %>
-            </h4>
-          </div>
-          <%= content_tag :div, id: "#{question}", class: "panel-collapse collapse yellow-light" + (question == "question1" ? " in" : "") do %>
-            <div class="panel-body">
-              <%= yield question.to_sym %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-      </div>
-    </div>
-  </div>
-</section>
--->
-
 <section id="contact">
   <div class="row">
     <div class="col-xs-12 text-center">
-      <h1><%= t(".contact") %></h1>
+      <h2><%= t(".contact") %></h2>
     </div>
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= form_for :contact, url: url_for(contacts_path), method: :post do |f| %>
@@ -406,32 +481,3 @@
     </div>
   </div>
 </section>
-
-<!--
-<section id="contact">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1 class="text-center">Skontaktuj się z nami</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <form class="form">
-        <span class="form-group">
-          <label>Temat</label>
-          <input type="email" class="form-control">
-        </span>
-        <span class="form-group">
-          <label>Wiadomość</label>
-          <input type="text" class="form-control">
-        </span><br>
-        <span class="form-group">
-          <button class="btn btn-primary btn-block" type="submit">Wyślij</button>
-        </span>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
--->
