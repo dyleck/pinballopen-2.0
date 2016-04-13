@@ -827,7 +827,7 @@ header {
       z-index: 1;
     }
   }
-  @media screen and (min-width: 480px) and (max-width: 767px) {
+  @media screen and (min-width: 480px) and (max-width: 767px) and (orientation: portrait){
     background-image: image-url("slider/fire-playfield.jpg");
     $bottom-spacing: 20px;
     #logo-ppo {
@@ -841,6 +841,30 @@ header {
       position: absolute;
       bottom: $bottom-spacing;
       z-index: 1;
+    }
+  }
+
+  @media screen and (max-width: 767px) and (orientation: landscape) {
+    background-image: image-url("slider/fire-playfield.jpg");
+    $bottom-spacing: 20px;
+    #logo-ppo {
+      height: 100%;
+      position: absolute;
+      left: 5%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .pinball-orgs {
+      position: absolute;
+      bottom: $bottom-spacing;
+      z-index: 1;
+      right: 5px;
+      & > div {
+        display: inline-block;
+        position: absolute;
+        right: 5px;
+        bottom: 0px;
+      }
     }
   }
 
@@ -970,6 +994,26 @@ header {
   }
   @media screen and (max-width: 767px) {
     background-image: image-url("photos/13a.jpg");
+  }
+  @media screen and (max-width: 767px) and (orientation: landscape) {
+    .animated-item-1 {
+      position: absolute;
+      left: 50%;
+      bottom: 60%;
+      span {
+        position: relative;
+        left: -50%;
+      }
+    }
+    .animated-item-3 {
+      position: absolute;
+      bottom: 40%;
+      left: 50%;
+      span {
+        position: relative;
+        left: -50%;
+      }
+    }
   }
   @media screen and (min-width: 768px) {
     .animated-item-1 {
