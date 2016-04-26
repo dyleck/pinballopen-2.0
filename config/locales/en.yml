@@ -17,6 +17,13 @@ en:
               too_short:  "is too short"
             password_confirmation:
               confirmation: "does not match"
+        tournament:
+          number_of_machines:
+            blank:        "cannot be blank"
+            not_a_number: "is not a number"
+            greater_than: "must be greater than zero"
+          name:
+            blank:        "cannot be blank"
   layouts:
     header:
       menu:
@@ -237,3 +244,7 @@ en:
       members:            "Members"
       only_created:       "Team will be listed here when captain create a team from his profile page."
     user_in_other_team:   "is in another team. Choose again."
+  tournaments:
+    form:
+      number_of_machines:   "Number of machines"
+      name:                 "Name"

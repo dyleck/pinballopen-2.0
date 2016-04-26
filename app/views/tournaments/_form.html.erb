@@ -1,0 +1,58 @@
+<div class="container" id="tournaments_form">
+  <% if @tournament.errors.any? %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+          <div class="alert alert-danger">
+            <ul>
+              <% @tournament.errors.messages.keys.each do |key| %>
+                <% @tournament.errors.messages[key].each do |message| %>
+                  <li><%= t(".#{key}") + " " + message %></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+  <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form">
+        <%= form_for @tournament do |f| %>
+            <div class="form-group">
+              <%= f.label t(".name") %>
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label t(".number_of_machines") %>
+              <%= f.number_field :number_of_machines, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label "Maszyny" %>
+                <% if !@tournament.number_of_machines.nil? %>
+                  <% @tournament.number_of_machines.times do |index| %>
+                    <div class="form-group">
+                      <% if @tournament.flippers[index].nil? %>
+                        <%= select_tag("tournament[flippers][]",
+                          options_for_select(Flipper.order(:name).map{|flipper| ["#{flipper.id} - #{flipper.name}", flipper.id]}),
+                          prompt: "Wybierz maszynę",
+                          class: "form-control")
+                        %>
+                      <% else %>
+                        <%= select_tag("tournament[flippers[]",
+                            options_for_select(Flipper.order(:name).map{|flipper| ["#{flipper.id} - #{flipper.name}", flipper.id]},
+                              @tournament.flippers[index].id),
+                            class: "form-control")
+                        %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            <div class="form-group">
+              <%= f.submit :submit, class: "form-control btn btn-primary" %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

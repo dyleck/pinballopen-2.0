@@ -17,6 +17,14 @@ pl:
               too_short:  "jest za krótkie"
             password_confirmation:
               confirmation: "jest niezgodne"
+        tournament:
+          attributes:
+            number_of_machines:
+              blank:        "nie może być pusta"
+              not_a_number: "nie jest liczbą"
+              greater_than: "musi być większa od zera"
+            name:
+              blank:        "nie może być pusta"
   layouts:
     header:
       menu:
@@ -237,3 +245,7 @@ pl:
       members:            "Członkowie"
       only_created:       "Drużyna pojawi się kiedy kapitan utworzy ją na swojej stronie profilowej."
     user_in_other_team:   "jest w innej drużynie. Wybierz ponownie."
+  tournaments:
+    form:
+      number_of_machines:   "Ilość maszyn"
+      name:                 "Nazwa"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328083247) do
+ActiveRecord::Schema.define(version: 20160424124151) do
 
   create_table "flippers", force: :cascade do |t|
     t.string   "name"
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(version: 20160328083247) do
     t.string   "translite_url"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "tournament_id"
   end
+
+  add_index "flippers", ["tournament_id"], name: "index_flippers_on_tournament_id"
 
   create_table "order_items", force: :cascade do |t|
     t.integer  "product_id"
@@ -58,6 +61,13 @@ ActiveRecord::Schema.define(version: 20160328083247) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "captain_id"
+  end
+
+  create_table "tournaments", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "number_of_machines"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "users", force: :cascade do |t|
