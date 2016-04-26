@@ -1,0 +1,27 @@
+<% provide :title, @tournament.name.nil? ? "Nowy turniej" : @tournament.name %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1>Parametry turnieju</h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row" style="font-size: 1.5em;">
+    <div class="col-xs-12">
+      Name: <%= @tournament.name %>
+    </div>
+    <div class="col-xs-12">
+      Number of machines: <%= @tournament.number_of_machines %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <%= link_to "Edytuj", edit_tournament_path(@tournament), class: "btn btn-md btn-warning" %>
+      <%= link_to "Usuń", tournament_path(@tournament), method: :delete, class: "btn btn-md btn-danger" %>
+    </div>
+  </div>
+</div>

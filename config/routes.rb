@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   root 'static_pages#home'
 
   scope '(:locale)' do
@@ -29,6 +27,7 @@ Rails.application.routes.draw do
     resources :products
     resources :payment_confirmations, only: [:index, :create, :update]
     resources :flippers
+    resources :tournaments, only: [:new, :create, :edit, :update, :destroy, :show, :index]
     get 'sff_validations' => 'sff_validations#index'
   end
 
