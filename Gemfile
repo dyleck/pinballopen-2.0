@@ -14,6 +14,7 @@ gem 'bcrypt', '~> 3.1'
 gem 'jquery-ui-rails'
 gem 'puma'
 gem 'rest-client'
+gem 'nested_form_fields'
 
 group :development do
   gem 'web-console', '~> 2.0'

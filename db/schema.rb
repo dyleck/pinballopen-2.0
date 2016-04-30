@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424124151) do
+ActiveRecord::Schema.define(version: 20160428182648) do
 
   create_table "flippers", force: :cascade do |t|
     t.string   "name"
@@ -47,6 +47,19 @@ ActiveRecord::Schema.define(version: 20160424124151) do
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id"
+
+  create_table "phases", force: :cascade do |t|
+    t.string   "type"
+    t.integer  "tournament_id"
+    t.boolean  "fixed"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "phases_users", force: :cascade do |t|
+    t.integer "phase_id"
+    t.integer "user_id"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string   "name"

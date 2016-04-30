@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :order_items, through: :orders
   has_many :products, through: :order_items
   belongs_to :team
+  has_and_belongs_to_many :phases
 
   validates :first_name, presence: true, length: { maximum: 50 }
   validates :last_name, presence: true, length: { maximum: 50 }
