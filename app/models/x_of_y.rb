@@ -1,0 +1,3 @@
+class XOfY < Phase
+
+end
