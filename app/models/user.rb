@@ -39,6 +39,13 @@ class User < ActiveRecord::Base
     payed_for_main - payed_for_team - assigned_to_teams
   end
 
+  def User.all_that_paid_for_main
+    User.joins(:orders, :products).where(
+                                      "orders.payment_confirmed": true,
+                                      "products.name": "main"
+                                    ).distinct
+  end
+
   def User.all_that_ordered_main
     User.joins(:products).where("products.name": "main").distinct.order(:id)
   end
