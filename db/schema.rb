@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430114208) do
+ActiveRecord::Schema.define(version: 20160502174516) do
 
   create_table "flippers", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20160430114208) do
   end
 
   add_index "flippers", ["tournament_id"], name: "index_flippers_on_tournament_id"
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "round_id"
+    t.integer  "flipper_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "matches", ["flipper_id"], name: "index_matches_on_flipper_id"
+  add_index "matches", ["round_id"], name: "index_matches_on_round_id"
 
   create_table "order_items", force: :cascade do |t|
     t.integer  "product_id"
@@ -69,6 +79,25 @@ ActiveRecord::Schema.define(version: 20160430114208) do
     t.datetime "updated_at", null: false
     t.decimal  "sff_price"
   end
+
+  create_table "rounds", force: :cascade do |t|
+    t.integer  "phase_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "rounds", ["phase_id"], name: "index_rounds_on_phase_id"
+
+  create_table "scores", force: :cascade do |t|
+    t.integer  "match_id"
+    t.integer  "user_id"
+    t.integer  "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "scores", ["match_id"], name: "index_scores_on_match_id"
+  add_index "scores", ["user_id"], name: "index_scores_on_user_id"
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
