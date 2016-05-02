@@ -30,16 +30,26 @@
               <%= f.label "Fazy turnieju" %>
               <%= f.nested_fields_for :phases do |phase_form| %>
                   <div class="form-group border">
-                    <%= phase_form.select(:type,
-                                          ["XOfY", "DoubleKO32"],
-                                          { prompt: "Wybierz rodzaj" },
-                                          { class: "form-control", style: "width: 95%; display: inline;" } )
-                    %>
                     <%= phase_form.remove_nested_fields_link do %>
-                      <i class="fa fa-times" style="color: red;"></i>
+                        <i class="fa fa-times" style="color: red;"></i>
                     <% end %>
-                    <%= phase_form.label "Rundy ustala faza", style: "inline" %>
-                    <%= phase_form.check_box :fixed, class: "inline" %>
+                    <span>
+                      <%= phase_form.select(:type,
+                                            Phase::PHASE_TYPES,
+                                            { prompt: "Wybierz rodzaj" },
+                                            { class: "form-control" } )
+                      %>
+                    </span>
+                    <div>
+                      <%= phase_form.label "Rundy ustala faza" %>
+                      <%= phase_form.check_box :fixed %>
+                    </div>
+                    <div>
+                      <%= phase_form.label "Ilość rund" %>
+                      <span>
+                        <%= phase_form.text_field :number_of_rounds, type: :number, class: "form-control" %>
+                      </span>
+                    </div>
                   </div>
               <% end %>
               <div class="center">

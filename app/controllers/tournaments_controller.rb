@@ -44,7 +44,12 @@ class TournamentsController < ApplicationController
 
   private
     def tournament_params
-      p = params.require(:tournament).permit(:name, :number_of_machines, flippers: [], phases_attributes: [:type, :id, :_destroy, :fixed])
+      p = params.require(:tournament).permit(:name, :number_of_machines, flippers: [],
+                                             phases_attributes: [:type,
+                                                                 :id,
+                                                                 :_destroy,
+                                                                 :fixed,
+                                                                 :number_of_rounds ])
       number = p[:number_of_machines].to_i
       if p[:flippers]
         p[:flippers] = p[:flippers].map{|id| Flipper.find_by(id: id)}[0, number].compact
