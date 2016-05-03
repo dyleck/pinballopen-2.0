@@ -1,0 +1,17 @@
+<div class="form">
+  <%= form_for @match, url: match_path(@match, tournament_id: @tournament.id), method: :patch do |match_form| %>
+      <div class="form-group">
+        <%= match_form.hidden_field :flipper_id %>
+      </div>
+      <div class="form-group">
+        <%= match_form.fields_for :scores do |score_form| %>
+            <%= score_form.hidden_field :user_id %>
+            <%= score_form.label :punkty %>
+            <%= score_form.text_field :value, type: "number", class: "form-control" %>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <%= match_form.submit "Utwórz", data: { confirm: ""} %>
+      </div>
+  <% end %>
+</div>
