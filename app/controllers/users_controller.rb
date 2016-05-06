@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
   def index
     # @users = User.all_that_ordered_main
-    @users = User.all
+    @users = User.where(activated: true)
   end
 
   private
