@@ -24,7 +24,28 @@ class XOfY < Phase
     end
   end
 
+  def destroy_match(match)
+    match.round.destroy
+  end
+
   def build_scores(match)
     match.scores.build
+  end
+
+  def match_if_contains(match)
+    new_match_flipper = match.flipper
+    new_match_user = match.scores.first.user
+    rounds_played_by_user = self.rounds.joins(:flippers, :users).where(
+        "scores.user_id": new_match_user.id,
+        "matches.flipper_id": new_match_flipper.id).first
+    if rounds_played_by_user
+      rounds_played_by_user.matches.first
+    else
+      nil
+    end
+  end
+
+  def update_scores(match, params)
+    params[:match][:scores_attributes]["0"][:value].to_i
   end
 end

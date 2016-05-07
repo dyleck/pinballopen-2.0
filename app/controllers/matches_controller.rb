@@ -45,6 +45,10 @@ class MatchesController < ApplicationController
   end
 
   def destroy
+    @match = Match.find_by(id: params[:id])
+    @tournament.current_phase.destroy_match(@match)
+    flash[:danger] = "Gra usunięta"
+    redirect_to matches_path(tournament_id: @tournament.id)
   end
 
   def show
