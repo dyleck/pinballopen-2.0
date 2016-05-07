@@ -1164,3 +1164,16 @@ header {
     border-radius: 5px;
   }
 }
+
+#matches {
+  .light {
+    background-color: #BBBBBB;
+  }
+  .dark {
+    background-color: #2E2F30;
+    color: white;
+  }
+  div[class^="col-"] {
+    margin-top: 5px;
+  }
+}

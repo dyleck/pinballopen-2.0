@@ -31,6 +31,9 @@ Rails.application.routes.draw do
     get 'sff_validations' => 'sff_validations#index'
     scope 'manage/(:tournament_id)' do
       resources :matches
+      get 'match_destroy_confirm/:id' => 'match_confirmations#match_destroy', as: 'match_destroy_confirm'
+      patch 'match_edit_confirm/:id' => 'match_confirmations#match_edit', as: 'match_edit_confirm'
+      post 'match_create_confirm' => 'match_confirmations#match_create', as: 'match_create_confirm'
     end
   end
 

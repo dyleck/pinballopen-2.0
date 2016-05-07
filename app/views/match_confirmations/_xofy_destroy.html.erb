@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h2>Potwierdź usunięcie</h2>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= form_for @match, url: match_path(@match, tournament_id: @tournament.id), method: :delete do |match_form| %>
+          <div class="form-group">
+            <%= match_form.label :flipper %>
+            <%= match_form.hidden_field :flipper_id %>
+            <%= match_form.text_field :flipper, value: @match.flipper.name, disabled: true, class: "form-control" %>
+          </div>
+          <%= match_form.fields_for :scores do |scores_form| %>
+              <div class="form-group">
+                <%= scores_form.label :gracz %>
+                <%= scores_form.hidden_field :user_id %>
+                <%= scores_form.text_field :gracz, value: scores_form.object.user.full_name, disabled: true, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= scores_form.label :wynik %>
+                <%= scores_form.hidden_field :value %>
+                <%= scores_form.text_field :wynik, value: scores_form.object.value, disabled: true, class: "form-control" %>
+              </div>
+          <% end %>
+          <div class="form-group">
+            <%= match_form.submit "Usuń!!!", class: "btn btn-danger" %>
+            <%= link_to "Nie usuwaj", matches_path(tournament_id: @tournament.id), class: "btn btn-primary" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

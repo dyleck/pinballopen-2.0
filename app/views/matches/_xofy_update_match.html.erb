@@ -1,7 +1,13 @@
 <div class="form">
-  <%= form_for @match, url: match_path(@match, tournament_id: @tournament.id), method: :patch do |match_form| %>
+  <%= form_for @match, url: match_edit_confirm_path(@match, tournament_id: @tournament.id), method: :patch do |match_form| %>
       <div class="form-group">
+        <%= match_form.label :flipper %>
         <%= match_form.hidden_field :flipper_id %>
+        <%= match_form.text_field :flipper_name, value: @match.flipper.name, disabled: true, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= match_form.label :gracz %>
+        <%= match_form.text_field :gracz, value: @match.scores.first.user.full_name, disabled: true, class: "form-control" %>
       </div>
       <div class="form-group">
         <%= match_form.fields_for :scores do |score_form| %>
@@ -11,7 +17,7 @@
         <% end %>
       </div>
       <div class="form-group">
-        <%= match_form.submit "Utwórz", data: { confirm: "Are you sure?"} %>
+        <%= match_form.submit "Utwórz" %>
       </div>
   <% end %>
 </div>
