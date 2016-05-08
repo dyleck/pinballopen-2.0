@@ -1,4 +1,6 @@
 class MatchConfirmationsController < ApplicationController
+  before_action :redirect_to_login_if_not_logged_in
+  before_action :redirect_to_root_if_not_admin
   before_action :set_tournament
 
   def match_destroy
