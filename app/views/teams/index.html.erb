@@ -21,10 +21,10 @@
       <%= t(".members") %>
     </div>
   </div>
-  <% @teams.each do |team| %>
+  <% @teams.each_with_index do |team, index| %>
       <div class="row <%= cycle "light", "dark" %>">
         <div class="col-xs-2 col-sm-1 col-sm-offset-3 text-center">
-          <%= team.id %>
+          <%= index + 1 %>
         </div>
         <div class="col-xs-5 col-sm-2 text-center">
           <%= team.name %>
