@@ -3,7 +3,7 @@
 <% (Product.all - ( one_timers &
                     Order.where(user: current_user).map{|o| o.order_items.map(&:product)}.flatten) ).each do |product| %>
     <% price = product.discount_if_sff_local_price current_user.sff_validated? %>
-    <% next if product.name == "team" && Team.count >= Team::MAX %>
+    <% next if (product.name == "team" && Team.count >= Team::MAX) || (product.name == "t-shirt" && Date.today >= Date.new(2016,05,07)) %>
     <div class="row">
       <div class="col-xs-12 corner-lu corner-rd">
         <%= form_for :order_item, url: order_items_path, remote: true do |f| %>

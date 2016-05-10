@@ -26,10 +26,10 @@
       <%= t('.payment') %>
     </div>
   </div>
-  <% @users.each do |user| %>
+  <% @users.each_with_index do |user, index| %>
   <div class="row alert-<%= mark_if_ordered_or_payed(user) %>">
     <div class="col-xs-2 col-sm-1 col-sm-offset-3 text-center">
-      <%= user.id %>
+      <%= index + 1 %>
     </div>
     <div class="col-xs-7 col-sm-3 text-center">
     <%= user.full_name %>

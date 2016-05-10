@@ -763,7 +763,7 @@ header {
     }
     .pinball-orgs {
       position: absolute;
-      bottom: $bottom-spacing;
+      bottom: 60px;
       right: 0px;
       z-index: 1;
     }
@@ -782,7 +782,7 @@ header {
     }
     .pinball-orgs {
       position: absolute;
-      bottom: $bottom-spacing;
+      bottom: 60px;
       right: 0px;
       z-index: 1;
     }
@@ -802,7 +802,7 @@ header {
     }
     .pinball-orgs {
       position: absolute;
-      bottom: $bottom-spacing;
+      bottom: 60px;
       right: 0px;
       z-index: 1;
     }
@@ -822,7 +822,7 @@ header {
     }
     .pinball-orgs {
       position: absolute;
-      bottom: $bottom-spacing;
+      bottom: 60px;
       right: 0px;
       z-index: 1;
     }
@@ -880,6 +880,9 @@ header {
     #pe-el {
       width: 78.875px;
       height: 50px;
+    }
+    #prosto {
+      width: 100px;
     }
     background-image: image-url("slider/fire-playfield.jpg");
     $bottom-spacing: 40px;
