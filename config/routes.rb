@@ -28,6 +28,9 @@ Rails.application.routes.draw do
     resources :payment_confirmations, only: [:index, :create, :update]
     resources :flippers
     resources :tournaments, only: [:new, :create, :edit, :update, :destroy, :show, :index]
+    resources :user_managements, only: [:index]
+    delete 'user_switches' => 'user_switches#destroy', as: 'destroy_user_switches'
+    post 'user_switches' => 'user_switches#create', as: 'create_user_switches'
     get 'sff_validations' => 'sff_validations#index'
     scope 'manage/(:tournament_id)' do
       resources :matches

@@ -3,11 +3,13 @@ module UsersHelper
     current_user.activated?
   end
 
+=begin
   def current_user
     if session[:user_id]
       User.find_by(id: session[:user_id])
     end
   end
+=end
 
   def mark_if_ordered_or_payed(user)
     if user.main_payed?

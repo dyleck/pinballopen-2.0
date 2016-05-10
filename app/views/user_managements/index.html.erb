@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="row-xs-12 text-center">
+      <h2>Zarządzanie użytkownikami</h2>
+    </div>
+  </div>
+  <div class="row">
+    <% if user_switched? %>
+      <div class="col-xs-12 alert alert-danger text-center">
+        Jesteś obecnie zalogowany jako <b><%= current_user.full_name %></b>.
+        <%= link_to "Wyłącz", destroy_user_switches_path, method: :delete, class: "btn btn-xs btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 alert alert-info">
+      <%= form_for :user_switches, url: create_user_switches_path, class: "form-horizontal" do |form| %>
+        <div class="col-xs-9 col-sm-5 col-sm-offset-3">
+          <%=
+            form.select :user_switch_id,
+                        User.all.map { |user|
+                          next if user.id == current_user(only_from_session: true).id
+                          [user.full_name, user.id]
+                        }.compact,
+                        {},
+                        { class: "form-control" }
+          %>
+        </div>
+        <div class="col-xs-3 col-sm-2">
+          <%= form.submit "Zmień", class: "btn btn-info" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
