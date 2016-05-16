@@ -1,6 +1,7 @@
-<% @rounds = phase.rounds.joins(:users, :flippers).
-        order("users.first_name", "users.last_name", "flippers.name") %>
-<% @rounds.each do |round| %>
-  <% html_class = cycle("light", "dark") %>
-  <%= render 'x_of_y/round', round: round, html_class: html_class %>
-<% end %>
+<div id="rounds">
+  <% @rounds = phase.rounds.joins(:users, :flippers).
+      order("users.first_name", "users.last_name", "flippers.name") %>
+  <% @rounds.each do |round| %>
+      <%= render 'x_of_y/round', round: round, html_class: cycle("light", "dark") %>
+  <% end %>
+</div>
