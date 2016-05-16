@@ -870,19 +870,19 @@ header {
 
   @media screen and (max-width: 479px) {
     #sff {
-      width: 42.6094px;
+      //width: 42.6094px;
       height: 50px;
     }
     #ifpa {
-      width: 54.7344px;
+      //width: 54.7344px;
       height: 50px;
     }
     #pe-el {
-      width: 78.875px;
+      //width: 78.875px;
       height: 50px;
     }
     #prosto {
-      width: 100px;
+      height: 50px;
     }
     background-image: image-url("slider/fire-playfield.jpg");
     $bottom-spacing: 40px;
