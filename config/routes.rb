@@ -21,6 +21,11 @@ Rails.application.routes.draw do
     get 'wait_for_sff' => 'static_pages#wait_for_sff'
     post 'login' => 'sessions#create'
     delete 'logout' => 'sessions#destroy'
+    resources :tournaments, only: [] do
+      member do
+        get 'standings'
+      end
+    end
   end
 
   scope 'admin' do
@@ -38,6 +43,7 @@ Rails.application.routes.draw do
       patch 'match_edit_confirm/:id' => 'match_confirmations#match_edit', as: 'match_edit_confirm'
       post 'match_create_confirm' => 'match_confirmations#match_create', as: 'match_create_confirm'
     end
+
   end
 
 

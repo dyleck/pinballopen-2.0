@@ -1,0 +1,6 @@
+$("#standings").replaceWith("<%= j(render "#{@tournament.current_phase.type.underscore}/standings") %>");
+console.log("js setTimeout() call");
+regex = /tournaments\/[0-9]+\/standings/;
+if (regex.test($(location).attr("pathname"))) {
+  setTimeout(standings.waitProgressBar, 1000);
+};

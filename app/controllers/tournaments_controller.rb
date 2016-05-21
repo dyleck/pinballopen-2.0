@@ -1,7 +1,7 @@
 class TournamentsController < ApplicationController
-  before_action :redirect_to_login_if_not_logged_in
-  before_action :redirect_to_root_if_not_admin
-  before_action :set_tournament, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_to_login_if_not_logged_in, except: [:standings]
+  before_action :redirect_to_root_if_not_admin, except: [:standings]
+  before_action :set_tournament, only: [:show, :edit, :update, :destroy, :standings]
 
   def show
   end
@@ -41,6 +41,13 @@ class TournamentsController < ApplicationController
 
   def index
     @tournaments = Tournament.all
+  end
+
+  def standings
+    respond_to do |format|
+      format.js {}
+      format.html
+    end
   end
 
   private

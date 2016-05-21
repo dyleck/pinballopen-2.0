@@ -1,0 +1,67 @@
+<div class="container-fluid" id="progress-bar">
+  <div class="row">
+    <div class="col-xs-12">
+      <div id="standings-progress">
+        <div id="standings-progress-bar">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "#{@tournament.current_phase.type.underscore}/standings" %>
+
+<script>
+  var standings = {
+    max_wait: 25,
+    wait_count: 26,
+    refresh: function() {
+      $.ajax({
+        url: "<%= standings_tournament_path(@tournament) %>",
+        dataType: 'script',
+        success: userPanel.setHeight
+      });
+    },
+    waitProgressBar: function() {
+      if (standings.wait_count < 0) {
+        standings.wait_count = standings.max_wait + 1;
+        standings.refresh();
+      } else {
+        $('#standings-progress-bar').css("width", Math.min(standings.wait_count * (100/standings.max_wait), 100) + "%");
+        setTimeout(standings.waitProgressBar, 1000);
+        standings.wait_count--;
+      }
+    }
+  };
+
+  var userPanel = {
+    fromTop: $('#standings table#user-table').offset().top,
+    height: $('#standings table#user-table').outerHeight(true),
+    animatedObject: $('#standings #user-panel'),
+    viewPortHeight: 0,
+    direction: "down",
+
+    setHeight: function() {
+      userPanel.viewPortHeight = $(window).outerHeight(true) - userPanel.fromTop - 5;
+      userPanel.animatedObject = $('#standings #user-panel');
+      userPanel.animatedObject.css('height', userPanel.viewPortHeight + "px");
+      userPanel.animateScroll();
+    },
+
+    animateScroll: function() {
+      if (userPanel.direction === "down") {
+        userPanel.animatedObject.scrollTop(0)
+            .animate({scrollTop: userPanel.height - userPanel.viewPortHeight}, 25000, "linear");
+        userPanel.direction = 'up';
+      } else {
+        userPanel.animatedObject.scrollTop(userPanel.height - userPanel.viewPortHeight)
+            .animate({scrollTop: 0}, 25000, "linear");
+        userPanel.direction = "down";
+      }
+    }
+
+  };
+  userPanel.setHeight();
+  setTimeout(standings.waitProgressBar, 1000);
+
+</script>

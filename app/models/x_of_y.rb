@@ -1,6 +1,9 @@
 class XOfY < Phase
 
   def assign(match)
+    if !self.tournament.flippers.include?(match.flipper)
+      return "Flipper nie bierze udziału w turnieju"
+    end
     user = match.users.first
     flipper = match.flipper
     rounds_played_by_user = self.rounds.joins(:users).where("scores.user_id": user.id)
@@ -47,5 +50,33 @@ class XOfY < Phase
 
   def update_scores(match, params)
     params[:match][:scores_attributes]["0"][:value].to_i
+  end
+
+  def user_points(user)
+    max_points = self.users.count
+    total_points = 0
+    flippers_played_with_scores(user).each do |entry|
+      count_of_greater_scores = matches.joins(:scores).where("scores.value > ?", entry[:score]).where("matches.flipper_id": entry[:flipper].id).count
+      total_points += max_points-count_of_greater_scores
+    end
+    total_points
+  end
+
+  def user_games_played(user)
+    matches.joins(:users, :scores).where("users.id": user.id).where.not("scores.value": nil).count
+  end
+
+  def flippers_played_with_scores(user)
+    entries = matches.joins(:users, :scores).where("users.id": user.id).where.not("scores.value": nil).select("matches.flipper_id", "scores.value")
+    entries.map {|field| {flipper: Flipper.find_by(id: field.flipper_id), score: field.value}}
+  end
+
+  def flippers_game_count
+    flippers = []
+    self.tournament.flippers.each do |flipper|
+      flippers << {name: flipper.name, count: self.matches.where("matches.flipper_id": flipper.id).
+                                                  joins(:scores).where.not("scores.value": nil).count}
+    end
+    flippers
   end
 end
