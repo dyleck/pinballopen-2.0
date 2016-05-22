@@ -44,9 +44,12 @@ class TournamentsController < ApplicationController
   end
 
   def standings
+    @projector = !params[:projector].nil?
     respond_to do |format|
       format.js {}
-      format.html
+      format.html do
+        # render layout: false if @projector
+      end
     end
   end
 

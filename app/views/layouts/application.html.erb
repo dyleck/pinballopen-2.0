@@ -39,13 +39,14 @@
 </script>
 <% end %>
 
-<%= render 'layouts/header' %>
-
-<%= render 'shared/flash' %>
-
+<% if !@projector %>
+  <%= render 'layouts/header' %>
+  <%= render 'shared/flash' %>
+<% end %>
 <%= yield %>
 
-<%= render 'layouts/login_modal' %>
-
+<% if !@projector %>
+  <%= render 'layouts/login_modal' %>
+<% end %>
 </body>
 </html>
