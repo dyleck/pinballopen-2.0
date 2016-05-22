@@ -8,4 +8,19 @@ class Tournament < ActiveRecord::Base
   def current_phase
     self.phases.first # TODO placeholder
   end
+
+  def start
+    self.phases.first.users = User.all_that_paid_for_main
+    self.phases.first.save
+  end
+
+  def started?
+    self.phases.first.users.count > 0
+  end
+
+  def reset
+    self.phases.first.rounds.destroy_all
+    self.phases.first.users.clear
+    self.phases.first.save
+  end
 end

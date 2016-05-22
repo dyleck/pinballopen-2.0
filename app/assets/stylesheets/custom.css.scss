@@ -1209,3 +1209,10 @@ header {
     }
   }
 }
+
+#user-panel, #machine-panel {
+  @media screen and (min-width: 1400px) {
+    font-size: 1.3em;
+  }
+}
+

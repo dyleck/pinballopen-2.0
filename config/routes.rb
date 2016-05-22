@@ -34,7 +34,11 @@ Rails.application.routes.draw do
     resources :products
     resources :payment_confirmations, only: [:index, :create, :update]
     resources :flippers
-    resources :tournaments, only: [:new, :create, :edit, :update, :destroy, :show, :index]
+    resources :tournaments, only: [:new, :create, :edit, :update, :destroy, :show, :index] do
+      member do
+        get 'start' => 'tournaments#start'
+      end
+    end
     resources :user_managements, only: [:index, :new, :create, :edit, :update]
     delete 'user_switches' => 'user_switches#destroy', as: 'destroy_user_switches'
     post 'user_switches' => 'user_switches#create', as: 'create_user_switches'

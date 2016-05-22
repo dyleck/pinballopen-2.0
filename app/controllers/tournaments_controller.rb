@@ -1,7 +1,7 @@
 class TournamentsController < ApplicationController
   before_action :redirect_to_login_if_not_logged_in, except: [:standings]
   before_action :redirect_to_root_if_not_admin, except: [:standings]
-  before_action :set_tournament, only: [:show, :edit, :update, :destroy, :standings]
+  before_action :set_tournament, only: [:show, :edit, :update, :destroy, :standings, :start]
 
   def show
   end
@@ -17,6 +17,7 @@ class TournamentsController < ApplicationController
       render 'new'
     else
       @tournament.phases.first.users << User.all_that_paid_for_main # TODO: move to start of tournament action
+      flash[:success] = "Turniej wystartowany"
       redirect_to tournaments_path
     end
   end
@@ -41,6 +42,12 @@ class TournamentsController < ApplicationController
 
   def index
     @tournaments = Tournament.all
+  end
+
+  def start
+    @tournament.start
+    flash[:success] = "#{@tournament.name} wystartowany!"
+    redirect_to tournaments_path
   end
 
   def standings

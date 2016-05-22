@@ -12,7 +12,7 @@ class UserStatsController < ApplicationController
       @tournament = default_tournament
     end
     @phase = @tournament.current_phase
-    @user = User.find_by(params[:user_id])
+    @user = User.find_by(id: params[:user_id])
     if @user.nil?
       redirect_to root_path
     end
