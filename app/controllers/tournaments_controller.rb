@@ -77,5 +77,8 @@ class TournamentsController < ApplicationController
 
     def set_tournament
       @tournament = Tournament.find_by(id: params[:id])
+      if @tournament.nil?
+        redirect_to root_path
+      end
     end
 end
