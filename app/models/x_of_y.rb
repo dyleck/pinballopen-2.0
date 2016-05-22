@@ -80,10 +80,36 @@ class XOfY < Phase
   end
 
   def points_for_flipper(flipper_score)
-    max_points - matches.joins(:scores).where("scores.value > ?", flipper_score[:score]).where("matches.flipper_id": flipper_score[:flipper].id).count
+    max_points - matches.joins(:scores).where("scores.value > ?", flipper_score[:score]).
+                    where("matches.flipper_id": flipper_score[:flipper].id).count
   end
 
   def max_points
     self.users.count
+  end
+
+  def compare(a,b)
+    if a[:points] < b[:points]
+      return -1
+    elsif a[:points] > b[:points]
+      return 1
+    else
+      a_flipper_points = flippers_played_with_scores(a[:user]).map{|f| points_for_flipper(f)}.sort.reverse
+      b_flipper_points = flippers_played_with_scores(b[:user]).map{|f| points_for_flipper(f)}.sort.reverse
+      if a_flipper_points.length == b_flipper_points.length
+        a_flipper_points.each_with_index do |a_val, index|
+          if a_val < b_flipper_points[index]
+            return -1
+          elsif a_val > b_flipper_points[index]
+            return 1
+          end
+        end
+        return 0
+      elsif a_flipper_points.length < b_flipper_points.length
+        return 1
+      else
+        return -1
+      end
+    end
   end
 end

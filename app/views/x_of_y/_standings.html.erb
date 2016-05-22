@@ -18,16 +18,22 @@
           </tr>
           </thead>
           <tbody>
-          <% phase.users.map {|user| { name: user.full_name,
+<%
+#          <% phase.users.map {|user| { name: user.full_name,
+#                                       points: phase.user_points(user),
+#                                       games: phase.user_games_played(user) } }
+#                 .sort_by{|a| a[:points]}.reverse.each_with_index do |entry, index| %>
+%>
+          <% phase.users.map {|user| { user: user,
                                        points: phase.user_points(user),
                                        games: phase.user_games_played(user) } }
-                 .sort_by{|a| a[:points]}.reverse.each_with_index do |entry, index| %>
+                 .sort{|a,b| phase.compare(a,b)}.reverse.each_with_index do |entry, index| %>
               <tr>
                 <td>
                   <%= index + 1 %>
                 </td>
                 <td>
-                  <%= entry[:name] %>
+                  <%= entry[:user].full_name %>
                 </td>
                 <td>
                   <%= entry[:points] %>
