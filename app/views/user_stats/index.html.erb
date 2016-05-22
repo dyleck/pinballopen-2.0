@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h2>Wyniki</h2> <!-- TODO t -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <% Tournament.where(name: ["Modern", "80's", "Stern Trophy"]).each do |tournament| %>
+        <%= link_to tournament.name, user_user_stats_path(tournament_id: tournament.id), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="row">
+        <div class="col-sm-5">
+          Maszyna <!-- TODO t -->
+        </div>
+        <div class="col-sm-3">
+          Wynik <!-- TODO t -->
+        </div>
+        <div class="col-sm-2">
+          Miejsce <!-- TODO t -->
+        </div>
+        <div class="col-sm-2">
+          Punkty <!-- TODO t -->
+        </div>
+      </div>
+      <div class="row">
+        <% @phase.flippers_played_with_scores(@user).each do |entry| %>
+          <div class="col-sm-5">
+            <%= entry[:flipper].name %>
+          </div>
+          <div class="col-sm-3">
+            <%= entry[:score] %>
+          </div>
+          <div class="col-xs-2">
+            <%= @phase.max_points - ( points = @phase.points_for_flipper(entry) ) + 1 %>
+          </div>
+          <div class="col-xs-2">
+            <%= points %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

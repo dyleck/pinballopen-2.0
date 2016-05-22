@@ -53,11 +53,10 @@ class XOfY < Phase
   end
 
   def user_points(user)
-    max_points = self.users.count
+    max = max_points
     total_points = 0
     flippers_played_with_scores(user).each do |entry|
-      count_of_greater_scores = matches.joins(:scores).where("scores.value > ?", entry[:score]).where("matches.flipper_id": entry[:flipper].id).count
-      total_points += max_points-count_of_greater_scores
+      total_points += points_for_flipper(entry)
     end
     total_points
   end
@@ -78,5 +77,13 @@ class XOfY < Phase
                                                   joins(:scores).where.not("scores.value": nil).count}
     end
     flippers
+  end
+
+  def points_for_flipper(flipper_score)
+    max_points - matches.joins(:scores).where("scores.value > ?", flipper_score[:score]).where("matches.flipper_id": flipper_score[:flipper].id).count
+  end
+
+  def max_points
+    self.users.count
   end
 end

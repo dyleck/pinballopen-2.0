@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :contacts, only: [:create]
     resources :orders, only: [:new, :update, :create, :destroy]
     resources :order_items, only: [:create, :destroy]
-    resources :users
+    resources :users do
+      resources :user_stats, only: [:index]
+    end
     resources :account_activations, only: [:edit, :update]
     resources :password_resets, only: [:edit, :update, :new, :create]
     resources :teams, only: [:new, :create, :edit, :update, :show, :index]
