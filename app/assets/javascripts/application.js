@@ -18,4 +18,5 @@
 //= require turbolinks
 //= require imagesloaded.pkgd.min
 //= require nested_form_fields
+//= require jquery.stickytableheaders.min
 //= require_tree .

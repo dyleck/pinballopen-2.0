@@ -69,10 +69,14 @@
           userPanel.animatedObject.scrollTop(0)
               .animate({scrollTop: userPanel.height - userPanel.viewPortHeight}, 25000, "linear");
           userPanel.direction = 'up';
-        } else {
+        } else if (userPanel.direction === "up") {
           userPanel.animatedObject.scrollTop(userPanel.height - userPanel.viewPortHeight)
               .animate({scrollTop: 0}, 25000, "linear");
-          userPanel.direction = "down";
+          userPanel.direction = "reload";
+        } else {
+          <% next_tournament = @tournaments[(@tournaments.index(@tournament) + 1) % @tournaments.length] %>
+          <% next_url = url_for standings_tournament_url(next_tournament, projector: "1", locale: locale) %>
+          window.location = "<%= next_url %>";
         }
       }
 

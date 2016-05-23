@@ -51,6 +51,7 @@ class TournamentsController < ApplicationController
   end
 
   def standings
+    @tournaments = Tournament.where(name: ["Modern", "80's", "Stern Trophy"]).order(:name)
     @projector = !params[:projector].nil?
     respond_to do |format|
       format.js {}

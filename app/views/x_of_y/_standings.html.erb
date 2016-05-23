@@ -18,12 +18,7 @@
           </tr>
           </thead>
           <tbody>
-<%
-#          <% phase.users.map {|user| { name: user.full_name,
-#                                       points: phase.user_points(user),
-#                                       games: phase.user_games_played(user) } }
-#                 .sort_by{|a| a[:points]}.reverse.each_with_index do |entry, index| %>
-%>
+
           <% phase.users.map {|user| { user: user,
                                        points: phase.user_points(user),
                                        games: phase.user_games_played(user) } }
@@ -76,3 +71,7 @@
     </div>
   </div>
 </div>
+
+<script>
+  $('#user-table').stickyTableHeaders({scrollableArea: $('#user-panel')});
+</script>
