@@ -35,6 +35,9 @@ class MatchesController < ApplicationController
 
   def edit
     @match = Match.find_by(id: params[:id])
+    if @match.nil?
+      redirect_to matches_path(tournament_id: @tournament)
+    end
   end
 
   def update

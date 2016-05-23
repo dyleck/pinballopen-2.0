@@ -9,13 +9,21 @@ class MatchConfirmationsController < ApplicationController
 
   def match_create
     @match = Match.new(match_params)
-    if existing_match = @tournament.current_phase.match_if_contains(@match)
-      redirect_to edit_match_path(existing_match, tournament_id: @tournament.id)
+    begin
+      if existing_match = @tournament.current_phase.match_if_contains(@match)
+        redirect_to edit_match_path(existing_match, tournament_id: @tournament.id)
+      end
+    rescue
+      flash[:danger] = "Użytkownik lub flipper nie znaleziony"
+      redirect_to new_match_path(tournament_id: @tournament)
     end
   end
 
   def match_edit
     @match = Match.find_by(id: params[:id])
+    if @match.nil?
+      redirect_to matches_path(tournament_id: @tournament)
+    end
     @new_scores = @tournament.current_phase.update_scores(@match, params)
   end
 
