@@ -2,6 +2,11 @@
 
 <div class="container" id="t-manage">
   <div class="row">
+    <div class="col-xs-12 text-center">
+      <h3><%= @tournament.name %></h3>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 border">
       <%= render "#{@tournament.current_phase.type.downcase}_new_match" %>
     </div>

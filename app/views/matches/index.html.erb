@@ -1,12 +1,19 @@
 <% provide :title, "Zarządzaj #{@tournament.name}"%>
 
+<div class="contaner">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h2><%= @tournament.name %></h2>
+    </div>
+  </div>
+</div>
 <div class="container" id="matches">
   <div class="row">
     <div class="col-xs-12 text-center">
       <%= link_to "Start/Koniec gry", new_match_path(tournament_id: @tournament.id), class: "btn btn-primary btn-md" %>
     </div>
     <div class="col-xs-12 text-center">
-      <h2>Rundy</h2>
+      <h3>Wyniki</h3>
     </div>
   </div>
   <%= render "#{@tournament.current_phase.type.underscore}/phase", phase: @tournament.current_phase %>

@@ -3,4 +3,5 @@ class Round < ActiveRecord::Base
   has_many :matches, dependent: :destroy
   has_many :users, through: :matches
   has_many :flippers, through: :matches
+  has_many :scores, through: :matches
 end

@@ -16,8 +16,7 @@ class TournamentsController < ApplicationController
     if @tournament.errors.any?
       render 'new'
     else
-      @tournament.phases.first.users << User.all_that_paid_for_main # TODO: move to start of tournament action
-      flash[:success] = "Turniej wystartowany"
+      flash[:success] = "Turniej utworzony"
       redirect_to tournaments_path
     end
   end

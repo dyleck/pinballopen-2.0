@@ -1,10 +1,12 @@
 <div id="rounds">
   <% if params[:user_id].nil? %>
     <% @rounds = phase.rounds.joins(:users, :flippers).
+        where("scores.value": nil).
         order("users.first_name", "users.last_name", "flippers.name") %>
   <% else %>
       <% @rounds = phase.rounds.joins(:users, :flippers).
           where("users.id": params[:user_id]).
+          where("scores.value": nil).
           order("users.first_name", "users.last_name", "flippers.name") %>
   <% end %>
   <div class="row">

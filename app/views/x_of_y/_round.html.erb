@@ -1,16 +1,17 @@
 <% match = round.matches.first %>
 <div class="row <%= html_class %>">
-  <div class="col-xs-12 col-sm-3">
-    <%= match.scores.first.user.full_name %>
-  </div>
-  <div class="col-xs-12 col-sm-3">
-    <%= match.flipper.name %>
-  </div>
-  <div class="col-xs-12 col-sm-3">
-    <%= number_with_delimiter(match.scores.first.value, delimiter: " ") %>
-  </div>
-  <div class="col-xs-12 col-sm-3">
-    <%= link_to "Edytuj", edit_match_path(match, tournament_id: @tournament.id), class: "btn btn-xs btn-primary" %>
-    <%= link_to "Usuń", match_destroy_confirm_path(match, tournament_id: @tournament.id), class: "btn btn-xs btn-danger" %>
-  </div>
+  <%= link_to edit_match_path(match, tournament_id: @tournament.id) do %>
+    <div class="col-xs-12 col-sm-3 clickable">
+      <%= match.scores.first.user.full_name %>
+    </div>
+    <div class="col-xs-12 col-sm-3 clickable">
+      <%= match.flipper.name %>
+    </div>
+    <div class="col-xs-12 col-sm-3 clickable">
+      <%= number_with_delimiter(match.scores.first.value, delimiter: " ") %>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <%= link_to "Wynik", edit_match_path(match, tournament_id: @tournament.id), class: "btn btn-lg btn-primary" %>
+    </div>
+  <% end %>
 </div>

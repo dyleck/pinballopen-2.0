@@ -112,4 +112,11 @@ class XOfY < Phase
       end
     end
   end
+
+  def flipper_if_user_has_unfinished_match?(match)
+    user = match.scores.first.user
+    if !(match = matches.joins(:users, :scores).where("users.id": user.id, "scores.value": nil).first).nil?
+      match.flipper
+    end
+  end
 end

@@ -9,6 +9,10 @@ class MatchConfirmationsController < ApplicationController
 
   def match_create
     @match = Match.new(match_params)
+    if flipper = @tournament.current_phase.flipper_if_user_has_unfinished_match?(@match)
+      flash[:danger] = "Gracz nie skończył <b>#{flipper.name}</b>"
+      redirect_to matches_path(tournament_id: @tournament)
+    end
     begin
       if existing_match = @tournament.current_phase.match_if_contains(@match)
         redirect_to edit_match_path(existing_match, tournament_id: @tournament.id)

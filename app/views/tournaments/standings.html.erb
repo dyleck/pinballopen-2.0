@@ -29,8 +29,8 @@
 <% if @projector %>
   <script>
     var standings = {
-      max_wait: 25,
-      wait_count: 26,
+      max_wait: 60,
+      wait_count: 61,
       refresh: function() {
         $.ajax({
           url: "<%= standings_tournament_path(@tournament) %>",
@@ -84,5 +84,22 @@
     userPanel.setHeight();
     setTimeout(standings.waitProgressBar, 1000);
 
+    var flipperPanel = {
+      flippers: <%== @tournament.flippers.map{|flipper| escape_javascript(flipper_path(flipper, tournament_id: @tournament))} %>,
+      index: 0,
+      getScores: function() {
+        $.ajax({
+          url: flipperPanel.flippers[flipperPanel.index],
+          dataType: "text",
+          success: flipperPanel.refreshPanel
+        })
+      },
+      refreshPanel: function(response) {
+        $("#machine-panel").html(response);
+        flipperPanel.index = ++(flipperPanel.index) % flipperPanel.flippers.length;
+        setTimeout(flipperPanel.getScores, standings.max_wait * 1000 / flipperPanel.flippers.length);
+      }
+    };
+    flipperPanel.getScores();
   </script>
 <% end %>
