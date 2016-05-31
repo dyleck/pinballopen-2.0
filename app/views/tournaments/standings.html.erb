@@ -67,7 +67,7 @@
       animateScroll: function() {
         if (userPanel.direction === "down") {
           userPanel.animatedObject.scrollTop(0)
-              .animate({scrollTop: userPanel.height - userPanel.viewPortHeight}, standings.max_wait * 100, "linear");
+              .animate({scrollTop: userPanel.height - userPanel.viewPortHeight}, standings.max_wait * 1000, "linear");
           userPanel.direction = 'up';
         } else if (userPanel.direction === "up") {
           userPanel.animatedObject.scrollTop(userPanel.height - userPanel.viewPortHeight)
