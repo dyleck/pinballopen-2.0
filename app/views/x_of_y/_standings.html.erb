@@ -1,4 +1,5 @@
 <% phase = @tournament.current_phase %>
+<% if !only_players %>
 <div class="container-fluid" id="standings">
   <div class="row">
     <div class="col-xs-12 col-sm-6">
@@ -7,6 +8,7 @@
           <h2>Gracze</h2> <!-- TODO t -->
         </div>
       </div>
+<% end %>
       <div class="col-xs-12" style="overflow: hidden;" id="user-panel">
         <table class="table table-responsive table-striped" id="user-table">
           <thead class="table-header">
@@ -41,33 +43,34 @@
           </tbody>
         </table>
       </div>
+<% if !only_players %>
     </div>
     <div class="col-xs-12 col-sm-6" id="machine-panel">
-      <div class="row">
-        <div class="col-xs-12 text-center">
-          <h2>Maszyny</h2> <!-- TODO t -->
-        </div>
-      </div>
-      <table class="table table-responsive table-striped">
-        <thead class="table-header">
-        <tr>
-          <td>Nazwa</td> <!-- TODO t -->
-          <td>Ilość gier</td>
-        </tr>
-        </thead>
-        <tbody>
-        <% phase.flippers_game_count.sort_by{|a| a[:name]}.each do |entry| %>
-            <tr>
-              <td>
-                <%= entry[:name] %>
-              </td>
-              <td>
-                <%= entry[:count] %>
-              </td>
-            </tr>
-        <% end %>
-        </tbody>
-      </table>
+      <!--<div class="row">-->
+        <!--<div class="col-xs-12 text-center">-->
+          <!--<h2>Maszyny</h2> &lt;!&ndash; TODO t &ndash;&gt;-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<table class="table table-responsive table-striped">-->
+        <!--<thead class="table-header">-->
+        <!--<tr>-->
+          <!--<td>Nazwa</td> &lt;!&ndash; TODO t &ndash;&gt;-->
+          <!--<td>Ilość gier</td>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<% phase.flippers_game_count.sort_by{|a| a[:name]}.each do |entry| %>-->
+            <!--<tr>-->
+              <!--<td>-->
+                <!--<%= entry[:name] %>-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--<%= entry[:count] %>-->
+              <!--</td>-->
+            <!--</tr>-->
+        <!--<% end %>-->
+        <!--</tbody>-->
+      <!--</table>-->
     </div>
   </div>
 </div>
@@ -75,3 +78,5 @@
 <script>
   $('#user-table').stickyTableHeaders({scrollableArea: $('#user-panel')});
 </script>
+
+<% end %>

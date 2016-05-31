@@ -53,7 +53,7 @@ class TournamentsController < ApplicationController
     @tournaments = Tournament.where(name: ["Modern", "80's", "Stern Trophy"]).order(:name)
     @projector = !params[:projector].nil?
     respond_to do |format|
-      format.js {}
+      format.js { @only_players = true }
       format.html do
         # render layout: false if @projector
       end

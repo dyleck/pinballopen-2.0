@@ -2,10 +2,10 @@
 <% if @projector %>
     <div class="cotainer-fluid wet-asphalt">
       <div class="row" style="margin: 0;">
-        <div class="col-md-8 col-md-offset-1 text-left">
+        <div class="col-md-7 col-md-offset-1 text-left">
           <h1>Polish Pinball Open 2016</h1>
         </div>
-        <div class="col-md-2 text-right">
+        <div class="col-md-3 text-right">
           <h1>
             <%= @tournament.name %>
           </h1>
@@ -24,7 +24,7 @@
   </div>
 <% end %>
 
-<%= render "#{@tournament.current_phase.type.underscore}/standings" %>
+<%= render "#{@tournament.current_phase.type.underscore}/standings", only_players: false %>
 
 <% if @projector %>
   <script>
@@ -67,11 +67,11 @@
       animateScroll: function() {
         if (userPanel.direction === "down") {
           userPanel.animatedObject.scrollTop(0)
-              .animate({scrollTop: userPanel.height - userPanel.viewPortHeight}, 25000, "linear");
+              .animate({scrollTop: userPanel.height - userPanel.viewPortHeight}, standings.max_wait * 100, "linear");
           userPanel.direction = 'up';
         } else if (userPanel.direction === "up") {
           userPanel.animatedObject.scrollTop(userPanel.height - userPanel.viewPortHeight)
-              .animate({scrollTop: 0}, 25000, "linear");
+              .animate({scrollTop: 0}, standings.max_wait * 100, "linear");
           userPanel.direction = "reload";
         } else {
           <% next_tournament = @tournaments[(@tournaments.index(@tournament) + 1) % @tournaments.length] %>
@@ -85,7 +85,7 @@
     setTimeout(standings.waitProgressBar, 1000);
 
     var flipperPanel = {
-      flippers: <%== @tournament.flippers.map{|flipper| escape_javascript(flipper_path(flipper, tournament_id: @tournament))} %>,
+      flippers: <%== @tournament.flippers.tournament_order.map{|flipper| escape_javascript(flipper_path(flipper, tournament_id: @tournament))} %>,
       index: 0,
       getScores: function() {
         $.ajax({
@@ -97,7 +97,7 @@
       refreshPanel: function(response) {
         $("#machine-panel").html(response);
         flipperPanel.index = ++(flipperPanel.index) % flipperPanel.flippers.length;
-        setTimeout(flipperPanel.getScores, standings.max_wait * 1000 / flipperPanel.flippers.length);
+        setTimeout(flipperPanel.getScores, (standings.max_wait * 1000) / flipperPanel.flippers.length);
       }
     };
     flipperPanel.getScores();
