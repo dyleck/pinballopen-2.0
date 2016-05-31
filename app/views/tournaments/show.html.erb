@@ -16,6 +16,16 @@
       Number of machines: <%= @tournament.number_of_machines %>
     </div>
   </div>
+  <div class="row">
+    <% @tournament.flippers.tournament_order.each_with_index do |flipper,index| %>
+      <div class="col-xs-1">
+        <%= index + 1 %>
+      </div>
+      <div class="col-xs-11">
+        <%= flipper.name %>
+      </div>
+    <% end %>
+  </div>
 </div>
 <div class="container">
   <div class="row">
