@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160507180455) do
+ActiveRecord::Schema.define(version: 20160531173759) do
 
   create_table "flippers", force: :cascade do |t|
     t.string   "name"
@@ -128,6 +128,8 @@ ActiveRecord::Schema.define(version: 20160507180455) do
     t.string   "activation_digest"
     t.string   "reset_digest"
     t.integer  "team_id"
+    t.boolean  "retired"
+    t.boolean  "superadmin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

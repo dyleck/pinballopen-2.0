@@ -9,16 +9,30 @@ class MatchConfirmationsController < ApplicationController
 
   def match_create
     @match = Match.new(match_params)
-    if flipper = @tournament.current_phase.flipper_if_user_has_unfinished_match?(@match)
-      flash[:danger] = "Gracz nie skończył <b>#{flipper.name}</b>"
-      redirect_to matches_path(tournament_id: @tournament)
-    end
-    begin
-      if existing_match = @tournament.current_phase.match_if_contains(@match)
-        redirect_to edit_match_path(existing_match, tournament_id: @tournament.id)
+    if @match.valid?
+      if !@tournament.flippers.include?(Flipper.find_by(id: params[:match][:flipper_id]))
+        flash[:danger] = "Flipper nie bierze udziału w turnieju"
+        redirect_to new_match_path(tournament_id: @tournament)
+      elsif flipper = @tournament.current_phase.flipper_if_user_has_unfinished_match?(@match)
+        flash[:danger] = "Gracz nie skończył <b>#{flipper.name}</b>"
+        redirect_to matches_path(tournament_id: @tournament)
+      else
+        begin
+          if existing_match = @tournament.current_phase.match_if_contains(@match)
+            if superadmin?
+              redirect_to edit_match_path(existing_match, tournament_id: @tournament.id)
+            else
+              flash[:danger] = "Użytkownik już zagrał na flipperze"
+              redirect_to new_match_path(tournament_id: @tournament)
+            end
+          end
+        rescue
+          flash[:danger] = "Użytkownik lub flipper nie znaleziony"
+          redirect_to new_match_path(tournament_id: @tournament)
+        end
       end
-    rescue
-      flash[:danger] = "Użytkownik lub flipper nie znaleziony"
+    else
+      flash[:danger] = "Podałeś błędne dane"
       redirect_to new_match_path(tournament_id: @tournament)
     end
   end

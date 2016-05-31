@@ -1,11 +1,7 @@
 <% provide :title, "Zarządzaj #{@tournament.name}"%>
 
 <div class="contaner">
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <h2><%= @tournament.name %></h2>
-    </div>
-  </div>
+  <%= render "header" %>
 </div>
 <div class="container" id="matches">
   <div class="row">

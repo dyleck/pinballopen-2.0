@@ -28,6 +28,10 @@ module SessionsHelper
     current_user(only_from_session: true).admin?
   end
 
+  def superadmin?
+    current_user.superadmin?
+  end
+
   def redirect_to_login_if_not_logged_in
     if !logged_in?
       session[:display_login] = true
@@ -52,6 +56,12 @@ module SessionsHelper
 
   def redirect_to_root_if_not_admin
     if !logged_in? || !current_user(only_from_session: true).admin?
+      redirect_to root_path
+    end
+  end
+
+  def redirect_to_root_if_not_superadmin_for_superadmin_in_user_params
+    if params[:user][:superadmin] && !superadmin?
       redirect_to root_path
     end
   end

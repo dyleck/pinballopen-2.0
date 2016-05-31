@@ -1,6 +1,7 @@
 <% provide :title, "Wynik - #{@tournament.name}" %>
 
 <div class="container" id="t-manage">
+  <%= render "header" %>
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 border">
       <%= render "#{@tournament.current_phase.type.downcase}_update_match" %>

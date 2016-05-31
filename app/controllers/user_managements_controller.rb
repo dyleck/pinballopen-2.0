@@ -1,6 +1,7 @@
 class UserManagementsController < ApplicationController
   before_action :redirect_to_login_if_not_logged_in
   before_action :redirect_to_root_if_not_admin
+  before_action :redirect_to_root_if_not_superadmin_for_superadmin_in_user_params, only: [:create, :update]
 
   def initialize
     @options = {}
@@ -45,7 +46,7 @@ class UserManagementsController < ApplicationController
 
   private
     def user_managements_params
-      params.require(:user).permit(:first_name,:last_name,:activated,:admin,:sff_validated, :password, :password_confirmation, :email)
+      params.require(:user).permit(:first_name,:last_name,:activated,:admin,:sff_validated, :password, :password_confirmation, :email, :superadmin)
     end
 
     def create_order(user)

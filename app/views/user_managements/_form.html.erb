@@ -36,6 +36,13 @@
         <%= form.check_box :admin %> Admin
       <% end %>
     </div>
+    <% if superadmin? %>
+      <div class="checkbox">
+        <%= label_tag do %>
+          <%= form.check_box :superadmin %> SuperAdmin
+        <% end %>
+      </div>
+    <% end %>
     <div class="checkbox">
       <%= label_tag do %>
         <%= form.check_box :sff_validated %> Członek SFF

@@ -15,8 +15,8 @@
         <% if tournament.started? %>
             <%= link_to "Wpisuj wyniki", matches_path(tournament_id: tournament.id), class: "btn btn-lg btn-info", style: "margin-bottom: 25px;" %>
         <% else %>
-            <%= link_to "Start", start_tournament_path(tournament), class: "btn btn-sm btn-primary", style: "margin-bottom: 25px; margin-right: 20px;" %>
-            <%= link_to "Usuń", tournament_path(tournament), method: :delete, class: "btn btn-sm btn-danger" %>
+            <%= link_to "Start", start_tournament_path(tournament), class: "btn btn-lg btn-primary" %>
+            <%= link_to "Usuń", tournament_path(tournament), method: :delete, class: "btn btn-lg btn-danger" %>
         <% end %>
       </div>
     </div>
