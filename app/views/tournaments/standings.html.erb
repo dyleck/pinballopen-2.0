@@ -71,7 +71,7 @@
           userPanel.direction = 'up';
         } else if (userPanel.direction === "up") {
           userPanel.animatedObject.scrollTop(userPanel.height - userPanel.viewPortHeight)
-              .animate({scrollTop: 0}, standings.max_wait * 100, "linear");
+              .animate({scrollTop: 0}, standings.max_wait * 1000, "linear");
           userPanel.direction = "reload";
         } else {
           <% next_tournament = @tournaments[(@tournaments.index(@tournament) + 1) % @tournaments.length] %>
