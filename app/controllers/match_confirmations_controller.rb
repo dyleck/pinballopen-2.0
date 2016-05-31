@@ -51,6 +51,11 @@ class MatchConfirmationsController < ApplicationController
     end
 
     def match_params
+      if params[:match][:flipper_number] && flipper_number = params[:match][:flipper_number].to_i
+        if !(flipper_number < 1) && !(flipper_number > @tournament.flippers.length)
+          params[:match][:flipper_id] = @tournament.flippers.tournament_order[flipper_number - 1].id.to_s
+        end
+      end
       params.require(:match).permit(:flipper_id, scores_attributes: [:id, :user_id, :value])
     end
 end

@@ -61,7 +61,7 @@
                 <% if !@tournament.number_of_machines.nil? %>
                   <% @tournament.number_of_machines.times do |index| %>
                     <div class="form-group">
-                      <% if @tournament.flippers[index].nil? %>
+                      <% if @tournament.flippers.tournament_order[index].nil? %>
                         <%= select_tag("tournament[flippers][]",
                           options_for_select(Flipper.order(:name).map{|flipper| ["#{flipper.name} - #{flipper.id}", flipper.id]}),
                           prompt: "Wybierz maszynę",
@@ -70,7 +70,7 @@
                       <% else %>
                         <%= select_tag("tournament[flippers[]",
                             options_for_select(Flipper.order(:name).map{|flipper| ["#{flipper.name} - #{flipper.id}", flipper.id]},
-                              @tournament.flippers[index].id),
+                              @tournament.flippers.tournament_order[index].id),
                             class: "form-control")
                         %>
                       <% end %>

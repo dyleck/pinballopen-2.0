@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531173759) do
+ActiveRecord::Schema.define(version: 20160531191232) do
 
   create_table "flippers", force: :cascade do |t|
     t.string   "name"
     t.string   "short_name"
     t.string   "translite_url"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "tournament_id"
+    t.integer  "flipper_number"
   end
 
   add_index "flippers", ["tournament_id"], name: "index_flippers_on_tournament_id"

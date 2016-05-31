@@ -70,7 +70,11 @@ class TournamentsController < ApplicationController
                                                                  :number_of_rounds ])
       number = p[:number_of_machines].to_i
       if p[:flippers]
-        p[:flippers] = p[:flippers].map{|id| Flipper.find_by(id: id)}[0, number].compact
+        p[:flippers] = p[:flippers].map.with_index do |id, index|
+          flipper = Flipper.find_by(id: id)
+          flipper.update_attribute(:flipper_number, index)
+          flipper
+        end[0, number].compact
       end
       p
     end
