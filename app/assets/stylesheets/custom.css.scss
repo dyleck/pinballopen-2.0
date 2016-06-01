@@ -1227,3 +1227,28 @@ header {
     font-size: 1.5em;
   }
 }
+
+div.light, div.dark {
+  @media all and (max-width: 767px) {
+    & > div {
+      border-bottom: 1px solid black;
+    }
+  }
+  @media all and (min-width: 768px) {
+    & > div {
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+  }
+}
+
+div.light {
+  background: #ccc;
+}
+
+#personal {
+  .header {
+    background-color: #1f1f1f;
+    color: yellow;
+  }
+}
