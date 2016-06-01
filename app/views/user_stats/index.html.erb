@@ -51,4 +51,13 @@
         <% end %>
     </div>
   </div>
+  <div class="row text-center">
+    <h3>
+      <% if (left = (@tournament.current_phase.number_of_rounds - @phase.flippers_played_with_scores(@user).count)) > 0  %>
+        Do zagrania: <%= left %> <!-- TODO t -->
+      <% else %>
+        Zagrałeś wszystkie gry w tym turnieju <!-- TODO t -->
+      <% end %>
+    </h3>
+  </div>
 </div>
