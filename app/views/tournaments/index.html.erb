@@ -6,6 +6,13 @@
       <h1>Turnieje</h1>
     </div>
   </div>
+    <% if superadmin? %>
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <%= link_to "Wyniki na projektor", standings_tournament_path(Tournament.first, projector: "1"), class: "btn btn-lg btn-danger" %>
+          </div>
+        </div>
+    <% end %>
     <% @tournaments.each do |tournament| %>
     <div class="row">
       <div class="col-xs-6 col-sm-3 col-sm-offset-3">
