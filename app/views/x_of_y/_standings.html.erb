@@ -1,0 +1,82 @@
+<% phase = @tournament.current_phase %>
+<% if !only_players %>
+<div class="container-fluid" id="standings">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <h2>Gracze</h2> <!-- TODO t -->
+        </div>
+      </div>
+<% end %>
+      <div class="col-xs-12" style="overflow: hidden;" id="user-panel">
+        <table class="table table-responsive table-striped" id="user-table">
+          <thead class="table-header">
+          <tr>
+            <td>#</td> <!-- TODO t -->
+            <td>Gracz</td>
+            <td>Pkt</td>
+            <td>Gry</td>
+          </tr>
+          </thead>
+          <tbody>
+
+          <% phase.users.map {|user| { user: user,
+                                       points: phase.user_points(user),
+                                       games: phase.user_games_played(user) } }
+                 .sort{|a,b| phase.compare(a,b)}.reverse.each_with_index do |entry, index| %>
+              <tr>
+                <td>
+                  <%= index + 1 %>
+                </td>
+                <td>
+                  <%= entry[:user].full_name %>
+                </td>
+                <td>
+                  <%= entry[:points] %>
+                </td>
+                <td>
+                  <%= entry[:games] %>
+                </td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+<% if !only_players %>
+    </div>
+    <div class="col-xs-12 col-sm-6" id="machine-panel">
+      <!--<div class="row">-->
+        <!--<div class="col-xs-12 text-center">-->
+          <!--<h2>Maszyny</h2> &lt;!&ndash; TODO t &ndash;&gt;-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<table class="table table-responsive table-striped">-->
+        <!--<thead class="table-header">-->
+        <!--<tr>-->
+          <!--<td>Nazwa</td> &lt;!&ndash; TODO t &ndash;&gt;-->
+          <!--<td>Ilość gier</td>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<% phase.flippers_game_count.sort_by{|a| a[:name]}.each do |entry| %>-->
+            <!--<tr>-->
+              <!--<td>-->
+                <!--<%= entry[:name] %>-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--<%= entry[:count] %>-->
+              <!--</td>-->
+            <!--</tr>-->
+        <!--<% end %>-->
+        <!--</tbody>-->
+      <!--</table>-->
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#user-table').stickyTableHeaders({scrollableArea: $('#user-panel')});
+</script>
+
+<% end %>

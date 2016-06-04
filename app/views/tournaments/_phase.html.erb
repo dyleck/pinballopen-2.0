@@ -1,0 +1,6 @@
+<%= phases_form.label :type %>
+<%= phases_form.select :type,
+                       options_for_select([["XofY", 1]]),
+                       { prompt: "Rodzaj fazy" },
+                       { class: "form-control" }
+%>

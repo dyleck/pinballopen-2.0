@@ -1,0 +1,88 @@
+<div class="container" id="tournaments_form">
+  <% if @tournament.errors.any? %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+          <div class="alert alert-danger">
+            <ul>
+              <% @tournament.errors.messages.keys.each do |key| %>
+                <% @tournament.errors.messages[key].each do |message| %>
+                  <li><%= t(".#{key}") + " " + message %></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+  <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form">
+        <%= form_for @tournament do |f| %>
+            <div class="form-group">
+              <%= f.label t(".name") %>
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label t(".number_of_machines") %>
+              <%= f.number_field :number_of_machines, class: "form-control" %>
+            </div>
+            <div class="form-group" id="phases">
+              <%= f.label "Fazy turnieju" %>
+              <%= f.nested_fields_for :phases do |phase_form| %>
+                  <div class="form-group border">
+                    <%= phase_form.remove_nested_fields_link do %>
+                        <i class="fa fa-times" style="color: red;"></i>
+                    <% end %>
+                    <span>
+                      <%= phase_form.select(:type,
+                                            Phase::PHASE_TYPES,
+                                            { prompt: "Wybierz rodzaj" },
+                                            { class: "form-control" } )
+                      %>
+                    </span>
+                    <div>
+                      <%= phase_form.label "Rundy ustala faza" %>
+                      <%= phase_form.check_box :fixed %>
+                    </div>
+                    <div>
+                      <%= phase_form.label "Ilość rund" %>
+                      <span>
+                        <%= phase_form.text_field :number_of_rounds, type: :number, class: "form-control" %>
+                      </span>
+                    </div>
+                  </div>
+              <% end %>
+              <div class="center">
+                <%= f.add_nested_fields_link :phases, "Dodaj fazę", class: "btn btn-md btn-primary" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label "Maszyny" %>
+                <% if !@tournament.number_of_machines.nil? %>
+                  <% @tournament.number_of_machines.times do |index| %>
+                    <div class="form-group">
+                      <% if @tournament.flippers.tournament_order[index].nil? %>
+                        <%= select_tag("tournament[flippers][]",
+                          options_for_select(Flipper.order(:name).map{|flipper| ["#{flipper.name} - #{flipper.id}", flipper.id]}),
+                          prompt: "Wybierz maszynę",
+                          class: "form-control")
+                        %>
+                      <% else %>
+                        <%= select_tag("tournament[flippers[]",
+                            options_for_select(Flipper.order(:name).map{|flipper| ["#{flipper.name} - #{flipper.id}", flipper.id]},
+                              @tournament.flippers.tournament_order[index].id),
+                            class: "form-control")
+                        %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            <div class="form-group">
+              <%= f.submit :submit, class: "form-control btn btn-primary" %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
 
-
   root 'static_pages#home'
 
   scope '(:locale)' do
     resources :contacts, only: [:create]
     resources :orders, only: [:new, :update, :create, :destroy]
     resources :order_items, only: [:create, :destroy]
-    resources :users
+    resources :users do
+      resources :user_stats, only: [:index]
+    end
     resources :account_activations, only: [:edit, :update]
     resources :password_resets, only: [:edit, :update, :new, :create]
     resources :teams, only: [:new, :create, :edit, :update, :show, :index]
@@ -23,14 +24,36 @@ Rails.application.routes.draw do
     get 'wait_for_sff' => 'static_pages#wait_for_sff'
     post 'login' => 'sessions#create'
     delete 'logout' => 'sessions#destroy'
+    resources :tournaments, only: [] do
+      member do
+        get 'standings'
+      end
+    end
   end
 
   scope 'admin' do
     resources :products
     resources :payment_confirmations, only: [:index, :create, :update]
     resources :flippers
+    resources :tournaments, only: [:new, :create, :edit, :update, :destroy, :show, :index] do
+      member do
+        get 'start' => 'tournaments#start'
+      end
+    end
+    resources :scores, only: [:update]
+    resources :user_managements, only: [:index, :new, :create, :edit, :update]
+    delete 'user_switches' => 'user_switches#destroy', as: 'destroy_user_switches'
+    post 'user_switches' => 'user_switches#create', as: 'create_user_switches'
     get 'sff_validations' => 'sff_validations#index'
+    scope 'manage/(:tournament_id)' do
+      resources :matches
+      get 'match_destroy_confirm/:id' => 'match_confirmations#match_destroy', as: 'match_destroy_confirm'
+      patch 'match_edit_confirm/:id' => 'match_confirmations#match_edit', as: 'match_edit_confirm'
+      post 'match_create_confirm' => 'match_confirmations#match_create', as: 'match_create_confirm'
+    end
+
   end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

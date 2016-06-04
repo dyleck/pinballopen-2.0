@@ -1,0 +1,63 @@
+<% provide :title, "Wyniki personalne" #TODO %>
+<div class="container">
+  <div class="row" style="margin-top: 10px;">
+    <div class="col-xs-12 text-center">
+      <% Tournament.where(name: ["Modern", "80's", "Stern Trophy"]).each do |tournament| %>
+        <%= link_to tournament.name, user_user_stats_path(tournament_id: tournament.id),
+                    class: @tournament == tournament ? "btn btn-danger" : "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h2>Twoje wyniki</h2> <!-- TODO t -->
+    </div>
+  </div>
+  <div class="row" id="personal">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <div class="row hidden-xs header">
+        <div class="col-sm-5">
+          <span class="pull-right">Maszyna</span> <!-- TODO t -->
+        </div>
+        <div class="col-sm-3">
+          <span class="pull-right">Wynik</span><!-- TODO t -->
+        </div>
+        <div class="col-sm-2">
+          <span class="pull-right">Miejsce</span> <!-- TODO t -->
+        </div>
+        <div class="col-sm-2">
+          <span class="pull-right">Punkty</span> <!-- TODO t -->
+        </div>
+      </div>
+        <% @phase.flippers_played_with_scores(@user).each do |entry| %>
+        <div class="row <%= cycle("light","dark") %>">
+          <div class="col-xs-12 col-sm-5">
+            <span class="visible-xs-inline-block pull-left">Flipper: </span>
+            <b><span class="pull-right"><%= entry[:flipper].name %></span></b>
+          </div>
+          <div class="col-xs-12 col-sm-3">
+            <span class="visible-xs-inline-block pull-left">Wynik:</span>
+            <b><span class="pull-right"><%= entry[:score] %></span></b>
+          </div>
+          <div class="col-xs-6 col-sm-2">
+            <span class="visible-xs-inline-block pull-left">Pozycja:</span>
+            <b><span class="pull-right"><%= @phase.max_points - ( points = @phase.points_for_flipper(entry) ) + 1 %></span></b>
+          </div>
+          <div class="col-xs-6 col-sm-2 last">
+            <span class="visible-xs-inline-block pull-left">Punkty:</span>
+            <b><span class="pull-right"><%= points %></span></b>
+          </div>
+        </div>
+        <% end %>
+    </div>
+  </div>
+  <div class="row text-center">
+    <h3>
+      <% if (left = (@tournament.current_phase.number_of_rounds - @phase.flippers_played_with_scores(@user).count)) > 0  %>
+        Do zagrania: <%= left %> <!-- TODO t -->
+      <% else %>
+        Zagrałeś wszystkie gry w tym turnieju <!-- TODO t -->
+      <% end %>
+    </h3>
+  </div>
+</div>

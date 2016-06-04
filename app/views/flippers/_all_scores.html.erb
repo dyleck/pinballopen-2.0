@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <h2><%= "#{@flipper.flipper_number + 1}: #{@flipper.name}" %></h2>
+  </div>
+</div>
+<table class="table table-responsive table-striped">
+  <thead class="table-header">
+  <tr>
+    <td>Lp</td>
+    <td>Gracz</td> <!-- TODO t -->
+    <td>Wynik</td>
+  </tr>
+  </thead>
+  <tbody>
+  <% @tournament.current_phase.rounds.joins(:scores).select("scores.user_id as user_id, scores.value as value").
+        where("matches.flipper_id": @flipper).order("scores.value desc").each_with_index do |score,index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= User.find_by(id: score.user_id).full_name %></td>
+      <td><%= number_with_delimiter score.value, delimiter: " " %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

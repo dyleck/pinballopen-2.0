@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :order_items, through: :orders
   has_many :products, through: :order_items
   belongs_to :team
+  has_and_belongs_to_many :phases
 
   validates :first_name, presence: true, length: { maximum: 50 }
   validates :last_name, presence: true, length: { maximum: 50 }
@@ -36,6 +37,13 @@ class User < ActiveRecord::Base
     ).distinct
     assigned_to_teams = User.where.not(team: nil)
     payed_for_main - payed_for_team - assigned_to_teams
+  end
+
+  def User.all_that_paid_for_main
+    User.joins(:orders, :products).where(
+                                      "orders.payment_confirmed": true,
+                                      "products.name": "main"
+                                    ).distinct
   end
 
   def User.all_that_ordered_main

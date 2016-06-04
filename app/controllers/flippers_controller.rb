@@ -8,6 +8,11 @@ class FlippersController < ApplicationController
   end
 
   def show
+    @tournament = Tournament.find_by(id: params[:tournament_id])
+    respond_to do |format|
+      format.js {}
+      format.html {}
+    end
   end
 
   def new

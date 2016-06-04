@@ -1,0 +1,53 @@
+<div id="rounds">
+  <% if params[:user_id].nil? %>
+    <% @rounds = phase.rounds.joins(:users, :flippers).
+        order("users.first_name", "users.last_name", "flippers.name") %>
+  <% else %>
+      <% @rounds = phase.rounds.joins(:users, :flippers).
+          where("users.id": params[:user_id]).
+          order("users.first_name", "users.last_name", "flippers.name") %>
+  <% end %>
+  <% if !superadmin? %>
+      <% @rounds = @rounds.where("scores.value": nil) %>
+  <% else %>
+      <% @rounds = @rounds.order("scores.entered desc") %>
+  <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-3">
+      <%= select_tag :user_id,
+                     options_for_select(
+                         User.all.map{|u| [u.full_name, u.id]}.sort_by{|a| a[0]}.insert(0, ["Wszyscy", 0]),
+                         (user = User.find_by(id: params[:user_id])).nil? ? 0 : user.id
+                     ),
+                     class: "form-control",
+                     onchange: "applyUserFilter()" %>
+    </div>
+  </div>
+  <% @rounds.each do |round| %>
+      <% html_class = cycle("light", "dark") %>
+      <% if round.scores.first.entered? %>
+          <% html_class = html_class + " entered" %>
+      <% end %>
+      <%= render 'x_of_y/round', round: round, html_class: html_class %>
+  <% end %>
+</div>
+
+<script>
+  function applyUserFilter() {
+    var userId = $("#user_id").val();
+    if (userId != "0") {
+      params = {
+        user_id: userId,
+        locale: "<%= locale %>"
+      };
+    } else {
+      params = {
+        locale: "<%= locale %>"
+      };
+    }
+    var origin = $(location).attr("origin");
+    var path = $(location).attr("pathname");
+    var options = $.param(params);
+    window.location = origin + path + "?" + options;
+  }
+</script>

@@ -1,0 +1,19 @@
+<div class="form">
+  <%= form_for @match, url: match_create_confirm_path(tournament_id: @tournament.id) do |match_form| %>
+      <div class="form-group">
+        <%= match_form.label :flipper %>
+        <%= text_field_tag "match[flipper_number]", "", type: :number, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= match_form.fields_for :scores do |score_form| %>
+          <%= score_form.label :gracz %>
+          <%= score_form.number_field :user_id, class: "form-control" %>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <%= match_form.submit "Start", class: "btn btn-lg btn-primary pull-left", style: "margin-bottom: 10px;" %>
+        <%= link_to "Cofnij", matches_path(tournament_id: @tournament), class: "btn btn-lg btn-danger pull-right",
+              style: "margin-bottom: 10px;" %>
+      </div>
+  <% end %>
+</div>

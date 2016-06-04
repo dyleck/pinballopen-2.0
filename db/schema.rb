@@ -11,15 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328083247) do
+ActiveRecord::Schema.define(version: 20160603164257) do
 
   create_table "flippers", force: :cascade do |t|
     t.string   "name"
     t.string   "short_name"
     t.string   "translite_url"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "tournament_id"
+    t.integer  "flipper_number"
   end
+
+  add_index "flippers", ["tournament_id"], name: "index_flippers_on_tournament_id"
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "round_id"
+    t.integer  "flipper_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "matches", ["flipper_id"], name: "index_matches_on_flipper_id"
+  add_index "matches", ["round_id"], name: "index_matches_on_round_id"
 
   create_table "order_items", force: :cascade do |t|
     t.integer  "product_id"
@@ -45,6 +59,20 @@ ActiveRecord::Schema.define(version: 20160328083247) do
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id"
 
+  create_table "phases", force: :cascade do |t|
+    t.string   "type"
+    t.integer  "tournament_id"
+    t.boolean  "fixed"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "number_of_rounds"
+  end
+
+  create_table "phases_users", force: :cascade do |t|
+    t.integer "phase_id"
+    t.integer "user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.decimal  "price"
@@ -53,11 +81,38 @@ ActiveRecord::Schema.define(version: 20160328083247) do
     t.decimal  "sff_price"
   end
 
+  create_table "rounds", force: :cascade do |t|
+    t.integer  "phase_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "rounds", ["phase_id"], name: "index_rounds_on_phase_id"
+
+  create_table "scores", force: :cascade do |t|
+    t.integer  "match_id"
+    t.integer  "user_id"
+    t.integer  "value",      limit: 8
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.boolean  "entered",              default: false
+  end
+
+  add_index "scores", ["match_id"], name: "index_scores_on_match_id"
+  add_index "scores", ["user_id"], name: "index_scores_on_user_id"
+
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "captain_id"
+  end
+
+  create_table "tournaments", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "number_of_machines"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,9 +130,8 @@ ActiveRecord::Schema.define(version: 20160328083247) do
     t.string   "activation_digest"
     t.string   "reset_digest"
     t.integer  "team_id"
+    t.boolean  "superadmin"
+    t.boolean  "retired"
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["team_id"], name: "index_users_on_team_id"
 
 end

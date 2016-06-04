@@ -1,0 +1,22 @@
+<% match = round.matches.first %>
+<div class="row <%= html_class %>">
+  <%= link_to edit_match_path(match, tournament_id: @tournament.id) do %>
+    <div class="col-xs-12 col-sm-3 clickable">
+      <%= match.scores.first.user.full_name %>
+    </div>
+    <div class="col-xs-12 col-sm-3 clickable">
+      <%= match.flipper.name %>
+    </div>
+    <div class="col-xs-12 col-sm-3 clickable">
+      <%= number_with_delimiter(match.scores.first.value, delimiter: " ") %>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <% if superadmin? %>
+        <%= link_to "Usuń", match_path(match, tournament_id: @tournament.id), method: :delete, class: "btn btn-lg btn-danger" %>
+        <%= link_to "Wpisane", score_path(match.scores.first, tournament_id: @tournament) , method: :patch, class: "btn btn-lg btn-info" %>
+      <% else %>
+        <%= link_to "Wynik", edit_match_path(match, tournament_id: @tournament.id), class: "btn btn-lg btn-primary" %>
+    <% end %>
+    </div>
+  <% end %>
+</div>
