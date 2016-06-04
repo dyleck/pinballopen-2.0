@@ -35,6 +35,8 @@ class UserManagementsController < ApplicationController
 
   def update
     @user = User.find_by(id: params[:id])
+    create_order(@user) if params[:payment]
+    @user.save
     @user.update_attributes(user_managements_params)
     if !@user.errors.any?
       flash[:success] = "Dane zaktualizowane"

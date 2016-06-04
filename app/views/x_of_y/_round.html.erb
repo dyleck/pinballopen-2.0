@@ -11,10 +11,12 @@
       <%= number_with_delimiter(match.scores.first.value, delimiter: " ") %>
     </div>
     <div class="col-xs-12 col-sm-3">
-      <%= link_to "Wynik", edit_match_path(match, tournament_id: @tournament.id), class: "btn btn-lg btn-primary pull-left" %>
       <% if superadmin? %>
-        <%= link_to "Usuń", match_path(match, tournament_id: @tournament.id), method: :delete, class: "btn btn-lg btn-danger pull-right" %>
-      <% end %>
+        <%= link_to "Usuń", match_path(match, tournament_id: @tournament.id), method: :delete, class: "btn btn-lg btn-danger" %>
+        <%= link_to "Wpisane", score_path(match.scores.first, tournament_id: @tournament) , method: :patch, class: "btn btn-lg btn-info" %>
+      <% else %>
+        <%= link_to "Wynik", edit_match_path(match, tournament_id: @tournament.id), class: "btn btn-lg btn-primary" %>
+    <% end %>
     </div>
   <% end %>
 </div>

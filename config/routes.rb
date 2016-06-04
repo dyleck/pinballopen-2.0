@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'static_pages#home'
 
   scope '(:locale)' do
@@ -39,6 +40,7 @@ Rails.application.routes.draw do
         get 'start' => 'tournaments#start'
       end
     end
+    resources :scores, only: [:update]
     resources :user_managements, only: [:index, :new, :create, :edit, :update]
     delete 'user_switches' => 'user_switches#destroy', as: 'destroy_user_switches'
     post 'user_switches' => 'user_switches#create', as: 'create_user_switches'

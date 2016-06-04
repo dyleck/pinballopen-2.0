@@ -71,6 +71,7 @@ class TournamentsController < ApplicationController
       number = p[:number_of_machines].to_i
       if p[:flippers]
         p[:flippers] = p[:flippers].map.with_index do |id, index|
+          next if id.nil? || id == ""
           flipper = Flipper.find_by(id: id)
           flipper.update_attribute(:flipper_number, index)
           flipper

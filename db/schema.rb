@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531223108) do
+ActiveRecord::Schema.define(version: 20160603164257) do
 
   create_table "flippers", force: :cascade do |t|
     t.string   "name"
@@ -93,8 +93,9 @@ ActiveRecord::Schema.define(version: 20160531223108) do
     t.integer  "match_id"
     t.integer  "user_id"
     t.integer  "value",      limit: 8
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.boolean  "entered",              default: false
   end
 
   add_index "scores", ["match_id"], name: "index_scores_on_match_id"

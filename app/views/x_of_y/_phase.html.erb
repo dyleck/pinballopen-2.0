@@ -9,6 +9,8 @@
   <% end %>
   <% if !superadmin? %>
       <% @rounds = @rounds.where("scores.value": nil) %>
+  <% else %>
+      <% @rounds = @rounds.order("scores.entered desc") %>
   <% end %>
   <div class="row">
     <div class="col-xs-12 col-sm-3">
@@ -22,7 +24,11 @@
     </div>
   </div>
   <% @rounds.each do |round| %>
-      <%= render 'x_of_y/round', round: round, html_class: cycle("light", "dark") %>
+      <% html_class = cycle("light", "dark") %>
+      <% if round.scores.first.entered? %>
+          <% html_class = html_class + " entered" %>
+      <% end %>
+      <%= render 'x_of_y/round', round: round, html_class: html_class %>
   <% end %>
 </div>
 
