@@ -40,8 +40,9 @@ class XOfY < Phase
     new_match_user = match.scores.first.user
     rounds_played_by_user = self.rounds.joins(:flippers, :users).where(
         "scores.user_id": new_match_user.id,
-        "matches.flipper_id": new_match_flipper.id).first
-    if rounds_played_by_user
+        "matches.flipper_id": new_match_flipper.id).
+        where.not("scores.value": nil)
+    if !rounds_played_by_user.empty?
       rounds_played_by_user.matches.first
     else
       nil
